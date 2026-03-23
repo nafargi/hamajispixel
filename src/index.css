@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&family=Space+Grotesk:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@font-face {
+  font-family: 'Devil Breeze';
+  src: url('./assets/axerio/FONTs/devil_breeze/Devil Breeze Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BDO Grotesk';
+  src: url('./assets/axerio/FONTs/BDO_Grotesk/BDOGrotesk-Regular-BF648a656fd543a.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BDO Grotesk';
+  src: url('./assets/axerio/FONTs/BDO_Grotesk/BDOGrotesk-Bold-BF648a656f8559f.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 24 100% 60%; /* Hyper Orange #ff8533 */
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 63%; /* #A1A1AA approx */
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 12%; /* #1F1F1F approx */
+    --input: 0 0% 12%;
+    --ring: 24 100% 60%;
+
+    --radius: 2rem; /* 32px */
+
+    /* Custom tokens */
+    --hyper-orange: 24 100% 60%;
+    --surface-elevated: 0 0% 6%;
+    --text-dim: 240 5% 65%; /* #A1A1AA */
+    --text-subtle: 0 0% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-black text-foreground antialiased;
+    background-color: #000000;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.05em;
+  }
+
+  h1 { font-size: clamp(2.5rem, 8vw, 6rem); }
+  h2 { font-size: clamp(2rem, 6vw, 4.5rem); }
+
+  .font-editorial {
+    @apply font-serif;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-devil {
+    font-family: 'Devil Breeze', 'Cormorant Garamond', serif;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  .font-bdo {
+    font-family: 'BDO Grotesk', 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  .text-elegant {
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.75rem;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--muted-foreground)) 100%);
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(135deg, hsl(var(--border)), transparent) 1;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  .line-reveal {
+    @apply relative overflow-hidden;
+  }
+
+  .line-reveal::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px bg-foreground;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  .line-reveal:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .studio-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Neon and Glow effects for luxury cyberpunk/modern feel */
+  .neon-glow {
+    box-shadow: 0 0 15px theme('colors.cyan.400'), inset 0 0 15px theme('colors.cyan.400');
+  }
+  
+  .neon-text-glow {
+    text-shadow: 0 0 10px theme('colors.cyan.400');
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .glassmorphism {
+    @apply bg-black/40 backdrop-blur-md border border-white/10;
+  }
+
+  .glassmorphism {
+    @apply bg-black/40 backdrop-blur-md border border-white/10;
+  }
+
+  .rich-black {
+    background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
+  }
+}
+
+@layer utilities {
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+  
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--foreground));
+  color: hsl(var(--background));
+}
