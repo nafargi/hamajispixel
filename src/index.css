@@ -36,13 +36,15 @@
     --popover: 0 0% 4%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 24 100% 60%; /* Hyper Orange #ff8533 */
+    --primary: 24 100% 60%;
+    /* Hyper Orange #ff8533 */
     --primary-foreground: 0 0% 0%;
 
     --secondary: 0 0% 8%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 63%; /* #A1A1AA approx */
+    --muted: 0 0% 63%;
+    /* #A1A1AA approx */
     --muted-foreground: 0 0% 55%;
 
     --accent: 0 0% 15%;
@@ -51,16 +53,19 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 12%; /* #1F1F1F approx */
+    --border: 0 0% 12%;
+    /* #1F1F1F approx */
     --input: 0 0% 12%;
     --ring: 24 100% 60%;
 
-    --radius: 2rem; /* 32px */
+    --radius: 2rem;
+    /* 32px */
 
     /* Custom tokens */
     --hyper-orange: 24 100% 60%;
     --surface-elevated: 0 0% 6%;
-    --text-dim: 240 5% 65%; /* #A1A1AA */
+    --text-dim: 240 5% 65%;
+    /* #A1A1AA */
     --text-subtle: 0 0% 40%;
   }
 }
@@ -76,13 +81,23 @@
     font-family: 'Space Grotesk', sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Space Grotesk', sans-serif;
     letter-spacing: -0.05em;
   }
 
-  h1 { font-size: clamp(2.5rem, 8vw, 6rem); }
-  h2 { font-size: clamp(2rem, 6vw, 4.5rem); }
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 6vw, 4.5rem);
+  }
 
   .font-editorial {
     @apply font-serif;
@@ -153,7 +168,7 @@
   .neon-glow {
     box-shadow: 0 0 15px theme('colors.cyan.400'), inset 0 0 15px theme('colors.cyan.400');
   }
-  
+
   .neon-text-glow {
     text-shadow: 0 0 10px theme('colors.cyan.400');
   }
@@ -177,14 +192,19 @@
 
 @layer utilities {
   @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
   }
-  
+
   .animate-marquee {
     animation: marquee 25s linear infinite;
   }
-  
+
   .animate-marquee:hover {
     animation-play-state: paused;
   }

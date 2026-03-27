@@ -90,7 +90,7 @@ const OnyxiumBrandGuideline: React.FC = () => {
             transition={{ duration: 1.5, ease: 'easeOut' }}
             className="mb-12"
           >
-            <img src={logoMain} alt="Onyxium Logo" className="max-w-[400px] md:max-w-[600px] mx-auto rounded-2xl shadow-2xl" />
+            <img src={logoMain} alt="Onyxium Logo" className="w-full h-full mx-auto rounded-2xl shadow-2xl" />
           </motion.div>
 
           <motion.div
@@ -333,7 +333,7 @@ const OnyxiumBrandGuideline: React.FC = () => {
 
       <section className="py-32 text-center bg-[#050D18] border-t border-white/5">
         <p className="text-[10px] tracking-[0.4em] uppercase text-white/40 mb-8 font-bold onyx-bd">Full Presentation Available</p>
-        <a href="https://www.behance.net/nafargidamena" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold onyx-h hover:scale-105 transition-transform duration-500 hover:shadow-[0_0_30px_#00B4FFaa] px-8 py-4 rounded-full" style={{ color: '#00B4FF' }}>
+        <a href="https://www.behance.net/gallery/236882049/ONYXIUM-software-full-brand-Identity" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold onyx-h hover:scale-105 transition-transform duration-500 hover:shadow-[0_0_30px_#00B4FFaa] px-8 py-4 rounded-full" style={{ color: '#00B4FF' }}>
           Explore on Behance <ArrowUpRight className="w-8 h-8 md:w-10 md:h-10" />
         </a>
       </section>

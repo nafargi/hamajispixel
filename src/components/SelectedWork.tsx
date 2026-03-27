@@ -59,7 +59,7 @@ const SelectedWork = () => {
                     </p>
                     
                     {/* Explore on Behance Button */}
-                    <div className="inline-flex items-center gap-3 bg-primary text-black px-6 py-3 rounded-full font-bold uppercase tracking-widest text-[9px] sm:text-[10px] transition-all duration-500 hover:scale-105 shadow-[0_0_20px_rgba(255,107,53,0.3)] opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 relative z-30 pointer-events-auto" onClick={(e) => { e.stopPropagation(); window.open("https://www.behance.net/nafargi", "_blank"); }}>
+                    <div className="inline-flex items-center gap-3 bg-primary text-black px-6 py-3 rounded-full font-bold uppercase tracking-widest text-[9px] sm:text-[10px] transition-all duration-500 hover:scale-105 shadow-[0_0_20px_rgba(255,107,53,0.3)] opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 relative z-30 pointer-events-auto" onClick={(e) => { e.stopPropagation(); window.open(brand.behanceUrl || "https://www.behance.net/nafargi", "_blank"); }}>
                       Explore on Behance
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                          <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>

@@ -203,7 +203,7 @@ const HeroSection = () => {
               transition={{ duration: 1.4, delay: 0.3, ease }}
               className="block text-[clamp(60px,10vw,140px)] font-bold text-white/[0.04] italic font-editorial"
             >
-             
+
             </motion.span>
           </div>
 

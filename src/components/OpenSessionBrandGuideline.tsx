@@ -59,36 +59,55 @@ const OpenSessionBrandGuideline = () => {
         </div>
       </section>
 
-      {/* 2. Philosophy & Concept */}
-      <section className="py-32 md:py-48 px-8 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start max-w-[1800px] mx-auto">
-        <div className="lg:col-span-5 sticky top-32">
-          <span className="text-[10px] tracking-[0.4em] uppercase text-[#6E44A7] font-bold block mb-12">01 / The Connection</span>
-          <h2 className="text-4xl md:text-6xl font-light font-montserrat tracking-tight leading-tight mb-8">
-            Healing Through <br /><span className="font-bold text-[#6E44A7]">Partnership.</span>
-          </h2>
-          <p className="text-lg opacity-60 font-light leading-relaxed max-w-md">
-            The foundation of Open Session is the pure connection between therapist and client. One reaches up, one reaches down—forming the 'O' for an Open, safe space, and the 'S' for a continuous Session.
-          </p>
+      {/* 2. Logo Definition Concept */}
+      <section className="py-32 md:py-48 px-8 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-stretch max-w-[1800px] mx-auto">
+        {/* Left Side: Concept Text */}
+        <div className="lg:col-span-6 bg-white rounded-[2rem] p-12 md:p-16 shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-black/5 flex flex-col justify-center">
+          <div className="space-y-12 pr-4 md:pr-8">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <h3 className="text-3xl font-bold font-montserrat mb-6 text-[#111]">The Two People</h3>
+              <p className="text-lg font-light leading-relaxed text-[#111]/80 mb-4">
+                The logo shows <strong className="font-semibold text-[#111]">two figures</strong> connecting with each other.
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-lg font-light leading-relaxed text-[#111]/80 marker:text-[#111]/40">
+                <li>It represents the partnership between the therapist and the person seeking help.</li>
+                <li>One person is reaching up and the other is reaching down, showing how they support each other during a session.</li>
+              </ul>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+              <h3 className="text-3xl font-bold font-montserrat mb-6 text-[#111]">The "O" and "S" Shapes</h3>
+              <p className="text-lg font-light leading-relaxed text-[#111]/80 mb-4">
+                The way the two people are positioned creates two specific letters:
+              </p>
+              <ul className="list-disc pl-6 space-y-4 text-lg font-light leading-relaxed text-[#111]/80 marker:text-[#E73539] marker:text-sm">
+                <li>
+                  <strong className="font-semibold text-[#111]">The "O":</strong> The two figures join together to form a circle, which represents the word "Open." This circle creates a "safe space" where everything is contained and private.
+                </li>
+                <li className="marker:text-[#F9832D]">
+                  <strong className="font-semibold text-[#111]">The "S":</strong> If you look at the <strong className="font-semibold text-[#111]">flow of the two bodies</strong>, they create a soft curve that looks like an "S" for "Session." This shows that the session is a smooth, continuous process of talking and healing.
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+              className="text-lg font-light leading-relaxed text-[#111]/80 italic border-l-[3px] border-[#6E44A7] pl-6 py-2"
+            >
+              In short: The logo uses two people to build the letters O and S, showing that a "session" is a "connection" between two people.
+            </motion.p>
+          </div>
         </div>
         
-        <div className="lg:col-span-7 flex flex-col gap-8 md:gap-16">
+        {/* Right Side: Visuals */}
+        <div className="lg:col-span-6 flex flex-col gap-8 h-full">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="relative bg-white p-16 md:p-32 flex items-center justify-center border border-black/5 rounded-[2rem]"
+            className="w-full h-full min-h-[500px] bg-[#fdfdfd] rounded-[2rem] flex items-center justify-center p-16 border border-black/5 shadow-[inset_0_0_100px_rgba(0,0,0,0.02)]"
           >
-            <img src={mainLogoMark} alt="Logo Mark" className="w-[50%]" />
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="w-full relative overflow-hidden group rounded-[2rem]"
-          >
-             <img src={slide51} alt="Therapy" className="w-full h-[60vh] md:h-[80vh] object-cover transition-transform duration-[3s] group-hover:scale-105" />
+            <img src={mainLogoMark} alt="Logo Mark Connection" className="w-[60%] drop-shadow-xl hover:scale-105 transition-transform duration-700" />
           </motion.div>
         </div>
       </section>
@@ -134,45 +153,32 @@ const OpenSessionBrandGuideline = () => {
         </div>
       </section>
 
-      {/* 4. Color Swatches (Containerized) */}
+      {/* 4. Color Swatches (Gradient Steps) */}
       <section className="py-32 md:py-48 px-8 md:px-16 w-full bg-[#fcfcfc]">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-[1800px] mx-auto bg-white rounded-[3rem] p-12 md:p-24 shadow-[0_20px_60px_rgba(0,0,0,0.03)] border border-black/5"
+          className="max-w-[1800px] mx-auto"
         >
-          <span className="text-[10px] tracking-[0.4em] uppercase text-[#6E44A7] font-bold block mb-16">03 / Palette</span>
-          
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 md:gap-10">
+          <div className="flex gap-[1%] w-full aspect-[1/1] sm:aspect-[2/1] md:aspect-[2.5/1]">
             {[
-              { hex: '#6E44A7', top: 'Dynamic', bottom: 'Purple', darkText: false },
-              { hex: '#F9832D', top: 'Positive', bottom: 'Orange', darkText: false },
-              { hex: '#1978A3', top: 'Friendly', bottom: 'Blue', darkText: false },
-              { hex: '#E73539', top: 'Smart', bottom: 'Red', darkText: false },
-              { hex: '#0A7B89', top: 'Peaceful', bottom: 'Teal', darkText: false }
-            ].map((color, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, scale: 0.8, y: 40 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col group h-full"
-              >
-                <div 
-                  className="aspect-[4/5] w-full rounded-2xl p-6 flex flex-col justify-end transition-transform duration-700 group-hover:-translate-y-2 shadow-sm group-hover:shadow-xl" 
-                  style={{ backgroundColor: color.hex, color: color.darkText ? '#000' : '#fff' }}
-                >
-                  <p className="text-[10px] tracking-[0.3em] uppercase opacity-60 mb-1">{color.top}</p>
-                  <p className="text-xl md:text-2xl font-bold font-montserrat">{color.bottom}</p>
-                </div>
-                <div className="pt-6 flex justify-between items-center px-1">
-                   <span className="text-[10px] font-mono opacity-50">{color.hex}</span>
-                   <span className="text-[10px] tracking-widest uppercase opacity-30 font-bold">P-0{i+1}</span>
-                </div>
-              </motion.div>
+              { hex: '#6E44A7', span: 2 },
+              { hex: '#F9832D', span: 1 },
+              { hex: '#1978A3', span: 1 },
+              { hex: '#E73539', span: 1 },
+              { hex: '#0F172A', span: 1 }
+            ].map((col, i) => (
+              <div key={i} className={`flex flex-col h-full bg-white ${col.span === 2 ? 'w-[33.33%]' : 'w-[16.66%]'} group`}>
+                {[...Array(10)].map((_, idx) => (
+                  <div 
+                    key={idx} 
+                    className="flex-1 w-full transition-opacity duration-500 ease-out"
+                    style={{ backgroundColor: col.hex, opacity: 1 - (idx * 0.09) }}
+                  />
+                ))}
+              </div>
             ))}
           </div>
         </motion.div>
@@ -295,7 +301,7 @@ const OpenSessionBrandGuideline = () => {
 
       <section className="py-32 text-center bg-white border-t border-black/5">
         <p className="text-[10px] tracking-[0.4em] uppercase text-black/40 mb-8 font-bold">Full Presentation Available</p>
-        <a href="https://www.behance.net/nafargidamena" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold font-montserrat hover:scale-105 transition-transform duration-500" style={{ color: '#6E44A7' }}>
+        <a href="https://www.behance.net/gallery/239772409/Open-Session-Therapy-Brand" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold font-montserrat hover:scale-105 transition-transform duration-500" style={{ color: '#6E44A7' }}>
           Explore on Behance <ArrowUpRight className="w-8 h-8 md:w-10 md:h-10" />
         </a>
       </section>

@@ -706,7 +706,7 @@ const SunZenithBrandGuideline: React.FC = () => {
       <section className="py-40 text-center border-t" style={{ background: '#ffffff', borderColor: `${BRAND_DARK}10` }}>
         <motion.div {...fadeInUp}>
           <p className="sz-bd text-xs tracking-[0.6em] uppercase mb-8" style={{ color: `${BRAND_DARK}50` }}>Full Presentation Available</p>
-          <a href="https://www.behance.net/nafargidamena" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.behance.net/gallery/232750275/sunzenith-solar-energy" target="_blank" rel="noopener noreferrer"
             className="sz-h text-4xl md:text-7xl font-bold tracking-tight transition-all duration-700"
             style={{ color: BRAND_DARK }}
             onMouseEnter={e => (e.currentTarget.style.color = BRAND_ORANGE)}
@@ -718,7 +718,7 @@ const SunZenithBrandGuideline: React.FC = () => {
 
       <section className="py-32 text-center bg-[#F3F6FA] border-t border-[#022272]/5">
         <p className="text-[10px] tracking-[0.4em] uppercase text-[#022272]/40 mb-8 font-bold">Full Presentation Available</p>
-        <a href="https://www.behance.net/nafargidamena" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold font-syne hover:scale-105 transition-transform duration-500" style={{ color: '#003dfc' }}>
+        <a href="https://www.behance.net/gallery/232750275/sunzenith-solar-energy" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold font-syne hover:scale-105 transition-transform duration-500" style={{ color: '#003dfc' }}>
           Explore on Behance <ArrowUpRight className="w-8 h-8 md:w-10 md:h-10" />
         </a>
       </section>

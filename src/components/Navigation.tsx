@@ -80,17 +80,17 @@ const Navigation = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-fit"
+        className="fixed top-6 left-0 right-0 z-50 w-full flex justify-center px-4"
       >
-        <div className={`flex items-center justify-between gap-8 px-6 py-2.5 rounded-full border backdrop-blur-xl transition-[background-color,border-color,box-shadow,color] duration-500 ease-in-out ${navThemeClass} ${textColorClass}`}>
+        <div className={`flex items-center justify-between gap-6 lg:gap-10 px-5 py-2.5 rounded-full border backdrop-blur-xl transition-[background-color,border-color,box-shadow,color] duration-500 ease-in-out ${navThemeClass} ${textColorClass}`}>
           
-          <Link to="/" className="hover:opacity-80 transition-opacity flex items-center">
+          <Link to="/" className="hover:opacity-80 transition-opacity flex items-center gap-1.5 whitespace-nowrap">
             <img 
               src="/hamajis_logo.svg" 
               alt="Hamaji's Pixel" 
-              className={`h-4 mx-1 md:h-5 w-auto transition-all duration-500 ${isDarkSection ? 'brightness-0 invert' : 'brightness-0'}`} 
+              className={`h-4 md:h-5 w-auto transition-all duration-500 ${isDarkSection ? 'brightness-0 invert' : 'brightness-0'}`} 
             />
-             Hamajis Pixel
+            <span className="text-[10px] md:text-xs tracking-[0.15em] uppercase font-bold">Hamajis Pixel</span>
           </Link>
 
           {/* Desktop Nav Links */}
@@ -106,7 +106,7 @@ const Navigation = () => {
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <a href="https://www.linkedin.com/in/nafargidamena/" target="_blank" rel="noopener noreferrer" className={`${linkColorClass} transition-colors hidden md:block`}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -114,12 +114,10 @@ const Navigation = () => {
             </a>
 
             <a 
-              href="https://www.linkedin.com/in/nafargidamena/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="px-5 py-2 bg-primary text-black text-[10px] tracking-widest uppercase font-bold rounded-full hover:scale-105 transition-all shadow-lg shadow-primary/10 hidden md:block"
+              href="/#book-call" 
+              className="px-5 py-2 bg-primary text-black text-[10px] tracking-widest uppercase font-bold rounded-full hover:scale-105 transition-all shadow-lg shadow-primary/10 hidden md:block whitespace-nowrap"
             >
-              Let's Chat
+              Book a Call
             </a>
 
             <button
@@ -166,7 +164,7 @@ const Navigation = () => {
                 transition={{ delay: 0.4 }}
                 className="px-8 py-4 bg-primary text-black text-[11px] tracking-widest uppercase font-bold rounded-full shadow-2xl shadow-primary/20"
               >
-                Let's Chat
+                Book a Call
               </motion.a>
             </div>
           </motion.div>

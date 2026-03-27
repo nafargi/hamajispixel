@@ -58,7 +58,7 @@ const TestimonialCard = ({ review }: { review: typeof reviews[0] }) => (
         <p className="text-[#ff8533] text-[10px] uppercase tracking-widest font-bold mt-1 opacity-70">{review.title}</p>
       </div>
     </div>
-    
+
     <div className="flex gap-1 mb-6 text-yellow-500/80">
       {[...Array(5)].map((_, j) => (
         <Star key={j} size={14} fill="currentColor" />
@@ -83,7 +83,7 @@ const Testimonials = () => {
     const setupMarquee = (row: HTMLDivElement, speed: number, direction: number) => {
       const items = gsap.utils.toArray(row.children);
       const totalWidth = row.scrollWidth / 2;
-      
+
       const tl = gsap.timeline({
         repeat: -1,
         defaults: { ease: "none", duration: speed }
@@ -103,11 +103,11 @@ const Testimonials = () => {
     // Mouse interactive speed
     const onMouseMove = (e: MouseEvent) => {
       if (!containerRef.current) return;
-      
+
       const rect = containerRef.current.getBoundingClientRect();
-      const distFromTop = Math.abs(e.clientY - (rect.top + rect.height/2));
+      const distFromTop = Math.abs(e.clientY - (rect.top + rect.height / 2));
       const normalizedDist = 1 - Math.min(distFromTop / 500, 1);
-      
+
       // Speed up marquees as mouse gets closer to section center
       gsap.to(tl1, { timeScale: 1 + normalizedDist * 4, duration: 1 });
       gsap.to(tl2, { timeScale: 1 + normalizedDist * 4, duration: 1 });
@@ -129,9 +129,9 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      id="testimonials" 
+      id="testimonials"
       className="py-16 pt-32 pb-48 bg-black border-t border-white/5 overflow-hidden relative"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-20 text-center lg:text-left flex flex-col lg:flex-row items-end justify-between gap-12">
@@ -169,7 +169,7 @@ const Testimonials = () => {
         </div>
       </div>
 
-      
+
 
       {/* Decorative Gradients */}
       <div className="absolute top-0 left-0 w-64 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />

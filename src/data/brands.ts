@@ -41,6 +41,7 @@ export interface Brand {
   concept: BrandConcept;
   logoConstruction: LogoConstruction;
   applications: BrandApplication[];
+  behanceUrl?: string;
 }
 
 import axerioCover from "@/assets/axerio/Brand guidelines - 26.jpg";
@@ -93,6 +94,7 @@ export const brands: Brand[] = [
       { type: "Digital", description: "SaaS interface and web presence." },
       { type: "Marketing", description: "Pitch decks and social templates." }
     ],
+    behanceUrl: "https://www.behance.net/gallery/245110401/AXerio",
   },
   {
     id: "questify_ai",
@@ -129,6 +131,7 @@ export const brands: Brand[] = [
       { type: "Learning Dashboard", description: "Real-time performance tracking UI." },
       { type: "Weak Point Analysis", description: "Dynamic visualization of study gaps." }
     ],
+    behanceUrl: "https://www.behance.net/gallery/244277807/Questify-AI-Full-brand",
   },
   {
     id: "onyxium",
@@ -164,6 +167,7 @@ export const brands: Brand[] = [
       { type: "Packaging", description: "Matte black boxes with gold foil stamping." },
       { type: "Editorial", description: "Lookbooks printed on premium matte papers." }
     ],
+    behanceUrl: "https://www.behance.net/gallery/236882049/ONYXIUM-software-full-brand-Identity",
   },
   {
     id: "open_session",
@@ -201,6 +205,7 @@ export const brands: Brand[] = [
       { type: "Counseling Interface", description: "Private, calming digital therapy rooms." },
       { type: "Progress Tracking", description: "Gentle visualization of healing journeys." }
     ],
+    behanceUrl: "https://www.behance.net/gallery/239772409/Open-Session-Therapy-Brand",
   },{
     id: "sunzenith",
     name: "Sunzenith",
@@ -235,6 +240,7 @@ export const brands: Brand[] = [
       { type: "Signage", description: "Oversized solar farm identification." },
       { type: "Vehicle Livery", description: "Fleet branding for global operations." }
     ],
+    behanceUrl: "https://www.behance.net/gallery/232750275/sunzenith-solar-energy",
   }
   ,
   {
@@ -270,5 +276,6 @@ export const brands: Brand[] = [
       { type: "Stationery", description: "Premium, watermarked legal letterheads." },
       { type: "Digital Workspace", description: "Intake portals and management dashboards." }
     ],
+    behanceUrl: "https://www.behance.net/gallery/233839147/Brand-Identity-For-Law-Firms",
   }
 ];

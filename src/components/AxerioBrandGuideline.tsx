@@ -349,7 +349,7 @@ const AxerioBrandGuideline: React.FC = () => {
         <motion.div {...fadeInUp}>
           <p className="text-xs tracking-[0.6em] uppercase text-white/30 mb-8">Full Presentation Available</p>
           <a 
-            href="https://www.behance.net/abdullah_mansour" 
+            href="https://www.behance.net/gallery/245110401/AXerio" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-4xl md:text-7xl font-light tracking-tighter hover:opacity-50 transition-all duration-700 font-devil"
@@ -361,7 +361,7 @@ const AxerioBrandGuideline: React.FC = () => {
 
       <section className="py-32 text-center bg-[#000000] border-t border-white/5">
         <p className="text-[10px] tracking-[0.4em] uppercase text-white/40 mb-8 font-bold">Full Presentation Available</p>
-        <a href="https://www.behance.net/nafargidamena" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold hover:scale-105 transition-transform duration-500" style={{ color: '#D4AF37' }}>
+        <a href="https://www.behance.net/gallery/245110401/AXerio" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold hover:scale-105 transition-transform duration-500" style={{ color: '#D4AF37' }}>
           Explore on Behance <ArrowUpRight className="w-8 h-8 md:w-10 md:h-10" />
         </a>
       </section>

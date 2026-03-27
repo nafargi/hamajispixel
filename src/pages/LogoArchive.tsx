@@ -27,7 +27,7 @@ const MiniLogoGroup = ({ logosArr, color }: { logosArr: any[]; color: TileColor 
             backgroundPosition: 'center'
           }}
         />
-        <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-700 pointer-events-none" />
+        <div className="absolute inset-0  group-hover:bg-white/5 transition-colors duration-700 pointer-events-none" />
       </div>
     ))}
   </div>

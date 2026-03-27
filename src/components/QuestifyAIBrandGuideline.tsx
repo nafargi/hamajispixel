@@ -263,9 +263,9 @@ const QuestifyAIBrandGuideline = () => {
         </motion.div>
       </section>
 
-      <section className="py-32 text-center bg-[#F2F7FB] border-t border-black/5">
+      <section className="py-32 text-center bg-[#F2F7FB] border-t border-white/5">
         <p className="text-[10px] tracking-[0.4em] uppercase text-black/40 mb-8 font-bold">Full Presentation Available</p>
-        <a href="https://www.behance.net/nafargidamena" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold hover:scale-105 transition-transform duration-500" style={{ color: '#385FFF' }}>
+        <a href="https://www.behance.net/gallery/244277807/Questify-AI-Full-brand" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold hover:scale-105 transition-transform duration-500" style={{ color: '#385FFF' }}>
           Explore on Behance <ArrowUpRight className="w-8 h-8 md:w-10 md:h-10" />
         </a>
       </section>

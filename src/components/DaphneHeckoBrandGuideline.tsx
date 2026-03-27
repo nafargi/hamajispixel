@@ -311,7 +311,7 @@ const DaphneHeckoBrandGuideline = () => {
 
       <section className="py-32 text-center bg-[#FAF9F6] border-t border-black/5">
         <p className="text-[10px] tracking-[0.4em] uppercase text-[#4A1021]/60 mb-8 font-bold">Full Presentation Available</p>
-        <a href="https://www.behance.net/nafargidamena" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold hover:scale-105 transition-transform duration-500" style={{ color: '#4A1021' }}>
+        <a href="https://www.behance.net/gallery/233839147/Brand-Identity-For-Law-Firms" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold hover:scale-105 transition-transform duration-500" style={{ color: '#4A1021' }}>
           Explore on Behance <ArrowUpRight className="w-8 h-8 md:w-10 md:h-10" />
         </a>
       </section>
