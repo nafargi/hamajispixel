@@ -10,7 +10,7 @@ const RefundPolicy = () => {
 
       <div className="max-w-[1400px] mx-auto relative z-10">
         <div className="flex flex-col items-center text-center mb-24">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -18,8 +18,8 @@ const RefundPolicy = () => {
           >
             <span className="text-xs uppercase tracking-[0.4em] font-bold text-primary">Absolute Confidence</span>
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -27,8 +27,8 @@ const RefundPolicy = () => {
           >
             RISK <span className="text-primary italic">FREE.</span>
           </motion.h2>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -78,7 +78,7 @@ const RefundPolicy = () => {
 
         {/* Massive Background Text */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 pointer-events-none select-none overflow-hidden w-full whitespace-nowrap opacity-[0.02]">
-           <span className="text-[20vw] font-bold font-heading text-white leading-none">REFUND POLICY • 100% REFUND •</span>
+           <span className="text-[20vw] font-bold text-white leading-none">REFUND POLICY • 100% REFUND •</span>
         </div>
       </div>
     </section>
