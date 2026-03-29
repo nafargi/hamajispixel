@@ -459,103 +459,45 @@ const SunZenithBrandGuideline: React.FC = () => {
         </div>
       </section>
 
-      {/* 8. Color System (Redesigned with Solar Flare Pulses) */}
-      <section className="w-full py-40 px-6 md:px-24 bg-[#020B26] overflow-hidden relative border-y border-white/5">
-        {/* Animated Solar Flare Pulses */}
-        <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center">
-            <motion.div 
-              className="absolute w-[60vw] h-[60vw] rounded-full bg-[#ff8533]"
-              style={{ filter: 'blur(120px)', opacity: 0.2 }}
-              animate={{ scale: [1, 1.4, 1], opacity: [0.1, 0.3, 0.1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-            />
-            <motion.div 
-              className="absolute w-[40vw] h-[40vw] rounded-full bg-[#003dfc]"
-              style={{ filter: 'blur(100px)', opacity: 0.3 }}
-              animate={{ scale: [1.2, 0.8, 1.2], opacity: [0.2, 0.5, 0.2] }}
-              transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
-            />
-            {/* Concentric rings */}
-            {[1, 2, 3].map((r) => (
-              <motion.div 
-                key={r}
-                className="absolute rounded-full border border-white/10"
-                style={{ width: `${r * 20}vw`, height: `${r * 20}vw`, willChange: 'transform' }}
-                animate={{ scale: [0.8, 1.2, 0.8], opacity: [0.05, 0.15, 0.05] }}
-                transition={{ duration: 6 + r * 2, repeat: Infinity, ease: 'easeInOut', delay: r }}
-              />
-            ))}
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
+      <section className="w-full py-24 md:py-32 px-6 md:px-24 bg-[#020B26] text-white border-y border-white/5 relative z-10 font-corbel">
+        <div className="max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] as any }}
-            className="mb-24"
+            className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-8"
           >
-            <div className="flex justify-between items-start border-t border-white/10 pt-8 mb-12">
-              <p className="sz-bd text-[10px] tracking-widest uppercase text-white/40">
-                Topic — 3.1<br />Page — Brand Color
-              </p>
-              <p className="sz-h text-[10px] tracking-widest uppercase font-bold text-right text-white">
-                Color Palette<br />Solar Tones
-              </p>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-bold sz-h tracking-tight text-white mb-12">Zenith Energy</h2>
+            <h2 className="text-4xl md:text-5xl font-bold font-syne tracking-tight uppercase">Color Palette</h2>
+            <p className="text-xs tracking-[0.4em] uppercase text-[#ff8533] font-bold">Zenith Energy</p>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-px bg-white/5 min-h-[400px]">
-             {/* Solar Blue */}
-             <div className="bg-[#003DFC] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
-                <motion.div className="absolute inset-0 bg-white/10" animate={{ scale: [1.2, 0.9, 1.2], opacity: [0.2, 0.4, 0.2] }} transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }} />
-                <h3 className="text-3xl md:text-5xl font-bold sz-h tracking-tight mb-12 relative z-10 uppercase">Solar <br/>Blue</h3>
-                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-white/70">
-                  <span>#003DFC</span>
-                  <span>Primary Authority</span>
-                </div>
-             </div>
-
-             {/* Solar Orange */}
-             <div className="bg-[#ff8533] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
-                <motion.div className="absolute inset-0 bg-white/20" animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.6, 0.3] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }} />
-                <h3 className="text-3xl md:text-5xl font-bold sz-h tracking-tight mb-12 relative z-10 uppercase">Solar <br/>Orange</h3>
-                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-white/70">
-                  <span>#FF8533</span>
-                  <span>Accent Energy</span>
-                </div>
-             </div>
-             
-             {/* Deep Navy */}
-             <div className="bg-[#022272] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
-                <motion.div className="absolute inset-0 bg-white/5" animate={{ scale: [1.5, 1, 1.5], opacity: [0.1, 0.3, 0.1] }} transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 2 }} />
-                <h3 className="text-3xl md:text-5xl font-bold sz-h tracking-tight mb-12 relative z-10 uppercase">Deep <br/>Navy</h3>
-                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-white/50">
-                  <span>#022272</span>
-                  <span>Base Stability</span>
-                </div>
-             </div>
-
-             {/* Sky Blue */}
-             <div className="bg-[#0968FF] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
-                <motion.div className="absolute inset-0 bg-white/15" animate={{ scale: [0.9, 1.3, 0.9], opacity: [0.2, 0.5, 0.2] }} transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 3 }} />
-                <h3 className="text-3xl md:text-5xl font-bold sz-h tracking-tight mb-12 relative z-10 uppercase">Sky <br/>Blue</h3>
-                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-white/60">
-                  <span>#0968FF</span>
-                  <span>Expansion</span>
-                </div>
-             </div>
-
-             {/* Amber */}
-             <div className="bg-[#FFBD00] p-12 md:p-16 flex flex-col justify-between text-[#022272] relative overflow-hidden group">
-                <motion.div className="absolute inset-0 bg-white/40" animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.7, 0.3] }} transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 4 }} />
-                <h3 className="text-3xl md:text-5xl font-bold sz-h tracking-tight mb-12 relative z-10 uppercase">Solar <br/>Amber</h3>
-                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-[#022272]/40">
-                  <span>#FFBD00</span>
-                  <span>Warmth</span>
-                </div>
-             </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+             {[
+               { name: 'Solar Blue', hex: '#003DFC', rgb: '0 61 252', text: 'white' },
+               { name: 'Solar Orange', hex: '#FF8533', rgb: '255 133 51', text: 'white' },
+               { name: 'Deep Navy', hex: '#022272', rgb: '2 34 114', text: 'white' },
+               { name: 'Sky Blue', hex: '#0968FF', rgb: '9 104 255', text: 'white' },
+               { name: 'Solar Amber', hex: '#FFBD00', rgb: '255 189 0', text: '#022272' }
+             ].map((color, i) => (
+               <motion.div 
+                 key={i}
+                 initial={{ opacity: 0, scale: 0.95 }}
+                 whileInView={{ opacity: 1, scale: 1 }}
+                 viewport={{ once: true }}
+                 transition={{ delay: i * 0.1 }}
+                 className="p-10 flex flex-col justify-between h-[320px] border border-white/10"
+                 style={{ backgroundColor: color.hex, color: color.text }}
+               >
+                 <div className="w-10 h-10 rounded-full border border-white/20" style={{ backgroundColor: color.hex }} />
+                 <div>
+                   <h3 className="text-xl font-bold font-syne tracking-tight mb-2 uppercase">{color.name}</h3>
+                   <div className="text-[10px] tracking-[0.2em] font-light opacity-60">
+                     <span>{color.hex}</span>
+                     <span className="block mt-1">RGB {color.rgb}</span>
+                   </div>
+                 </div>
+               </motion.div>
+             ))}
           </div>
         </div>
       </section>

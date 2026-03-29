@@ -124,69 +124,44 @@ const OpenSessionBrandGuideline = () => {
         </div>
       </section>
 
-      {/* 4. Color Swatches (Gradient Steps) */}
-      <section className="py-32 md:py-48 px-8 md:px-16 w-full bg-[#fcfcfc] relative overflow-hidden">
-        {/* Animated Background Flow */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-20 flex items-center justify-center mix-blend-multiply">
-            <motion.div 
-              className="absolute w-[60vw] h-[60vw] rounded-full bg-[#6E44A7]"
-              style={{ filter: 'blur(100px)' }}
-              animate={{ x: [0, 100, -50, 0], y: [0, -50, 100, 0], scale: [1, 1.2, 0.9, 1] }} transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-            />
-            <motion.div 
-              className="absolute w-[50vw] h-[50vw] rounded-full bg-[#F9832D]"
-              style={{ filter: 'blur(100px)' }}
-              animate={{ x: [0, -100, 50, 0], y: [0, 50, -100, 0], scale: [1, 1.3, 0.8, 1] }} transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-            />
-            <motion.div 
-              className="absolute w-[70vw] h-[70vw] rounded-full bg-[#1978A3]"
-              style={{ filter: 'blur(120px)' }}
-              animate={{ x: [50, -50, 50], y: [50, 50, -50], scale: [1, 1.5, 1], opacity: [0.5, 0.8, 0.5] }} transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
-            />
-        </div>
-
+      <section className="py-24 md:py-32 px-8 md:px-16 w-full bg-[#fcfcfc] border-y border-black/5 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] as any }}
-          className="max-w-[1800px] mx-auto relative z-10"
+          className="max-w-[1800px] mx-auto"
         >
-          <div className="mb-24 flex justify-between items-end">
-             <h2 className="text-4xl md:text-6xl font-light font-montserrat text-[#111] tracking-tight">Empathy Palette</h2>
+          <div className="mb-16 flex justify-between items-end border-b border-black/10 pb-8">
+             <h2 className="text-3xl md:text-5xl font-light font-montserrat text-[#111] tracking-tight uppercase">Empathy Palette</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-px bg-black/10 min-h-[400px]">
-             {/* Therapist Purple */}
-             <div className="bg-[#6E44A7] p-8 md:p-12 flex flex-col justify-end text-white relative overflow-hidden group mix-blend-normal">
-                <motion.div className="absolute inset-0 bg-white/10" animate={{opacity:[0,0.3,0]}} transition={{duration:8,repeat:Infinity,ease:'easeInOut'}} />
-                <h3 className="text-2xl font-light tracking-tight mb-2 relative z-10">Purple</h3>
-                <span className="text-xs font-light tracking-widest relative z-10 opacity-70">#6E44A7</span>
-             </div>
-             {/* Safe Space Teal */}
-             <div className="bg-[#1978A3] p-8 md:p-12 flex flex-col justify-end text-white relative overflow-hidden group mix-blend-normal">
-                <motion.div className="absolute inset-0 bg-white/10" animate={{opacity:[0,0.3,0]}} transition={{duration:9,repeat:Infinity,ease:'easeInOut',delay:1}} />
-                <h3 className="text-2xl font-light tracking-tight mb-2 relative z-10">Teal</h3>
-                <span className="text-xs font-light tracking-widest relative z-10 opacity-70">#1978A3</span>
-             </div>
-             {/* Warm Human Orange */}
-             <div className="bg-[#F9832D] p-8 md:p-12 flex flex-col justify-end text-white relative overflow-hidden group mix-blend-normal">
-                <motion.div className="absolute inset-0 bg-white/10" animate={{opacity:[0,0.3,0]}} transition={{duration:10,repeat:Infinity,ease:'easeInOut',delay:2}} />
-                <h3 className="text-2xl font-light tracking-tight mb-2 relative z-10">Orange</h3>
-                <span className="text-xs font-light tracking-widest relative z-10 opacity-70">#F9832D</span>
-             </div>
-             {/* Emotional Red */}
-             <div className="bg-[#E73539] p-8 md:p-12 flex flex-col justify-end text-white relative overflow-hidden group mix-blend-normal">
-                <motion.div className="absolute inset-0 bg-white/10" animate={{opacity:[0,0.3,0]}} transition={{duration:11,repeat:Infinity,ease:'easeInOut',delay:3}} />
-                <h3 className="text-2xl font-light tracking-tight mb-2 relative z-10">Red</h3>
-                <span className="text-xs font-light tracking-widest relative z-10 opacity-70">#E73539</span>
-             </div>
-             {/* Deep Navy */}
-             <div className="bg-[#0F172A] p-8 md:p-12 flex flex-col justify-end text-white relative overflow-hidden group mix-blend-normal">
-                <motion.div className="absolute inset-0 bg-white/10" animate={{opacity:[0,0.2,0]}} transition={{duration:12,repeat:Infinity,ease:'easeInOut',delay:4}} />
-                <h3 className="text-2xl font-light tracking-tight mb-2 relative z-10">Navy</h3>
-                <span className="text-xs font-light tracking-widest relative z-10 opacity-70">#0F172A</span>
-             </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+             {[
+               { name: 'Purple', hex: '#6E44A7', rgb: '110 68 167', text: 'white' },
+               { name: 'Teal', hex: '#1978A3', rgb: '25 120 163', text: 'white' },
+               { name: 'Orange', hex: '#F9832D', rgb: '249 131 45', text: 'white' },
+               { name: 'Red', hex: '#E73539', rgb: '231 53 57', text: 'white' },
+               { name: 'Navy', hex: '#0F172A', rgb: '15 23 42', text: 'white' }
+             ].map((color, i) => (
+               <motion.div 
+                 key={i}
+                 initial={{ opacity: 0, scale: 0.95 }}
+                 whileInView={{ opacity: 1, scale: 1 }}
+                 viewport={{ once: true }}
+                 transition={{ delay: i * 0.1 }}
+                 className="p-10 flex flex-col justify-between h-[300px] border border-black/5"
+                 style={{ backgroundColor: color.hex, color: color.text }}
+               >
+                 <div className="w-10 h-10 rounded-full border border-white/20" style={{ backgroundColor: color.hex }} />
+                 <div>
+                   <h3 className="text-xl font-light tracking-tight mb-2 uppercase">{color.name}</h3>
+                   <div className="text-[10px] tracking-[0.2em] font-light opacity-60">
+                     <span>{color.hex}</span>
+                     <span className="block mt-1">RGB {color.rgb}</span>
+                   </div>
+                 </div>
+               </motion.div>
+             ))}
           </div>
         </motion.div>
       </section>

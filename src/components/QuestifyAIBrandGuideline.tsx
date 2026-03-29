@@ -107,60 +107,38 @@ const QuestifyAIBrandGuideline = () => {
             </div>
           </motion.div>
       </section>
-      {/* 3. Color System (Redesigned with Vertical Data Shifts) */}
-      <section className="py-40 px-6 md:px-24 bg-[#05080F] text-white overflow-hidden relative border-y border-white/5">
-        {/* Animated Vertical Data Matrix */}
-        <div className="absolute inset-0 pointer-events-none z-0 flex gap-4 md:gap-8 justify-between opacity-20">
-            {[...Array(20)].map((_, i) => (
+      <section className="py-24 md:py-32 px-6 md:px-24 bg-[#05080F] text-white border-y border-white/5 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-8">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tighter uppercase">Color Palette</h2>
+            <p className="text-xs tracking-[0.4em] uppercase text-[#385FFF] font-bold">Algorithmic Base</p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+             {[
+               { name: 'Royal Blue', hex: '#385FFF', rgb: '56 95 255', text: 'white' },
+               { name: 'Charcoal', hex: '#05080F', rgb: '5 8 15', text: 'white' },
+               { name: 'Light Blue', hex: '#D1E4FF', rgb: '209 228 255', text: '#05080F' }
+             ].map((color, i) => (
                <motion.div 
                  key={i}
-                 className="w-[1px] md:w-[2px] h-[300%] bg-gradient-to-b from-transparent via-[#385FFF] to-transparent mix-blend-screen"
-                 style={{ willChange: 'transform' }}
-                 animate={{ y: ['-100%', '0%'] }}
-                 transition={{ duration: 10 + Math.random() * 20, repeat: Infinity, ease: 'linear', delay: -Math.random() * 20 }}
-               />
-            ))}
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div {...fadeInUp} className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <div className="max-w-xl">
-              <span className="text-xs tracking-[0.4em] uppercase text-[#385FFF] font-bold mb-6 block">Color System</span>
-              <h2 className="text-5xl md:text-7xl font-light tracking-tighter">Algorithmic Base</h2>
-            </div>
-            <p className="text-sm opacity-50 max-w-xs font-light leading-relaxed">
-              A meticulously calculated palette balancing high-energy cognitive blue with systematic data voids.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 min-h-[400px]">
-             {/* Royal Blue Node */}
-             <div className="bg-[#385FFF] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
-                <motion.div className="absolute inset-0 bg-white/20" style={{ transformOrigin: 'bottom' }} animate={{scaleY:[0, 1, 0]}} transition={{duration:15,repeat:Infinity,ease:'easeInOut'}} />
-                <h3 className="text-3xl md:text-5xl font-light tracking-tight mb-12 relative z-10 uppercase">Royal Blue</h3>
-                <div className="text-[10px] tracking-widest uppercase opacity-70 flex justify-between relative z-10">
-                  <span>#385FFF</span>
-                  <span>Primary Node</span>
-                </div>
-             </div>
-             {/* Charcoal */}
-             <div className="bg-[#020305] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
-                <motion.div className="absolute inset-0 bg-white/5" style={{ transformOrigin: 'top' }} animate={{scaleY:[0, 1, 0]}} transition={{duration:18,repeat:Infinity,ease:'easeInOut',delay:2}} />
-                <h3 className="text-3xl md:text-5xl font-light tracking-tight mb-12 relative z-10 uppercase">Charcoal</h3>
-                <div className="text-[10px] tracking-widest uppercase opacity-40 flex justify-between relative z-10">
-                  <span>#05080F</span>
-                  <span>Base Architecture</span>
-                </div>
-             </div>
-             {/* Light Blue */}
-             <div className="bg-[#D1E4FF] p-12 md:p-16 flex flex-col justify-between text-[#05080F] relative overflow-hidden group">
-                <motion.div className="absolute inset-0 bg-white/40" style={{ transformOrigin: 'bottom' }} animate={{scaleY:[0, 1, 0]}} transition={{duration:20,repeat:Infinity,ease:'easeInOut',delay:4}} />
-                <h3 className="text-3xl md:text-5xl font-light tracking-tight mb-12 relative z-10 uppercase">Light Blue</h3>
-                <div className="text-[10px] tracking-widest uppercase opacity-60 flex justify-between relative z-10">
-                  <span>#D1E4FF</span>
-                  <span>Interface Tone</span>
-                </div>
-             </div>
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 transition={{ delay: i * 0.1 }}
+                 className="p-12 flex flex-col justify-between h-[350px] border border-white/10"
+                 style={{ backgroundColor: color.hex, color: color.text }}
+               >
+                 <div className="w-12 h-12 rounded-full border border-white/20" style={{ backgroundColor: color.hex }} />
+                 <div>
+                   <h3 className="text-3xl font-light tracking-tight mb-8 uppercase">{color.name}</h3>
+                   <div className="text-[10px] tracking-[0.2em] font-light opacity-50 flex justify-between">
+                     <span>{color.hex}</span>
+                     <span>RGB {color.rgb}</span>
+                   </div>
+                 </div>
+               </motion.div>
+             ))}
           </div>
         </div>
       </section>

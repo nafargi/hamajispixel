@@ -169,33 +169,22 @@ const OnyxiumBrandGuideline: React.FC = () => {
             <h2 className="text-6xl md:text-8xl font-bold onyx-h text-white">Palette</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {COLORS.map((color, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="relative h-[400px] flex flex-col justify-end p-8 overflow-hidden group"
-                style={{ backgroundColor: color.hex }}
+                className="p-8 border border-white/10 flex flex-col justify-between h-[300px]"
+                style={{ backgroundColor: color.hex + '10' }}
               >
-                {/* Liquid overlay for each block */}
-                <motion.div 
-                  className="absolute inset-0 bg-white/10"
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                    x: [0, 20, -20, 0],
-                    y: [0, -20, 20, 0]
-                  }}
-                  transition={{ duration: 10 + i * 2, repeat: Infinity, ease: 'easeInOut' }}
-                  style={{ filter: 'blur(40px)', opacity: 0.2 }}
-                />
-                
-                <div className="relative z-10">
+                <div className="w-12 h-12 rounded-full mb-6" style={{ backgroundColor: color.hex }} />
+                <div>
                   <span className="text-[10px] tracking-[0.3em] uppercase text-white/40 block mb-2">{color.label}</span>
-                  <h3 className="text-2xl font-bold onyx-h text-white mb-4">{color.name}</h3>
-                  <div className="flex justify-between items-end border-t border-white/20 pt-4">
+                  <h3 className="text-xl font-bold onyx-h text-white mb-4">{color.name}</h3>
+                  <div className="flex justify-between items-end border-t border-white/10 pt-4">
                     <span className="text-xs font-mono text-white/60 tracking-widest">{color.hex}</span>
                     <span className="text-[10px] text-white/30 uppercase onyx-bd">RGB {color.rgb}</span>
                   </div>

@@ -91,59 +91,37 @@ const DaphneHeckoBrandGuideline = () => {
         </div>
       </section>
 
-      {/* 4. Color System (Redesigned with Subtle Breathing Pulse) */}
-      <section className="w-full bg-[#590620] py-24 px-6 md:px-24 border-y border-black/10 overflow-hidden relative">
-        {/* Animated Radial Pulse */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 flex items-center justify-center">
-          <motion.div 
-            className="absolute w-[60vw] h-[60vw] rounded-full bg-[#DAAB5B]/20 mix-blend-screen"
-            style={{ filter: 'blur(100px)', willChange: 'transform' }}
-            animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.7, 0.3] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-          />
-          <motion.div 
-            className="absolute w-[40vw] h-[40vw] rounded-full bg-white/10 mix-blend-screen"
-            style={{ filter: 'blur(80px)', willChange: 'transform' }}
-            animate={{ scale: [1.2, 0.9, 1.2], opacity: [0.2, 0.5, 0.2] }}
-            transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
-          />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="mb-24 flex justify-between items-end">
-             <h2 className="text-4xl md:text-6xl font-light font-nexa text-white tracking-widest">Color Pairings</h2>
+      <section className="w-full bg-[#590620] py-24 px-6 md:px-24 border-y border-black/10 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 flex justify-between items-end border-b border-white/10 pb-8">
+             <h2 className="text-4xl md:text-5xl font-light font-nexa text-white tracking-widest uppercase">Color Palette</h2>
           </div>
           
-          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 min-h-[400px]">
-             {/* Burgundy */}
-             <div className="bg-[#2C0310] p-12 md:p-16 flex flex-col justify-between text-white border-white/5 relative overflow-hidden group">
-                <motion.div className="absolute inset-0 bg-[#590620]/50" animate={{opacity:[0.2,0.6,0.2]}} transition={{duration:6,repeat:Infinity,ease:'easeInOut'}} />
-                <h3 className="text-3xl md:text-5xl font-light text-white tracking-tight mb-12 relative z-10">Burgundy</h3>
-                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-white/50">
-                  <span>#590620</span>
-                  <span>RGB 89 6 32</span>
-                </div>
-             </div>
-             
-             {/* Gold */}
-             <div className="bg-[#4A3A1F] p-12 md:p-16 flex flex-col justify-between text-white border-white/5 relative overflow-hidden group">
-                <motion.div className="absolute inset-0 bg-[#DAAB5B]/40" animate={{opacity:[0.3,0.8,0.3]}} transition={{duration:7,repeat:Infinity,ease:'easeInOut',delay:2}} />
-                <h3 className="text-3xl md:text-5xl font-light text-[#DAAB5B] tracking-tight mb-12 relative z-10">Gold</h3>
-                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-[#DAAB5B]/50">
-                  <span>#DAAB5B</span>
-                  <span>RGB 218 171 91</span>
-                </div>
-             </div>
-
-             {/* Cream */}
-             <div className="bg-[#FAF9F6] p-12 md:p-16 flex flex-col justify-between text-[#2c2b2b] border-white/5 relative overflow-hidden group">
-                <motion.div className="absolute inset-0 bg-white/60" animate={{opacity:[0.4,1,0.4]}} transition={{duration:9,repeat:Infinity,ease:'easeInOut',delay:4}} />
-                <h3 className="text-3xl md:text-5xl font-light text-[#2c2b2b] tracking-tight mb-12 relative z-10">Cream</h3>
-                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-[#2c2b2b]/40">
-                  <span>#FAF9F6</span>
-                  <span>RGB 250 249 246</span>
-                </div>
-             </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+             {[
+               { name: 'Burgundy', hex: '#590620', rgb: '89 6 32', bg: '#2C0310', text: 'white' },
+               { name: 'Gold', hex: '#DAAB5B', rgb: '218 171 91', bg: '#4A3A1F', text: 'white' },
+               { name: 'Cream', hex: '#FAF9F6', rgb: '250 249 246', bg: '#FAF9F6', text: '#2c2b2b' }
+             ].map((color, i) => (
+               <motion.div 
+                 key={i}
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 transition={{ delay: i * 0.1 }}
+                 className="p-12 flex flex-col justify-between h-[350px] border border-white/10"
+                 style={{ backgroundColor: color.bg, color: color.text }}
+               >
+                 <div className="w-12 h-12 rounded-full border border-white/20" style={{ backgroundColor: color.hex }} />
+                 <div>
+                   <h3 className="text-3xl font-light tracking-tight mb-8 uppercase">{color.name}</h3>
+                   <div className="text-[10px] tracking-[0.2em] font-light flex justify-between opacity-50">
+                     <span>{color.hex}</span>
+                     <span>RGB {color.rgb}</span>
+                   </div>
+                 </div>
+               </motion.div>
+             ))}
           </div>
         </div>
       </section>

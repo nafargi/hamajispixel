@@ -156,86 +156,41 @@ const AxerioBrandGuideline: React.FC = () => {
       </section>
 
       {/* 4. Color System (Redesigned with Sweep Animation) */}
-      <section className="w-full bg-[#050505] py-24 px-6 md:px-24 border-y border-white/5 overflow-hidden relative">
-        {/* Animated Scanner Sweeps */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-          <motion.div 
-            className="absolute top-0 bottom-0 left-0 w-[20vw] bg-gradient-to-r from-transparent via-[#ffffff]/5 to-transparent mix-blend-screen"
-            style={{ filter: 'blur(10px)', willChange: 'transform' }}
-            animate={{ x: ['-100vw', '150vw'] }}
-            transition={{ duration: 7, repeat: Infinity, ease: 'linear' }}
-          />
-          <motion.div 
-            className="absolute top-0 bottom-0 left-0 w-[10vw] bg-gradient-to-r from-transparent via-[#ffffff]/10 to-transparent mix-blend-screen"
-            style={{ filter: 'blur(20px)', willChange: 'transform', transform: 'skewX(-20deg)' }}
-            animate={{ x: ['-50vw', '180vw'] }}
-            transition={{ duration: 11, repeat: Infinity, ease: 'linear', delay: 2 }}
-          />
-        </div>
-
+      <section className="w-full bg-[#050505] py-24 px-6 md:px-24 border-y border-white/5 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] as any }}
-          className="max-w-7xl mx-auto relative z-10"
+          className="max-w-7xl mx-auto"
         >
-          {/* Header specs */}
           <div className="flex justify-between items-start mb-16 border-t border-white/10 pt-8 text-white/40 font-bdo text-[10px] tracking-widest uppercase">
-            <div>
-              Topic — 3.1<br />
-              Page no. — 17
-            </div>
-            <div className="text-right font-bold text-white">
-              Color Palette<br />
-              Colors
-            </div>
+            <div>Topic — 3.1<br />Page no. — 17</div>
+            <div className="text-right font-bold text-white">Color Palette</div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 min-h-[400px]">
-            {/* Alabaster */}
-            <div className="bg-white p-12 md:p-16 flex flex-col justify-between text-black relative overflow-hidden group">
-               <motion.div className="absolute inset-x-0 h-[200%] bg-gradient-to-b from-transparent via-black/5 to-transparent -skew-y-12"
-                 animate={{ y: ['-100%', '100%'] }} transition={{ duration: 8, repeat: Infinity, ease: 'linear' }} />
-               <h3 className="text-3xl md:text-5xl font-light tracking-tight mb-12 uppercase relative z-10 font-editorial italic">Alabaster</h3>
-               <div className="text-[10px] tracking-[0.2em] opacity-40 flex justify-between relative z-10 font-bdo">
-                 <span>#FFFFFF</span>
-                 <span>RGB 255 255 255</span>
-               </div>
-            </div>
-            
-            {/* Obsidian */}
-            <div className="bg-[#111111] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
-               <motion.div className="absolute inset-x-0 h-[200%] bg-gradient-to-b from-transparent via-white/5 to-transparent -skew-y-12"
-                 animate={{ y: ['-100%', '100%'] }} transition={{ duration: 10, repeat: Infinity, ease: 'linear', delay: 1 }} />
-               <h3 className="text-3xl md:text-5xl font-light tracking-tight mb-12 uppercase relative z-10 font-editorial italic">Obsidian</h3>
-               <div className="text-[10px] tracking-[0.2em] opacity-40 flex justify-between relative z-10 font-bdo">
-                 <span>#111111</span>
-                 <span>RGB 17 17 17</span>
-               </div>
-            </div>
-
-            {/* Graphite */}
-            <div className="bg-[#444444] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
-               <motion.div className="absolute inset-x-0 h-[200%] bg-gradient-to-b from-transparent via-white/5 to-transparent -skew-y-12"
-                 animate={{ y: ['-100%', '100%'] }} transition={{ duration: 12, repeat: Infinity, ease: 'linear', delay: 2 }} />
-               <h3 className="text-3xl md:text-5xl font-light tracking-tight mb-12 uppercase relative z-10 font-editorial italic">Graphite</h3>
-               <div className="text-[10px] tracking-[0.2em] opacity-40 flex justify-between relative z-10 font-bdo">
-                 <span>#444444</span>
-                 <span>RGB 68 68 68</span>
-               </div>
-            </div>
-
-            {/* Silver */}
-            <div className="bg-[#C0C0C0] p-12 md:p-16 flex flex-col justify-between text-black relative overflow-hidden group">
-               <motion.div className="absolute inset-x-0 h-[200%] bg-gradient-to-b from-transparent via-white/20 to-transparent -skew-y-12"
-                 animate={{ y: ['-100%', '100%'] }} transition={{ duration: 9, repeat: Infinity, ease: 'linear', delay: 0.5 }} />
-               <h3 className="text-3xl md:text-5xl font-light tracking-tight mb-12 uppercase relative z-10 font-editorial italic">Silver</h3>
-               <div className="text-[10px] tracking-[0.2em] opacity-40 flex justify-between relative z-10 font-bdo">
-                 <span>#C0C0C0</span>
-                 <span>RGB 192 192 192</span>
-               </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { name: 'Alabaster', hex: '#FFFFFF', rgb: '255 255 255', text: 'black' },
+              { name: 'Obsidian', hex: '#111111', rgb: '17 17 17', text: 'white' },
+              { name: 'Graphite', hex: '#444444', rgb: '68 68 68', text: 'white' },
+              { name: 'Silver', hex: '#C0C0C0', rgb: '192 192 192', text: 'black' }
+            ].map((color, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="p-12 flex flex-col justify-between h-[350px] border border-white/5"
+                style={{ backgroundColor: color.hex, color: color.text }}
+              >
+                <h3 className="text-3xl font-light font-editorial italic uppercase">{color.name}</h3>
+                <div className="text-[10px] tracking-[0.2em] opacity-40 flex justify-between font-bdo">
+                  <span>{color.hex}</span>
+                  <span>RGB {color.rgb}</span>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </section>
