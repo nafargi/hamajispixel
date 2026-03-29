@@ -17,7 +17,11 @@ import logoConstruction from "@/assets/onyxium/Artboard 19_7@3x-100.jpg";
 const ONYX_NAVY = '#0A1628';
 const ELECTRIC_CYAN = '#00B4FF';
 const SKY_BLUE = '#1D6FFF';
-const ONYX_DARKER = '#050D18';
+// Brand palette (Restored to Full Gold/Onyx)
+const ONYX_BLACK = '#0A0A0B';
+const ONYX_GOLD = '#D4AF37';
+const ONYX_GRAY = '#707070';
+const ONYX_SILVER = '#C0C0C0';
 
 const VALUES = [
   { title: 'Innovation', icon: <Cpu size={24} />, desc: 'Pushing the boundaries of what is possible in digital solutions.' },
@@ -27,10 +31,10 @@ const VALUES = [
 ];
 
 const COLORS = [
-  { name: 'Onyx Deep Navy', hex: '#0A1628', label: 'Primary', rgb: '10, 22, 40' },
-  { name: 'Electric Cyan', hex: '#00B4FF', label: 'Accent', rgb: '0, 180, 255' },
-  { name: 'Sky Blue', hex: '#1D6FFF', label: 'Secondary', rgb: '29, 111, 255' },
-  { name: 'Onyx Dark', hex: '#050D18', label: 'Base', rgb: '5, 13, 24' },
+  { name: 'Onyx Gold', hex: '#D4AF37', label: 'Primary Accent', rgb: '212, 175, 55' },
+  { name: 'Onyx Black', hex: '#0A0A0B', label: 'Primary Brand', rgb: '10, 10, 11' },
+  { name: 'Slate Gray', hex: '#707070', label: 'Secondary', rgb: '112, 112, 112' },
+  { name: 'Silver', hex: '#C0C0C0', label: 'Tertiary', rgb: '192, 192, 192' },
   { name: 'Pure White', hex: '#FFFFFF', label: 'Neutral', rgb: '255, 255, 255' },
 ];
 
@@ -63,221 +67,249 @@ const OnyxiumBrandGuideline: React.FC = () => {
         .onyx-bd { font-family: 'Syne', sans-serif; }
       `}</style>
 
-      {/* 1. HERO SECTION */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
+      {/* 1. CINEMATIC HERO SECTION (Dynamic Color Background) */}
+      <section className="h-[100svh] w-full relative flex items-center justify-center overflow-hidden bg-[#0A0A0B]">
+        {/* Living Liquid Gold Background */}
+        <div className="absolute inset-0 z-0">
+          {/* Base Dark */}
+          <div className="absolute inset-0 bg-[#0A0A0B]" />
+          {/* Organic gold blobs */}
           <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.4 }}
-            transition={{ duration: 2 }}
-            className="absolute top-[-20%] left-[-10%] w-[60%] h-[80%] rounded-full blur-[120px]"
-            style={{ background: `radial-gradient(circle, ${SKY_BLUE}33 0%, transparent 70%)` }}
+            className="absolute top-1/4 left-1/4 w-[60%] h-[60%] rounded-full bg-[#D4AF37]/30 mix-blend-screen"
+            style={{ filter: 'blur(80px)', willChange: 'transform' }}
+            animate={{ scale: [1, 1.2, 0.9, 1], x: [0, 100, -50, 0], y: [0, -50, 100, 0] }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
           />
           <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.3 }}
-            transition={{ duration: 2, delay: 0.5 }}
-            className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[80%] rounded-full blur-[120px]"
-            style={{ background: `radial-gradient(circle, ${ELECTRIC_CYAN}22 0%, transparent 70%)` }}
+            className="absolute bottom-1/4 right-1/4 w-[70%] h-[70%] rounded-full bg-[#D4AF37]/20 mix-blend-screen"
+            style={{ filter: 'blur(100px)', willChange: 'transform' }}
+            animate={{ scale: [1, 1.3, 0.8, 1], x: [0, -150, 50, 0], y: [0, 100, -80, 0] }}
+            transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
           />
+          <motion.div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] rounded-full bg-[#707070]/10 mix-blend-screen"
+            style={{ filter: 'blur(120px)', willChange: 'transform' }}
+            animate={{ scale: [1, 1.5, 1], opacity: [0.1, 0.3, 0.1] }}
+            transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+          />
+          {/* Subtle vignette/overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0B] via-transparent to-transparent opacity-60" />
         </div>
-
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5, ease: 'easeOut' }}
-            className="mb-12"
+        
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mt-20">
+          <motion.img 
+             initial={{ opacity: 0, scale: 0.95 }}
+             animate={{ opacity: 1, scale: 1 }}
+             transition={{ duration: 1.5, ease: 'easeOut' }}
+             src={logoMain} className="w-[140px] md:w-[180px] mb-12 mix-blend-screen opacity-90" alt="Onyxium Minimal Mark" 
+          />
+          <motion.p 
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 1, delay: 0.5 }}
+             className="text-xl md:text-3xl text-white font-light tracking-wide leading-relaxed onyx-bd drop-shadow-md"
           >
-            <img src={logoMain} alt="Onyxium Logo" className="w-full h-full mx-auto rounded-2xl shadow-2xl" />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1 }}
-          >
-            <p className="text-[#00B4FF] uppercase tracking-[0.5em] text-sm mb-6 onyx-bd font-semibold">
-              Brand Identity System &middot; 2024
-            </p>
-            <h1 className="text-4xl md:text-7xl font-bold onyx-h tracking-tight mb-8">
-              ONYXIUM
-            </h1>
-            <p className="max-w-2xl mx-auto text-xl text-white/60 onyx-bd font-light leading-relaxed italic">
-              "Empowering scalable software solutions through sophisticated engineering and timeless design."
-            </p>
-          </motion.div>
+             Digital ecosystems engineered for scale. Building the infrastructure of tomorrow.
+          </motion.p>
         </div>
 
         <motion.div 
           animate={{ y: [0, 10, 0] }} 
           transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/30"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/50 z-10"
         >
-          <ArrowDown size={32} strokeWidth={1} />
+          <ArrowDown size={32} strokeWidth={1.5} />
         </motion.div>
       </section>
 
-      {/* 2. PHILOSOPHY & ABOUT */}
-      <section className="py-32 bg-[#050D18]">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <motion.div {...fadeInUp}>
-              <span className="text-[#00B4FF] uppercase tracking-widest text-xs mb-4 block onyx-bd font-bold">The Vision</span>
-              <h2 className="text-4xl md:text-6xl font-bold onyx-h mb-8">A Premium Luxury Brand</h2>
-              <p className="text-xl text-white/70 onyx-bd leading-relaxed mb-12">
-                Onyxium is founded on the principles of strength, elegance, and timeless mystique. 
-                We provide high-end, scalable software development services that prioritize both 
-                aesthetic perfection and architectural robustness.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-8">
-                {VALUES.map((v, i) => (
-                  <div key={i} className="space-y-4">
-                    <div className="text-[#00B4FF]">{v.icon}</div>
-                    <h3 className="text-lg font-bold onyx-h">{v.title}</h3>
-                    <p className="text-sm text-white/50 onyx-bd">{v.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+      {/* 2. ABOUT THE BRAND */}
+      <section className="py-32 px-6 md:px-24 bg-[#0A0A0B] text-white">
+        <motion.div {...fadeInUp} className="max-w-4xl mx-auto text-center">
+          <span className="text-xs tracking-[0.4em] uppercase text-[#D4AF37] onyx-bd font-bold mb-6 block">The Purpose</span>
+          <h2 className="text-3xl md:text-5xl onyx-h font-light leading-tight">
+            Onyxium is a technology infrastructure firm dedicated to high-performance, secure, and scalable digital solutions. We turn complex data architecture into seamless operational power.
+          </h2>
+        </motion.div>
+      </section>
 
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="relative aspect-square"
-            >
-              <img src={onyxiumCover} alt="Onyxium Brand Visual" className="w-full h-full object-cover rounded-3xl shadow-[0_0_100px_rgba(0,180,255,0.1)]" />
-              <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-[#00B4FF]/10 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hidden md:block">
-                <div className="w-8 h-1 bg-[#00B4FF] mb-4" />
-                <p className="text-xs onyx-bd text-white/60">EST. 2024 &middot; GLOBAL SOFTWARE STANDARDS</p>
-              </div>
-            </motion.div>
-          </div>
+      {/* 3. LOGO CONCEPT */}
+      <section className="py-32 px-6 md:px-24 bg-[#0A0A0B] text-white">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <motion.div {...fadeInUp}>
+            <span className="text-xs tracking-[0.4em] uppercase font-bold text-[#D4AF37] onyx-bd mb-6 block">Logo Concept</span>
+            <h2 className="text-4xl font-light onyx-h mb-8">Architectural Symmetry</h2>
+            <p className="text-lg onyx-bd font-light leading-relaxed text-white/70">
+              The orbital rings symbolize an interconnected network, while the central leaf reflects organic technological growth and adaptability. Symmetry provides ultimate stability.
+            </p>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="flex justify-center flex-col items-center bg-[#151515] p-12 border border-white/5"
+          >
+            <img src={logoConstruction} alt="Logo Construction" className="w-full h-auto" />
+            <p className="mt-8 text-xs tracking-widest text-[#D4AF37] onyx-bd">SAFE AREA & GRID CONSTRUCTION</p>
+          </motion.div>
         </div>
       </section>
 
-      {/* 3. LOGO CONSTRUCTION */}
-      <section className="py-32 bg-[#0A1628]">
-        <div className="container mx-auto px-6 text-center">
-          <motion.div {...fadeInUp} className="mb-20">
-            <span className="text-[#00B4FF] uppercase tracking-widest text-xs mb-4 block onyx-bd font-bold">Identity Mark</span>
-            <h2 className="text-4xl md:text-6xl font-bold onyx-h">The Orbital Symbol</h2>
+      {/* 4. Color System (Full Animated Palette) */}
+      <section className="py-32 bg-[#0A0A0B] overflow-hidden border-y border-white/5">
+        <div className="container mx-auto px-6 max-w-7xl relative">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className="mb-16 relative z-10"
+          >
+            <span className="text-xs tracking-[0.4em] uppercase text-[#D4AF37] onyx-bd font-bold mb-4 block">Color Strategy</span>
+            <h2 className="text-6xl md:text-8xl font-bold onyx-h text-white">Palette</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="bg-[#050D18] p-12 rounded-3xl border border-white/5"
-            >
-              <img src={logoConstruction} alt="Logo Construction" className="w-full h-auto" />
-              <p className="mt-8 text-xs tracking-widest text-white/30 onyx-bd">SAFE AREA & GRID CONSTRUCTION</p>
-            </motion.div>
-
-            <div className="text-left space-y-8">
-              {LOGO_FEATURES.map((f, i) => (
-                <motion.div 
-                  key={i}
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="p-8 bg-white/5 border-l-4 border-[#00B4FF] rounded-r-2xl"
-                >
-                  <h4 className="text-lg font-bold mb-2 onyx-h text-[#00B4FF]">{f.label}</h4>
-                  <p className="text-white/60 onyx-bd">{f.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. COLOR PALETTE */}
-      <section className="py-32 bg-[#050D18]">
-        <div className="container mx-auto px-6">
-          <motion.div {...fadeInUp} className="mb-20">
-            <span className="text-[#00B4FF] uppercase tracking-widest text-xs mb-4 block onyx-bd font-bold">The Palette</span>
-            <h2 className="text-4xl md:text-6xl font-bold onyx-h">Luxury in Every Pixel</h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-12">
-            {COLORS.map((c, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
+            {COLORS.map((color, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="group cursor-pointer"
+                className="relative h-[400px] flex flex-col justify-end p-8 overflow-hidden group"
+                style={{ backgroundColor: color.hex }}
               >
-                <div 
-                  className="h-64 md:h-80 w-full rounded-2xl mb-4 transition-transform duration-500 group-hover:scale-[1.02]"
-                  style={{ background: c.hex, boxShadow: `0 20px 40px ${c.hex}11` }}
+                {/* Liquid overlay for each block */}
+                <motion.div 
+                  className="absolute inset-0 bg-white/10"
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    x: [0, 20, -20, 0],
+                    y: [0, -20, 20, 0]
+                  }}
+                  transition={{ duration: 10 + i * 2, repeat: Infinity, ease: 'easeInOut' }}
+                  style={{ filter: 'blur(40px)', opacity: 0.2 }}
                 />
-                <div className="px-2">
-                  <p className="text-xs text-[#00B4FF] font-bold tracking-widest mb-1 onyx-bd">{c.label}</p>
-                  <h4 className="text-lg font-bold mb-1 onyx-h">{c.name}</h4>
-                  <p className="text-xs text-white/40 onyx-bd uppercase tracking-tighter">HEX: {c.hex} / RGB: {c.rgb}</p>
+                
+                <div className="relative z-10">
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-white/40 block mb-2">{color.label}</span>
+                  <h3 className="text-2xl font-bold onyx-h text-white mb-4">{color.name}</h3>
+                  <div className="flex justify-between items-end border-t border-white/20 pt-4">
+                    <span className="text-xs font-mono text-white/60 tracking-widest">{color.hex}</span>
+                    <span className="text-[10px] text-white/30 uppercase onyx-bd">RGB {color.rgb}</span>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
-
-          <motion.div {...fadeInUp} className="rounded-3xl overflow-hidden border border-white/10">
-            <img src={colorArtboard} alt="Detailed Color Guidelines" className="w-full h-auto" />
-          </motion.div>
         </div>
       </section>
 
       {/* 5. TYPOGRAPHY */}
-      <section className="py-32 bg-[#0A1628]">
-        <div className="container mx-auto px-6">
-          <motion.div {...fadeInUp} className="text-center mb-20">
-            <span className="text-[#00B4FF] uppercase tracking-widest text-xs mb-4 block onyx-bd font-bold">Typography System</span>
-            <h2 className="text-4xl md:text-6xl font-bold onyx-h">The Language of Onyxium</h2>
+      <section className="py-32 bg-[#050D18]">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <motion.div {...fadeInUp} className="mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold onyx-h text-white flex items-center gap-4">
+              Typography
+            </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <motion.div {...fadeInUp} className="space-y-8">
-              <div className="p-12 bg-white/5 border border-white/10 rounded-3xl">
-                <img src={typographyBlanquotey} alt="Primary Typography" className="w-full h-auto mb-8" />
-                <div className="flex justify-between items-end">
-                  <div>
-                    <h4 className="text-2xl font-bold onyx-h text-[#00B4FF]">Blanquotey</h4>
-                    <p className="text-sm text-white/40 onyx-bd uppercase">Primary &middot; Headlines</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-[10px] text-white/20 onyx-bd leading-tight uppercase tracking-widest">
-                      Rounded Modern Sans<br />Geometric Symmetry
-                    </p>
-                  </div>
+          <div className="space-y-32">
+            {/* Blanquotey Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              <motion.div {...fadeInUp} className="space-y-6">
+                <div className="bg-gradient-to-br from-[#0c1f38] via-[#093566] to-[#0088cc] p-12">
+                  <h3 className="text-6xl md:text-8xl text-white onyx-h mb-2 tracking-wide">Blanquotey</h3>
+                  <p className="text-white/90 text-lg onyx-bd">Primary Typeface</p>
                 </div>
-              </div>
-            </motion.div>
+                <div className="bg-[#051124] p-8 border border-white/5 space-y-4">
+                  <p className="text-[#00B4FF] text-xl md:text-2xl onyx-h tracking-widest break-all">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                  </p>
+                  <p className="text-[#00B4FF] text-xl md:text-2xl onyx-h tracking-widest break-all">
+                    abcdefghijklmnopqrstuvwxyz
+                  </p>
+                  <p className="text-[#00B4FF] text-xl md:text-2xl onyx-h tracking-widest break-all">
+                    1234567890!@#$%^&*()_
+                  </p>
+                </div>
+              </motion.div>
+              
+              <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="flex flex-col justify-between h-full pt-4">
+                <p className="text-lg md:text-xl text-white/70 onyx-bd leading-relaxed">
+                  Our primary typeface, <strong className="text-white font-bold onyx-h">Blanquotey</strong>, reflects the brand's
+                  clean, modern, and confident personality. It offers excel-
+                  lent readability across both digital and print media, main-
+                  taining consistency and visual harmony throughout all
+                  brand communications. The balanced proportions and
+                  smooth letterforms of Blanquotey, embody professional-
+                  ism and creativity, making it ideal for headlines, body text,
+                  and marketing materials alike.
+                </p>
+                
+                <div className="mt-16 flex items-center gap-6">
+                  <img src={logoConstruction} alt="Onyxium Logo" className="h-20 w-auto object-contain mix-blend-screen opacity-80" />
+                  <span className="text-6xl md:text-7xl onyx-h text-white tracking-tighter">Onyxium</span>
+                </div>
+              </motion.div>
+            </div>
 
-            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="space-y-8">
-              <div className="p-12 bg-white/5 border border-white/10 rounded-3xl">
-                <img src={typographySyne} alt="Secondary Typography" className="w-full h-auto mb-8" />
-                <div className="flex justify-between items-end">
-                  <div>
-                    <h4 className="text-2xl font-bold onyx-h text-[#00B4FF]">Syne</h4>
-                    <p className="text-sm text-white/40 onyx-bd uppercase">Secondary &middot; Body Copy</p>
+            {/* Syne Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mt-32">
+              <motion.div {...fadeInUp} className="space-y-6">
+                <div className="bg-gradient-to-br from-[#0c1f38] via-[#093566] to-[#0088cc] p-12">
+                  <h3 className="text-6xl md:text-8xl text-white onyx-bd font-bold mb-2">Syne</h3>
+                  <p className="text-white/90 text-lg onyx-bd">Secondary Typeface</p>
+                </div>
+                <div className="bg-[#051124] p-8 border border-white/5 space-y-4">
+                  <p className="text-[#00B4FF] text-xl md:text-2xl onyx-bd tracking-widest break-all uppercase">
+                    abcdefghijklmnopqrstuvwxyz
+                  </p>
+                  <p className="text-[#00B4FF] text-xl md:text-2xl onyx-bd tracking-widest break-all">
+                    abcdefghijklmnopqrstuvwxyz
+                  </p>
+                  <p className="text-[#00B4FF] text-xl md:text-2xl onyx-bd tracking-widest break-all mt-8">
+                    1234567890!@#$%^&*()_
+                  </p>
+                </div>
+              </motion.div>
+              
+              <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="flex flex-col justify-between h-full pt-4">
+                <p className="text-lg md:text-xl text-white/70 onyx-bd leading-relaxed">
+                  Our secondary typeface, <strong className="text-white font-bold">Syne</strong>, adds a distinctive and ex-
+                  pressive character to the brand. It complements the main
+                  font with its geometric structure and contemporary edge,
+                  making it perfect for highlights, subheadings, and creative
+                  elements. Syne introduces a sense of individuality and ar-
+                  tistic flair while maintaining balance and cohesion within
+                  the overall visual identity.
+                </p>
+                
+                <div className="mt-16 space-y-3">
+                  <div className="flex items-center gap-4 onyx-bd text-lg">
+                    <span className="text-[#00B4FF] font-normal w-40">Syne REGULAR</span>
+                    <span className="text-white">&rarr; Body text</span>
                   </div>
-                  <div className="text-right">
-                    <p className="text-[10px] text-white/20 onyx-bd leading-tight uppercase tracking-widest">
-                      Contemporary Flair<br />Exceptional Readability
-                    </p>
+                  <div className="flex items-center gap-4 onyx-bd text-lg">
+                    <span className="text-[#00B4FF] font-medium w-40">Syne MEDIUM</span>
+                    <span className="text-white font-medium">&rarr; Subheadings</span>
+                  </div>
+                  <div className="flex items-center gap-4 onyx-bd text-lg">
+                    <span className="text-[#00B4FF] font-semibold w-40">Syne SEMIBOLD</span>
+                    <span className="text-white font-semibold">&rarr; Highlights</span>
+                  </div>
+                  <div className="flex items-center gap-4 onyx-bd text-lg">
+                    <span className="text-[#00B4FF] font-bold w-40">Syne BOLD</span>
+                    <span className="text-white font-bold">&rarr; Headings</span>
+                  </div>
+                  <div className="flex items-center gap-4 onyx-bd text-xl">
+                    <span className="text-[#00B4FF] font-extrabold w-48 tracking-wider">Syne EXTRABOLD</span>
+                    <span className="text-white font-extrabold tracking-wider">&rarr; Display titles</span>
                   </div>
                 </div>
-              </div>
-                </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -291,7 +323,7 @@ const OnyxiumBrandGuideline: React.FC = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <motion.div {...fadeInUp} className="group relative overflow-hidden rounded-3xl">
+            <motion.div {...fadeInUp} className="group relative overflow-hidden">
               <img src={brandMockup} alt="Mockup 1" className="w-full aspect-[4/3] object-cover transition-transform duration-[3s] group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent opacity-60" />
               <div className="absolute bottom-8 left-8">
@@ -300,7 +332,7 @@ const OnyxiumBrandGuideline: React.FC = () => {
               </div>
             </motion.div>
 
-            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="group relative overflow-hidden rounded-3xl">
+            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="group relative overflow-hidden">
               <img src={brandDetail} alt="Mockup 2" className="w-full aspect-[4/3] object-cover transition-transform duration-[3s] group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent opacity-60" />
               <div className="absolute bottom-8 left-8">

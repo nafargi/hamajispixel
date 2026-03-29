@@ -2,9 +2,8 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import HorizontalMarquee from "@/components/HorizontalMarquee";
 import ValueProposition from "@/components/ValueProposition";
-import Services from "@/components/Services";
-import Process from "@/components/Process";
 import SelectedWork from "@/components/SelectedWork";
+import RefundPolicy from "@/components/RefundPolicy";
 import Testimonials from "@/components/Testimonials";
 import LogoCollection from "@/components/LogoCollection";
 import Footer from "@/components/Footer";
@@ -31,8 +30,7 @@ const Index = () => {
         <LogoCollection />
       
         <BentoGrid />
-        <Services />
-        <Process />
+        <RefundPolicy />
         <Testimonials />
         <FAQ />
         <BookCall />

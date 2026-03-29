@@ -24,67 +24,70 @@ const QuestifyAIBrandGuideline = () => {
   return (
     <div className="min-h-screen bg-white text-[#05080F] selection:bg-[#385FFF] selection:text-white overflow-hidden font-corbel">
       
-      {/* 1. Hero Section - Extreme Premium */}
-      <section className="h-screen w-full flex items-center justify-center relative bg-[#F2F7FB] overflow-hidden">
-        <motion.div 
-            initial={{ scale: 1.2, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] as any }}
-            className="absolute inset-0 z-0 opacity-10"
-        >
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white" />
-            <div className="grid grid-cols-6 h-full border-x border-black/5">
-                {[...Array(6)].map((_, i) => <div key={i} className="border-r border-black/5 h-full" />)}
-            </div>
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] as any }}
-          className="relative z-10 text-center px-6"
-        >
-          <img src={mainFullBlue} alt="Questify AI" className="w-[300px] md:w-[650px] mx-auto mb-16 drop-shadow-[0_20px_50px_rgba(56,95,255,0.1)]" />
-          <motion.div
+      {/* 1. CINEMATIC HERO SECTION (Dynamic Data Background) */}
+      <section className="h-[100svh] w-full relative flex items-center justify-center overflow-hidden bg-[#05080F]">
+        {/* Animated Vertical Data Matrix Background */}
+        <div className="absolute inset-0 pointer-events-none z-0 flex gap-4 md:gap-8 justify-between opacity-30">
+            {[...Array(20)].map((_, i) => (
+               <motion.div 
+                 key={i}
+                 className="w-[1px] md:w-[2px] h-[300%] bg-gradient-to-b from-transparent via-[#385FFF] to-transparent mix-blend-screen"
+                 style={{ willChange: 'transform' }}
+                 animate={{ y: ['-100%', '0%'] }}
+                 transition={{ duration: 10 + Math.random() * 20, repeat: Infinity, ease: 'linear', delay: -Math.random() * 20 }}
+               />
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#05080F] via-transparent to-transparent opacity-80" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl">
+          <motion.img 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            src={mainFullWhite} className="w-[120px] md:w-[150px] mb-12" alt="Questify Minimal AI Logo" 
+          />
+          <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 1 }}
-            className="flex flex-col items-center"
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-xl md:text-3xl text-white font-light tracking-wide leading-relaxed drop-shadow-md"
           >
-            <span className="text-[10px] tracking-[0.8em] uppercase text-[#385FFF] font-bold mb-4">Identity Specification</span>
-            <div className="w-12 h-[1px] bg-[#385FFF]/30" />
-          </motion.div>
+            Fluid intelligence meets academic perfection. The next generation of cognitive systems.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* 2. ABOUT THE BRAND */}
+      <section className="py-32 px-6 md:px-24 bg-[#05080F] text-white">
+        <motion.div {...fadeInUp} className="max-w-4xl mx-auto text-center">
+          <span className="text-xs tracking-[0.4em] uppercase text-[#385FFF] font-bold mb-6 block">The Purpose</span>
+          <h2 className="text-3xl md:text-5xl font-light leading-tight">
+            Questify AI builds institutional-grade artificial intelligence solutions explicitly designed to accelerate academic research, learning platforms, and operational efficiencies.
+          </h2>
         </motion.div>
       </section>
 
-      {/* 2. Brand Concept & Logic */}
-      <section className="py-40 px-6 md:px-24 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeInUp} className="mb-24 max-w-3xl">
-            <span className="text-xs tracking-[0.4em] uppercase text-[#385FFF] font-bold mb-8 block">Brand Concept</span>
-            <h2 className="text-5xl md:text-8xl font-light tracking-tighter mb-12">The Q-Structure</h2>
-            <p className="text-xl md:text-2xl text-[#05080F]/60 font-light leading-relaxed">
-              Questify AI merges the geometry of academic perfection with the fluidity of artificial intelligence.
+      {/* 3. LOGO CONCEPT */}
+      <section className="py-32 px-6 md:px-24 bg-white text-[#05080F]">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
+          <motion.div {...fadeInUp}>
+            <span className="text-xs tracking-[0.4em] uppercase opacity-40 mb-6 block font-bold">Logo Concept</span>
+            <h2 className="text-4xl font-light tracking-tight mb-8">Machine Intelligence</h2>
+            <p className="text-lg text-[#05080F]/60 leading-relaxed font-light">
+              A sharp, structural 'Q' integrated with a diamond element represents the synthesis of the academic pursuit (the Quest) and the spark of machine intelligence.
             </p>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
-            <motion.div {...fadeInUp} className="bg-[#F2F7FB] p-12 rounded-lg flex flex-col items-center text-center">
-              <div className="text-6xl font-bold text-[#385FFF] mb-8">Q</div>
-              <h4 className="text-lg font-bold mb-4">Letterform Core</h4>
-              <p className="text-sm text-[#05080F]/40 leading-relaxed">The foundation is the letter 'Q', representing 'Quest' — the heart of academic pursuit.</p>
-            </motion.div>
-            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="bg-[#F2F7FB] p-12 rounded-lg flex flex-col items-center text-center">
-              <div className="text-6xl text-[#385FFF] mb-8">◆</div>
-              <h4 className="text-lg font-bold mb-4">Diamond Intelligence</h4>
-              <p className="text-sm text-[#05080F]/40 leading-relaxed">An integrated diamond element symbolizes a spark of AI and structural academic perfection.</p>
-            </motion.div>
-            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="bg-[#385FFF] p-12 rounded-lg flex flex-col items-center text-center text-white">
-              <img src={mainFullWhite} alt="Logo" className="w-32 mb-8 brightness-0 invert" />
-              <h4 className="text-lg font-bold mb-4">The Result</h4>
-              <p className="text-sm text-white/80 leading-relaxed">A cohesive mark that communicates expertise, intelligence, and modern efficiency.</p>
-            </motion.div>
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center justify-center p-16 border border-black/5 bg-[#F2F7FB]"
+          >
+            <img src={mainIcon} alt="Questify AI Symbol" className="w-[150px] md:w-[200px]" />
+          </motion.div>
+        </div>
 
           {/* Compact Logo Variations */}
           <motion.div {...fadeInUp} className="border-t border-black/5 pt-16">
@@ -103,87 +106,61 @@ const QuestifyAIBrandGuideline = () => {
                 ))}
             </div>
           </motion.div>
-        </div>
       </section>
+      {/* 3. Color System (Redesigned with Vertical Data Shifts) */}
+      <section className="py-40 px-6 md:px-24 bg-[#05080F] text-white overflow-hidden relative border-y border-white/5">
+        {/* Animated Vertical Data Matrix */}
+        <div className="absolute inset-0 pointer-events-none z-0 flex gap-4 md:gap-8 justify-between opacity-20">
+            {[...Array(20)].map((_, i) => (
+               <motion.div 
+                 key={i}
+                 className="w-[1px] md:w-[2px] h-[300%] bg-gradient-to-b from-transparent via-[#385FFF] to-transparent mix-blend-screen"
+                 style={{ willChange: 'transform' }}
+                 animate={{ y: ['-100%', '0%'] }}
+                 transition={{ duration: 10 + Math.random() * 20, repeat: Infinity, ease: 'linear', delay: -Math.random() * 20 }}
+               />
+            ))}
+        </div>
 
-      {/* 3. Color System - Tone Grid (User Favorite) */}
-      <section className="py-40 px-6 md:px-24 bg-[#05080F] text-white">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div {...fadeInUp} className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-xl">
               <span className="text-xs tracking-[0.4em] uppercase text-[#385FFF] font-bold mb-6 block">Color System</span>
-              <h2 className="text-5xl md:text-7xl font-light tracking-tighter">Primary Tones</h2>
+              <h2 className="text-5xl md:text-7xl font-light tracking-tighter">Algorithmic Base</h2>
             </div>
-            <p className="text-sm opacity-40 max-w-xs font-light leading-relaxed">
-              A meticulously calculated palette balancing high-energy Royal Blue with systematic neutrals.
+            <p className="text-sm opacity-50 max-w-xs font-light leading-relaxed">
+              A meticulously calculated palette balancing high-energy cognitive blue with systematic data voids.
             </p>
           </motion.div>
 
-          <div className="space-y-12">
-            {[
-              { 
-                base: '#385FFF', 
-                name: 'Royal Blue', 
-                tones: [
-                  { label: '60% Dark', hex: '#041763' },
-                  { label: '60% Dark', hex: '#0A2BB1' },
-                  { label: 'Original', hex: '#385FFF' },
-                  { label: '80% Opacity', hex: '#385FFFCC' },
-                  { label: '60% Opacity', hex: '#385FFF99' },
-                  { label: '40% Opacity', hex: '#385FFF66' },
-                  { label: '20% Opacity', hex: '#385FFF33' },
-                  { label: '10% Opacity', hex: '#385FFF1A' },
-                  { label: '5% Opacity', hex: '#385FFF0D' }
-                ]
-              },
-              { 
-                base: '#05080F', 
-                name: 'Charcoal Black', 
-                tones: [
-                  { label: 'Original', hex: '#05080F' },
-                  { label: '80% Opacity', hex: '#05080Fcc' },
-                  { label: '60% Opacity', hex: '#484848' },
-                  { label: '40% Opacity', hex: '#767676' },
-                  { label: '20% Opacity', hex: '#A3A3A3' },
-                  { label: '10% Opacity', hex: '#D1D1D1' },
-                  { label: '5% Opacity', hex: '#E8E8E8' },
-                  { label: '2% Opacity', hex: '#F4F4F4' }
-                ]
-              }
-            ].map((system, i) => (
-              <div key={i} className="space-y-4">
-                <motion.div 
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as any }}
-                    className="h-32 w-full flex items-end justify-between p-8 origin-left relative overflow-hidden rounded-sm"
-                    style={{ backgroundColor: system.base }}
-                >
-                    <span className="text-xs tracking-widest uppercase font-bold relative z-10">{system.name}</span>
-                    <span className="text-[10px] tracking-widest opacity-40 relative z-10">{system.base}</span>
-                </motion.div>
-                
-                <div className="grid grid-cols-4 md:grid-cols-9 gap-1 md:gap-2">
-                  {system.tones.map((tone, ti) => (
-                    <motion.div
-                      key={ti}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.1 + (ti * 0.05), duration: 0.8 }}
-                      className="group relative"
-                    >
-                      <div className="aspect-[3/4] rounded-[1px] mb-2 transition-transform duration-500 group-hover:scale-[1.05]" style={{ backgroundColor: tone.hex }} />
-                      <div className="flex flex-col gap-1">
-                        <span className="text-[7px] tracking-tighter opacity-30 uppercase font-bold">{tone.label}</span>
-                        <span className="text-[7px] tracking-widest opacity-20 uppercase">{tone.hex.replace('#', '')}</span>
-                      </div>
-                    </motion.div>
-                  ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 min-h-[400px]">
+             {/* Royal Blue Node */}
+             <div className="bg-[#385FFF] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
+                <motion.div className="absolute inset-0 bg-white/20" style={{ transformOrigin: 'bottom' }} animate={{scaleY:[0, 1, 0]}} transition={{duration:15,repeat:Infinity,ease:'easeInOut'}} />
+                <h3 className="text-3xl md:text-5xl font-light tracking-tight mb-12 relative z-10 uppercase">Royal Blue</h3>
+                <div className="text-[10px] tracking-widest uppercase opacity-70 flex justify-between relative z-10">
+                  <span>#385FFF</span>
+                  <span>Primary Node</span>
                 </div>
-              </div>
-            ))}
+             </div>
+             {/* Charcoal */}
+             <div className="bg-[#020305] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
+                <motion.div className="absolute inset-0 bg-white/5" style={{ transformOrigin: 'top' }} animate={{scaleY:[0, 1, 0]}} transition={{duration:18,repeat:Infinity,ease:'easeInOut',delay:2}} />
+                <h3 className="text-3xl md:text-5xl font-light tracking-tight mb-12 relative z-10 uppercase">Charcoal</h3>
+                <div className="text-[10px] tracking-widest uppercase opacity-40 flex justify-between relative z-10">
+                  <span>#05080F</span>
+                  <span>Base Architecture</span>
+                </div>
+             </div>
+             {/* Light Blue */}
+             <div className="bg-[#D1E4FF] p-12 md:p-16 flex flex-col justify-between text-[#05080F] relative overflow-hidden group">
+                <motion.div className="absolute inset-0 bg-white/40" style={{ transformOrigin: 'bottom' }} animate={{scaleY:[0, 1, 0]}} transition={{duration:20,repeat:Infinity,ease:'easeInOut',delay:4}} />
+                <h3 className="text-3xl md:text-5xl font-light tracking-tight mb-12 relative z-10 uppercase">Light Blue</h3>
+                <div className="text-[10px] tracking-widest uppercase opacity-60 flex justify-between relative z-10">
+                  <span>#D1E4FF</span>
+                  <span>Interface Tone</span>
+                </div>
+             </div>
           </div>
         </div>
       </section>
@@ -243,7 +220,7 @@ const QuestifyAIBrandGuideline = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] as any }}
-                className="relative aspect-[16/10] overflow-hidden rounded-sm group shadow-2xl"
+                className="relative aspect-[16/10] overflow-hidden group"
               >
                 <img src={img} alt={`Asset ${i}`} className="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-all duration-1000" />

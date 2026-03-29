@@ -241,14 +241,17 @@ const EditorialShowcase = () => {
       <div className="py-4 px-6 lg:px-24 relative z-10">
         <main className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 border border-white/5 shadow-2xl">
-            <EditorialBlockA items={allLogos.slice(0, 15)} />
-            <EditorialBlockB items={allLogos.slice(15, 30)} />
-            <EditorialBlockC items={allLogos.slice(30, 45)} />
-            <EditorialBlockA items={allLogos.slice(45, 60)} />
+            {Array.from({ length: Math.ceil(allLogos.length / 15) }, (_, i) => {
+              const chunk = allLogos.slice(i * 15, (i + 1) * 15);
+              const type = i % 3;
+              if (type === 0) return <EditorialBlockA key={i} items={chunk} />;
+              if (type === 1) return <EditorialBlockB key={i} items={chunk} />;
+              return <EditorialBlockC key={i} items={chunk} />;
+            })}
           </div>
         </main>
       </div>
-
+      
       <BookCall />
       <Footer />
     </div>

@@ -22,165 +22,128 @@ const DaphneHeckoBrandGuideline = () => {
   const { scrollYProgress } = useScroll({ target: containerRef });
   const yParallax = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 40 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-100px" },
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }
+  };
+
   return (
     <div ref={containerRef} className="bg-[#FAF9F6] text-[#2c2b2b] font-montserrat overflow-hidden">
       
-      {/* 1. Hero */}
-      <section className="h-screen w-full relative flex flex-col justify-between py-12 px-8 md:px-16 bg-[#590620] overflow-hidden">
-        <motion.div 
-          style={{ y: yParallax }} 
-          className="absolute inset-0 z-0 bg-gradient-to-tr from-[#30010E] to-[#590620]"
-        />
-
-        <div className="relative z-10 w-full flex justify-between items-start pt-24 text-[#DAAB5B]">
-          <p className="text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-[#E5D1D0]">Brand Identity Guidelines</p>
-          <p className="text-[10px] md:text-xs tracking-widest uppercase opacity-70">CONFIDENTIAL</p>
+      {/* 1. CINEMATIC HERO SECTION */}
+      <section className="h-[100svh] w-full relative flex items-center justify-center overflow-hidden bg-[#590620]">
+        {/* Ultra-HD Image Background */}
+        <div className="absolute inset-0 z-0">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover object-center" alt="DH Legal Ops Cinematic Hero" />
+          {/* Subtle Brand Color Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-[#590620]/20 mix-blend-multiply" />
         </div>
         
-        <div className="relative z-10 w-full flex flex-col items-center justify-center flex-1">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }} 
-            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }} 
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl">
+          <motion.img 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            src={horizontalWhite} className="w-[130px] md:w-[200px] mb-12" alt="DH Legal Ops Logo" 
+          />
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-xl md:text-3xl text-white font-light tracking-wide leading-relaxed drop-shadow-md"
           >
-            <img src={horizontalWhite} alt="DH Legal Ops" className="w-[300px] md:w-[600px]" />
+            Lifting the operational burden. Engineering efficiency for modern law firms.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* 2. ABOUT THE BRAND */}
+      <section className="py-32 px-6 md:px-24 bg-[#050505] text-white">
+        <motion.div {...fadeInUp} className="max-w-4xl mx-auto text-center">
+          <span className="text-xs tracking-[0.4em] uppercase text-[#DAAB5B] font-bold mb-6 block">The Purpose</span>
+          <h2 className="text-3xl md:text-5xl font-light leading-tight">
+            DH Legal Ops delivers streamlined operational support—handling intake to billing—so legal professionals can focus entirely on practicing law and serving their clients.
+          </h2>
+        </motion.div>
+      </section>
+
+      {/* 3. LOGO CONCEPT */}
+      <section className="py-32 px-6 md:px-24 bg-white text-[#2c2b2b] border-y border-[#2c2b2b]/10">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <motion.div {...fadeInUp}>
+            <span className="text-xs tracking-[0.4em] uppercase opacity-40 mb-6 block font-bold">Logo Concept</span>
+            <h2 className="text-4xl font-light tracking-tight mb-8">Professional Precision</h2>
+            <p className="text-lg text-[#2c2b2b]/60 leading-relaxed">
+              The 'd' and 'h' are rendered in a bold, rounded style for approachability. The stem of the 'h' seamlessly transforms into a fountain pen nib, a classic symbol of legal precision.
+            </p>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="flex justify-center items-center p-16 border border-black/5 bg-[#FAF9F6]"
+          >
+            <img src={mainLogoMark} alt="DH Symbol" className="w-[150px] md:w-[200px]" />
           </motion.div>
         </div>
       </section>
 
-      {/* 2. Philosophy & Concept */}
-      <section className="py-32 md:py-48 px-8 md:px-16 max-w-[1800px] mx-auto border-b border-[#2c2b2b]/10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
-          <div className="sticky top-32">
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#590620] font-bold block mb-12">01 / The Promise</span>
-            <h2 className="text-4xl md:text-6xl font-bold font-nexa tracking-tight leading-tight mb-8">
-              Lifting the <span className="text-[#DAAB5B]">Operational Burden.</span>
-            </h2>
-            <p className="text-lg md:text-xl font-light leading-relaxed max-w-xl text-[#2c2b2b]/80">
-              DH Legal Ops delivers streamlined operational support for law firm owners—handling everything from client intake to billing, marketing, and team performance. Enabling legal professionals to focus on practicing law, serving clients, and driving growth.
-            </p>
-          </div>
-          
-          <div className="flex flex-col gap-12">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              className="bg-white p-16 md:p-32 flex flex-col items-center justify-center border border-black/5 rounded-3xl shadow-sm"
-            >
-              <img src={mainLogoMark} alt="Logo Mark" className="w-[40%] mb-12" />
-              <p className="text-center text-sm leading-relaxed max-w-sm opacity-70">
-                <strong className="text-[#590620]">The Concept:</strong> The letters "d" and "h" are rendered in a bold, rounded Nexa Heavy style. The stem of the "h" transforms into a fountain pen nib, symbolizing law, precision, and professionalism. Let the negative space add visual sharpness, reinforcing accuracy.
-              </p>
-            </motion.div>
-          </div>
+      {/* 4. Color System (Redesigned with Subtle Breathing Pulse) */}
+      <section className="w-full bg-[#590620] py-24 px-6 md:px-24 border-y border-black/10 overflow-hidden relative">
+        {/* Animated Radial Pulse */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 flex items-center justify-center">
+          <motion.div 
+            className="absolute w-[60vw] h-[60vw] rounded-full bg-[#DAAB5B]/20 mix-blend-screen"
+            style={{ filter: 'blur(100px)', willChange: 'transform' }}
+            animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.7, 0.3] }}
+            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          />
+          <motion.div 
+            className="absolute w-[40vw] h-[40vw] rounded-full bg-white/10 mix-blend-screen"
+            style={{ filter: 'blur(80px)', willChange: 'transform' }}
+            animate={{ scale: [1.2, 0.9, 1.2], opacity: [0.2, 0.5, 0.2] }}
+            transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
+          />
         </div>
-      </section>
 
-      {/* 3. Color Pairings (As requested by user screenshot) */}
-      <section className="py-32 px-8 xl:px-8 w-full">
-        <div className="max-w-[1800px] mx-auto">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-24 flex justify-between items-end">
-             <h2 className="text-4xl md:text-6xl font-bold font-nexa text-[#590620]">Color Pairings</h2>
+             <h2 className="text-4xl md:text-6xl font-light font-nexa text-white tracking-widest">Color Pairings</h2>
           </div>
           
-          {/* Animated Color Grid Container */}
-          <div className="w-full flex flex-col">
-             
-             {/* Burgundy Row */}
-             <div className="flex flex-row w-full h-[150px] md:h-[200px] items-stretch">
-                {/* RGB label */}
-                <div className="w-[120px] shrink-0 hidden lg:flex flex-col justify-center text-xs font-light tracking-wide text-[#2c2b2b]/60 leading-relaxed pr-8">
-                   <p>R: 89</p>
-                   <p>G: 6</p>
-                   <p>B: 32</p>
-                </div>
-                
-                {/* Solid main panel */}
-                <motion.div 
-                   initial={{ opacity: 0, x: -50 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   viewport={{ once: true }}
-                   transition={{ duration: 0.8, ease: "easeOut" }}
-                   className="w-1/3 md:w-1/4 shrink-0 bg-[#590620] flex items-center justify-center text-[#DAAB5B] text-xl md:text-2xl tracking-widest font-light"
-                >
-                   #590620
-                </motion.div>
-
-                {/* Fade sequence */}
-                <div className="flex-1 flex flex-row bg-white">
-                   {[90, 80, 70, 60, 50, 40, 20].map((opacity, idx) => (
-                      <motion.div 
-                         key={`burgundy-${opacity}`}
-                         initial={{ opacity: 0, scaleY: 0 }}
-                         whileInView={{ opacity: opacity / 100, scaleY: 1 }}
-                         viewport={{ once: true }}
-                         transition={{ delay: 0.3 + (idx * 0.1), duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                         className="flex-1 h-full origin-bottom"
-                         style={{ backgroundColor: `#590620` }}
-                      />
-                   ))}
-                </div>
-
-                {/* CMYK label */}
-                <div className="w-[120px] shrink-0 hidden lg:flex flex-col justify-center text-xs font-light tracking-wide text-[#2c2b2b]/60 leading-relaxed pl-8">
-                   <p>C: 39%</p>
-                   <p>M: 96%</p>
-                   <p>Y: 69%</p>
-                   <p>K: 58%</p>
-                </div>
-             </div>
-
-             {/* Gold Row */}
-             <div className="flex flex-row w-full h-[150px] md:h-[200px] items-stretch">
-                {/* RGB label */}
-                <div className="w-[120px] shrink-0 hidden lg:flex flex-col justify-center text-xs font-light tracking-wide text-[#2c2b2b]/60 leading-relaxed pr-8">
-                   <p>R: 218</p>
-                   <p>G: 171</p>
-                   <p>B: 91</p>
-                </div>
-                
-                {/* Solid main panel */}
-                <motion.div 
-                   initial={{ opacity: 0, x: -50 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   viewport={{ once: true }}
-                   transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-                   className="w-1/3 md:w-1/4 shrink-0 bg-[#DAAB5B] flex items-center justify-center text-[#590620] text-xl md:text-2xl tracking-widest font-light"
-                >
-                   #DAAB5B
-                </motion.div>
-
-                {/* Fade sequence */}
-                <div className="flex-1 flex flex-row bg-white">
-                   {[90, 80, 70, 60, 50, 40, 20].map((opacity, idx) => (
-                      <motion.div 
-                         key={`gold-${opacity}`}
-                         initial={{ opacity: 0, scaleY: 0 }}
-                         whileInView={{ opacity: opacity / 100, scaleY: 1 }}
-                         viewport={{ once: true }}
-                         transition={{ delay: 0.4 + (idx * 0.1), duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                         className="flex-1 h-full origin-top"
-                         style={{ backgroundColor: `#DAAB5B` }}
-                      />
-                   ))}
-                </div>
-
-                {/* CMYK label */}
-                <div className="w-[120px] shrink-0 hidden lg:flex flex-col justify-center text-xs font-light tracking-wide text-[#2c2b2b]/60 leading-relaxed pl-8 pt-4">
-                   <p>C: 15%</p>
-                   <p>M: 33%</p>
-                   <p>Y: 75%</p>
-                   <p>K: 0%</p>
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 min-h-[400px]">
+             {/* Burgundy */}
+             <div className="bg-[#2C0310] p-12 md:p-16 flex flex-col justify-between text-white border-white/5 relative overflow-hidden group">
+                <motion.div className="absolute inset-0 bg-[#590620]/50" animate={{opacity:[0.2,0.6,0.2]}} transition={{duration:6,repeat:Infinity,ease:'easeInOut'}} />
+                <h3 className="text-3xl md:text-5xl font-light text-white tracking-tight mb-12 relative z-10">Burgundy</h3>
+                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-white/50">
+                  <span>#590620</span>
+                  <span>RGB 89 6 32</span>
                 </div>
              </div>
              
-             {/* Slide number context from image */}
-             <div className="w-full mt-4 text-right hidden lg:block">
-               <span className="text-xs font-bold mr-12 opacity-60">15</span>
+             {/* Gold */}
+             <div className="bg-[#4A3A1F] p-12 md:p-16 flex flex-col justify-between text-white border-white/5 relative overflow-hidden group">
+                <motion.div className="absolute inset-0 bg-[#DAAB5B]/40" animate={{opacity:[0.3,0.8,0.3]}} transition={{duration:7,repeat:Infinity,ease:'easeInOut',delay:2}} />
+                <h3 className="text-3xl md:text-5xl font-light text-[#DAAB5B] tracking-tight mb-12 relative z-10">Gold</h3>
+                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-[#DAAB5B]/50">
+                  <span>#DAAB5B</span>
+                  <span>RGB 218 171 91</span>
+                </div>
              </div>
 
+             {/* Cream */}
+             <div className="bg-[#FAF9F6] p-12 md:p-16 flex flex-col justify-between text-[#2c2b2b] border-white/5 relative overflow-hidden group">
+                <motion.div className="absolute inset-0 bg-white/60" animate={{opacity:[0.4,1,0.4]}} transition={{duration:9,repeat:Infinity,ease:'easeInOut',delay:4}} />
+                <h3 className="text-3xl md:text-5xl font-light text-[#2c2b2b] tracking-tight mb-12 relative z-10">Cream</h3>
+                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-[#2c2b2b]/40">
+                  <span>#FAF9F6</span>
+                  <span>RGB 250 249 246</span>
+                </div>
+             </div>
           </div>
         </div>
       </section>
@@ -227,33 +190,32 @@ const DaphneHeckoBrandGuideline = () => {
                <span className="text-[10px] tracking-[0.4em] uppercase text-[#590620] font-bold block mb-4">Logo System</span>
                <h2 className="text-4xl md:text-5xl font-bold font-nexa text-[#2c2b2b]">Variations & Lockups</h2>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                {/* Wordmark Primary */}
-               <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} className="col-span-1 md:col-span-2 p-16 md:p-24 bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow flex items-center justify-center">
+               <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} className="col-span-1 md:col-span-2 p-16 md:p-24 bg-white flex items-center justify-center">
                   <img src={horizontalBurgendy} alt="Horizontal Burgundy" className="w-[80%] max-w-[400px] object-contain" />
                </motion.div>
                
                {/* Vertical Primary */}
-               <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ delay: 0.1 }} className="p-16 bg-[#590620] rounded-3xl shadow-sm hover:shadow-2xl transition-shadow flex flex-col items-center justify-center gap-8">
+               <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ delay: 0.1 }} className="p-16 bg-[#590620] flex flex-col items-center justify-center gap-8">
                   <img src={verticalBurgendy} alt="Vertical Burgundy" className="w-[60%] max-w-[200px] brightness-0 invert object-contain" />
                   <span className="text-[10px] tracking-[0.3em] uppercase text-[#DAAB5B] opacity-80">White Lockup</span>
                </motion.div>
 
                {/* Horizontal White */}
-               <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ delay: 0.2 }} className="p-16 bg-[#1A1A1A] rounded-3xl shadow-sm hover:shadow-2xl transition-shadow flex flex-col items-center justify-center gap-8">
+               <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ delay: 0.2 }} className="p-16 bg-[#1A1A1A] flex flex-col items-center justify-center gap-8">
                   <img src={horizontalWhite} alt="Horizontal White" className="w-[80%] max-w-[300px] object-contain" />
                   <span className="text-[10px] tracking-[0.3em] uppercase text-white/50">Dark Mode</span>
                </motion.div>
 
                {/* Logo Mark Only */}
-               <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ delay: 0.3 }} className="p-16 bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow flex flex-col items-center justify-center gap-8">
+               <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ delay: 0.3 }} className="p-16 bg-white flex flex-col items-center justify-center gap-8">
                   <img src={mainLogoMark} alt="Brand Mark" className="w-[50%] max-w-[150px] object-contain" />
                   <span className="text-[10px] tracking-[0.3em] uppercase opacity-40">Primary Mark</span>
                </motion.div>
 
                {/* Logo Mark White */}
-               <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ delay: 0.4 }} className="p-16 bg-[#DAAB5B] rounded-3xl shadow-sm hover:shadow-xl transition-shadow flex flex-col items-center justify-center gap-8">
+               <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ delay: 0.4 }} className="p-16 bg-[#DAAB5B] flex flex-col items-center justify-center gap-8">
                   <img src={logoWhite} alt="White Mark" className="w-[50%] max-w-[150px] object-contain" />
                   <span className="text-[10px] tracking-[0.3em] uppercase text-[#590620] opacity-80">Gold Lockup</span>
                </motion.div>
@@ -272,30 +234,30 @@ const DaphneHeckoBrandGuideline = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
              <motion.div 
                 initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1.5 }}
-                className="md:col-span-12 rounded-[2rem] overflow-hidden group shadow-[0_20px_60px_rgba(0,0,0,0.1)]"
+                className="md:col-span-12 overflow-hidden group"
              >
                 <img src={bannerMockup} alt="Banner" className="w-full h-auto object-cover transition-transform duration-[4s] hover:scale-105" />
              </motion.div>
              
              <motion.div 
                 initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1.5, delay: 0.1 }}
-                className="md:col-span-6 rounded-[2rem] overflow-hidden group shadow-[0_20px_60px_rgba(0,0,0,0.1)]"
+                className="md:col-span-6 overflow-hidden group"
              >
                 <img src={businessCardMockup} alt="Business Cards" className="w-full h-[40vh] md:h-[60vh] object-cover transition-transform duration-[4s] hover:scale-105" />
              </motion.div>
              
              <motion.div 
                 initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1.5, delay: 0.2 }}
-                className="md:col-span-6 rounded-[2rem] overflow-hidden group shadow-[0_20px_60px_rgba(0,0,0,0.1)]"
+                className="md:col-span-6 overflow-hidden group"
              >
                 <img src={laptopMockup} alt="Digital Tool" className="w-full h-[40vh] md:h-[60vh] object-cover transition-transform duration-[4s] hover:scale-105" />
              </motion.div>
 
              <motion.div 
                 initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1.5 }}
-                className="md:col-span-12 rounded-[2rem] overflow-hidden group bg-neutral-100 flex items-center justify-center p-8 mt-12"
+                className="md:col-span-12 overflow-hidden group bg-neutral-100 flex items-center justify-center p-8 mt-12"
              >
-                <img src={slide31} alt="Slide Context" className="w-full md:w-3/4 h-auto shadow-xl" />
+                <img src={slide31} alt="Slide Context" className="w-full md:w-3/4 h-auto" />
              </motion.div>
           </div>
         </div>

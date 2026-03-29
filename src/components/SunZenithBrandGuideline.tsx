@@ -176,83 +176,62 @@ const SunZenithBrandGuideline: React.FC = () => {
         .sz-bd { font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif; }
       `}</style>
 
-      {/* ══════════════ 1. HERO / ABOUT ══════════════ */}
-      <section
-        className="min-h-screen w-full flex flex-col items-center justify-center px-6 md:px-24 py-32 relative text-center overflow-hidden"
-        style={{ background: 'linear-gradient(160deg, #f0f5ff 0%, #ffffff 50%, #fff8f0 100%)' }}
-      >
-        {/* ambient glows */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full opacity-20 pointer-events-none"
-          style={{ background: `radial-gradient(circle, ${BRAND_ORANGE}55 0%, transparent 70%)` }} />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-10 pointer-events-none"
-          style={{ background: `radial-gradient(circle, ${BRAND_BLUE}55 0%, transparent 70%)` }} />
-
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] as any }} className="max-w-5xl w-full">
-
-          <motion.p className="text-xs tracking-[0.7em] uppercase mb-10 sz-bd font-semibold"
-            style={{ color: BRAND_ORANGE }} initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 1 }}>
-            Brand Identity Presentation &middot; 2024
+      {/* 1. CINEMATIC HERO SECTION */}
+      <section className="h-[100svh] w-full relative flex items-center justify-center overflow-hidden bg-[#022272]">
+        {/* Ultra-HD Image Background */}
+        <div className="absolute inset-0 z-0">
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover object-center" alt="SunZenith Solar Field Hero" />
+          {/* Subtle Brand Color Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-[#003dfc]/40 mix-blend-multiply" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mt-16">
+          <motion.img 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            src={logoMainFullWhite} className="w-[120px] md:w-[150px] mb-12" alt="SunZenith Minimal Logo" 
+          />
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-xl md:text-3xl text-white font-light tracking-wide leading-relaxed drop-shadow-md sz-bd"
+          >
+            Rising to the highest point of solar excellence. Powering a sustainable future.
           </motion.p>
+        </div>
+      </section>
 
-          <div className="mb-10 flex items-center justify-center">
-            <SunPathLogo animate={true} />
-          </div>
-
-          <motion.h2 className="text-xl md:text-2xl font-light mb-16 sz-bd italic"
-            style={{ color: `${BRAND_DARK}99` }} initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-            transition={{ delay: 2.8, duration: 1 }}>
-            &ldquo;Rising to the highest point of solar excellence.&rdquo;
-          </motion.h2>
-
-          <div className="w-px h-20 mx-auto mb-12"
-            style={{ background: `linear-gradient(to bottom, ${BRAND_ORANGE}60, transparent)` }} />
-
-          <motion.p className="max-w-3xl mx-auto text-lg md:text-xl font-light leading-relaxed sz-bd"
-            style={{ color: `${BRAND_DARK}99` }} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 3, duration: 1 }}>
-            SunZenith is a turnkey solar integrator dedicated to empowering homeowners and businesses with
-            seamlessly integrated, cost-efficient, and reliable solar energy solutions &mdash; fostering a
-            sustainable future for all.
-          </motion.p>
-        </motion.div>
-
-        <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2" style={{ color: `${BRAND_BLUE}60` }}>
-          <ArrowDown size={32} strokeWidth={1} />
+      {/* 2. ABOUT THE BRAND */}
+      <section className="py-32 px-6 md:px-24 bg-[#050505] text-white">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }} className="max-w-4xl mx-auto text-center">
+          <span className="text-xs tracking-[0.4em] uppercase text-[#ff8533] font-bold mb-6 block sz-bd">The Purpose</span>
+          <h2 className="text-3xl md:text-5xl font-light leading-tight sz-h">
+            SunZenith is a turnkey solar integrator empowering homeowners and businesses with seamless, high-efficiency renewable energy systems and real-time independence.
+          </h2>
         </motion.div>
       </section>
 
-      {/* ══════════════ 2. MISSION & VISION ══════════════ */}
-      <section className="w-full py-32 px-6 md:px-24" style={{ background: BRAND_DARK }}>
-        <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeInUp} className="mb-20 text-center">
-            <span className="text-xs tracking-[0.5em] uppercase mb-4 block sz-bd font-semibold" style={{ color: BRAND_ORANGE }}>Purpose</span>
-            <h2 className="text-4xl md:text-6xl font-bold sz-h tracking-tight text-white">Mission &amp; Vision</h2>
+      {/* 3. LOGO CONCEPT */}
+      <section className="py-32 px-6 md:px-24 bg-white text-[#022272] border-y border-black/5">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }}>
+            <span className="text-xs tracking-[0.4em] uppercase opacity-40 mb-6 block font-bold sz-bd">Logo Concept</span>
+            <h2 className="text-4xl font-light tracking-tight mb-8 sz-h">The Solar Ascent</h2>
+            <p className="text-lg text-[#022272]/70 leading-relaxed font-light sz-bd">
+              An ascendant arc tracing the sun's journey culminates in an orange dot representing the zenith—signifying peak operational performance and maximum power output.
+            </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div {...scaleIn} className="p-10 md:p-14 rounded-2xl border"
-              style={{ background: `${BRAND_BLUE}22`, borderColor: `${BRAND_BLUE}44` }}>
-              <div className="w-12 h-1 rounded-full mb-8" style={{ background: BRAND_ORANGE }} />
-              <p className="text-xs tracking-[0.5em] uppercase mb-4 sz-bd" style={{ color: BRAND_ORANGE }}>Our Mission</p>
-              <p className="text-white text-lg md:text-xl font-light leading-relaxed sz-bd">
-                To empower homeowners and businesses to achieve energy independence and significant savings through
-                seamlessly integrated, cost-efficient, and reliable solar energy solutions, fostering a sustainable
-                future for all.
-              </p>
-            </motion.div>
-            <motion.div {...scaleIn} transition={{ delay: 0.15 } as any} className="p-10 md:p-14 rounded-2xl border"
-              style={{ background: `${BRAND_ORANGE}15`, borderColor: `${BRAND_ORANGE}44` }}>
-              <div className="w-12 h-1 rounded-full mb-8" style={{ background: BRAND_BLUE }} />
-              <p className="text-xs tracking-[0.5em] uppercase mb-4 sz-bd" style={{ color: BRAND_LIGHT_BLUE }}>Our Vision</p>
-              <p className="text-white text-lg md:text-xl font-light leading-relaxed sz-bd">
-                To become the most trusted and cost-efficient turnkey solar integrator, recognized for our commitment
-                to customer success, technological excellence, and environmental stewardship, driving the widespread
-                adoption of renewable energy.
-              </p>
-            </motion.div>
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="flex justify-center items-center py-16 px-6 border border-black/5 bg-[#f5f8ff]"
+          >
+            <SunPathLogo animate={true} />
+          </motion.div>
         </div>
       </section>
 
@@ -270,8 +249,8 @@ const SunZenithBrandGuideline: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] as any }}
                 whileHover={{ y: -6 }}
-                className="p-8 rounded-2xl flex flex-col gap-5 cursor-default group"
-                style={{ background: '#ffffff', boxShadow: '0 4px 30px rgba(0,61,252,0.06)' }}
+                className="p-8 flex flex-col gap-5 cursor-default group"
+                style={{ background: '#ffffff' }}
               >
                 <span className="text-3xl" style={{ color: BRAND_BLUE }}>{v.icon}</span>
                 <h3 className="text-sm font-bold sz-h leading-snug" style={{ color: BRAND_DARK }}>{v.title}</h3>
@@ -306,7 +285,7 @@ const SunZenithBrandGuideline: React.FC = () => {
                     initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1, duration: 0.7 }}
-                    className="flex gap-4 items-start p-5 rounded-xl" style={{ background: '#f5f8ff' }}>
+                    className="flex gap-4 items-start p-5" style={{ background: '#f5f8ff' }}>
                     <span className="w-2 h-2 rounded-full mt-2 shrink-0" style={{ background: BRAND_ORANGE }} />
                     <div>
                       <p className="font-semibold sz-h text-sm mb-1" style={{ color: BRAND_DARK }}>{title}</p>
@@ -379,8 +358,8 @@ const SunZenithBrandGuideline: React.FC = () => {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div {...scaleIn} className="flex flex-col items-center gap-6">
-              <div className="w-full max-w-[480px] flex items-center justify-center rounded-2xl p-14"
-                style={{ background: '#ffffff', boxShadow: '0 10px 60px rgba(0,61,252,0.08)' }}>
+              <div className="w-full max-w-[480px] flex items-center justify-center p-14"
+                style={{ background: '#ffffff' }}>
                 <img src={logoMainBlue} alt="SunZenith Main Logo Blue" className="w-full h-auto object-contain max-h-40" />
               </div>
               <span className="text-[10px] tracking-[0.3em] uppercase sz-bd" style={{ color: `${BRAND_DARK}50` }}>Primary Blue Logotype</span>
@@ -391,7 +370,7 @@ const SunZenithBrandGuideline: React.FC = () => {
                   initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08, duration: 0.7 }}
-                  className="flex gap-4 items-start p-5 rounded-xl" style={{ background: '#ffffff' }}>
+                  className="flex gap-4 items-start p-5" style={{ background: '#ffffff' }}>
                   <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-white text-xs font-bold sz-h"
                     style={{ background: i >= 2 ? BRAND_ORANGE : BRAND_BLUE }}>
                     {i + 1}
@@ -421,7 +400,7 @@ const SunZenithBrandGuideline: React.FC = () => {
                   initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.7 }}
-                  className="flex gap-4 items-start p-5 rounded-xl" style={{ background: '#f5f8ff' }}>
+                  className="flex gap-4 items-start p-5" style={{ background: '#f5f8ff' }}>
                   <span className="w-2 h-2 rounded-full mt-2 shrink-0"
                     style={{ background: i % 2 === 0 ? BRAND_BLUE : BRAND_ORANGE }} />
                   <div>
@@ -433,14 +412,14 @@ const SunZenithBrandGuideline: React.FC = () => {
             </motion.div>
             <motion.div {...scaleIn} transition={{ delay: 0.2 } as any} className="flex flex-col items-center gap-8">
               <div className="flex flex-col items-center gap-4">
-                <div className="w-56 h-56 flex items-center justify-center rounded-2xl"
-                  style={{ background: '#f5f8ff', boxShadow: '0 10px 60px rgba(0,61,252,0.08)' }}>
+                <div className="w-56 h-56 flex items-center justify-center"
+                  style={{ background: '#f5f8ff' }}>
                   <img src={logoMarkBlue} alt="SunZenith Icon Mark Blue" className="w-32 h-32 object-contain" />
                 </div>
                 <span className="text-[10px] tracking-[0.3em] uppercase sz-bd" style={{ color: `${BRAND_DARK}50` }}>Icon Mark &middot; Light</span>
               </div>
               <div className="flex flex-col items-center gap-4">
-                <div className="w-56 h-56 flex items-center justify-center rounded-2xl" style={{ background: BRAND_DARK }}>
+                <div className="w-56 h-56 flex items-center justify-center" style={{ background: BRAND_DARK }}>
                   <SimplifiedLogo size={140} />
                 </div>
                 <span className="text-[10px] tracking-[0.3em] uppercase sz-bd" style={{ color: `${BRAND_DARK}50` }}>Animated Symbol &middot; Dark</span>
@@ -459,19 +438,19 @@ const SunZenithBrandGuideline: React.FC = () => {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <motion.div {...scaleIn} whileHover={{ scale: 1.02 }}
-              className="aspect-square flex flex-col items-center justify-center p-12 rounded-2xl"
+              className="aspect-square flex flex-col items-center justify-center p-12"
               style={{ background: BRAND_BLUE }}>
               <img src={logoMainFullWhite} alt="White Logotype on Blue" className="w-2/3 h-auto object-contain mb-8" />
               <p className="text-white/60 text-[9px] tracking-widest uppercase sz-bd">Primary Blue</p>
             </motion.div>
             <motion.div {...scaleIn} transition={{ delay: 0.1 } as any} whileHover={{ scale: 1.02 }}
-              className="aspect-square flex flex-col items-center justify-center p-12 rounded-2xl"
+              className="aspect-square flex flex-col items-center justify-center p-12"
               style={{ background: '#ffffff' }}>
               <img src={logoMainBlack} alt="Black Logotype on White" className="w-2/3 h-auto object-contain mb-8" />
               <p className="text-black/30 text-[9px] tracking-widest uppercase sz-bd">Reversed White</p>
             </motion.div>
             <motion.div {...scaleIn} transition={{ delay: 0.2 } as any} whileHover={{ scale: 1.02 }}
-              className="aspect-square flex flex-col items-center justify-center p-12 rounded-2xl"
+              className="aspect-square flex flex-col items-center justify-center p-12"
               style={{ background: BRAND_DARK }}>
               <img src={logoMarkWhite} alt="Icon Mark" className="w-1/3 h-auto object-contain mb-8" />
               <p className="text-white/40 text-[9px] tracking-widest uppercase sz-bd">Icon Mark</p>
@@ -480,108 +459,103 @@ const SunZenithBrandGuideline: React.FC = () => {
         </div>
       </section>
 
-      {/* ══════════════ 8. COLOR PALETTE ══════════════ */}
-      <section className="w-full py-32 px-6 md:px-24" style={{ background: '#ffffff' }}>
-        <div className="max-w-7xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
+      {/* 8. Color System (Redesigned with Solar Flare Pulses) */}
+      <section className="w-full py-40 px-6 md:px-24 bg-[#020B26] overflow-hidden relative border-y border-white/5">
+        {/* Animated Solar Flare Pulses */}
+        <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center">
+            <motion.div 
+              className="absolute w-[60vw] h-[60vw] rounded-full bg-[#ff8533]"
+              style={{ filter: 'blur(120px)', opacity: 0.2 }}
+              animate={{ scale: [1, 1.4, 1], opacity: [0.1, 0.3, 0.1] }}
+              transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+            />
+            <motion.div 
+              className="absolute w-[40vw] h-[40vw] rounded-full bg-[#003dfc]"
+              style={{ filter: 'blur(100px)', opacity: 0.3 }}
+              animate={{ scale: [1.2, 0.8, 1.2], opacity: [0.2, 0.5, 0.2] }}
+              transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
+            />
+            {/* Concentric rings */}
+            {[1, 2, 3].map((r) => (
+              <motion.div 
+                key={r}
+                className="absolute rounded-full border border-white/10"
+                style={{ width: `${r * 20}vw`, height: `${r * 20}vw`, willChange: 'transform' }}
+                animate={{ scale: [0.8, 1.2, 0.8], opacity: [0.05, 0.15, 0.05] }}
+                transition={{ duration: 6 + r * 2, repeat: Infinity, ease: 'easeInOut', delay: r }}
+              />
+            ))}
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] as any }}
-            className="mb-20">
-            <div className="flex justify-between items-start border-t pt-8 mb-12"
-              style={{ borderColor: `${BRAND_DARK}15` }}>
-              <p className="sz-bd text-[10px] tracking-widest uppercase" style={{ color: `${BRAND_DARK}50` }}>
-                Topic &mdash; 3.1<br />Page &mdash; Brand Color
+            className="mb-24"
+          >
+            <div className="flex justify-between items-start border-t border-white/10 pt-8 mb-12">
+              <p className="sz-bd text-[10px] tracking-widest uppercase text-white/40">
+                Topic — 3.1<br />Page — Brand Color
               </p>
-              <p className="sz-h text-[10px] tracking-widest uppercase font-bold text-right" style={{ color: BRAND_DARK }}>
-                Color Palette<br />Colors
+              <p className="sz-h text-[10px] tracking-widest uppercase font-bold text-right text-white">
+                Color Palette<br />Solar Tones
               </p>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold sz-h tracking-tight" style={{ color: BRAND_DARK }}>Brand Color</h2>
+            <h2 className="text-4xl md:text-6xl font-bold sz-h tracking-tight text-white mb-12">Zenith Energy</h2>
           </motion.div>
 
-          {/* Primary + Secondary description + main swatch */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div className="space-y-8">
-              <motion.div initial={{ x: -80, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] as any, delay: 0.2 }}>
-                <h3 className="text-2xl font-bold sz-h mb-3" style={{ color: BRAND_BLUE }}>Primary</h3>
-                <div className="border-l-4 pl-4" style={{ borderColor: BRAND_BLUE }}>
-                  <p className="sz-bd" style={{ color: `${BRAND_DARK}99` }}>
-                    Our primary color represents the core of our brand identity. It should be used for logos,
-                    key buttons, and main brand elements to maintain visual consistency.
-                  </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-px bg-white/5 min-h-[400px]">
+             {/* Solar Blue */}
+             <div className="bg-[#003DFC] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
+                <motion.div className="absolute inset-0 bg-white/10" animate={{ scale: [1.2, 0.9, 1.2], opacity: [0.2, 0.4, 0.2] }} transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }} />
+                <h3 className="text-3xl md:text-5xl font-bold sz-h tracking-tight mb-12 relative z-10 uppercase">Solar <br/>Blue</h3>
+                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-white/70">
+                  <span>#003DFC</span>
+                  <span>Primary Authority</span>
                 </div>
-              </motion.div>
-              <motion.div initial={{ x: -80, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] as any, delay: 0.35 }}>
-                <h3 className="text-2xl font-bold sz-h mb-3" style={{ color: BRAND_ORANGE }}>Secondary</h3>
-                <div className="border-l-4 pl-4" style={{ borderColor: BRAND_ORANGE }}>
-                  <p className="sz-bd" style={{ color: `${BRAND_DARK}99` }}>
-                    The secondary color complements the primary color. It is used for accents, backgrounds,
-                    and supporting graphics to enhance hierarchy and visual interest.
-                  </p>
-                </div>
-              </motion.div>
-            </div>
+             </div>
 
-            <motion.div initial={{ x: 80, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] as any, delay: 0.2 }}
-              className="rounded-2xl overflow-hidden" style={{ minHeight: '280px', display: 'grid', gridTemplateRows: '2fr 1fr' }}>
-              <div className="flex items-end p-6" style={{ background: BRAND_BLUE }}>
-                <div className="text-white/80 sz-bd text-xs leading-relaxed">
-                  RGB: 0, 61, 199<br />CMYK: 94, 83, 0, 0<br />Hex: #003dfc
+             {/* Solar Orange */}
+             <div className="bg-[#ff8533] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
+                <motion.div className="absolute inset-0 bg-white/20" animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.6, 0.3] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }} />
+                <h3 className="text-3xl md:text-5xl font-bold sz-h tracking-tight mb-12 relative z-10 uppercase">Solar <br/>Orange</h3>
+                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-white/70">
+                  <span>#FF8533</span>
+                  <span>Accent Energy</span>
                 </div>
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-                <div className="flex items-end p-4 sz-bd text-xs text-white" style={{ background: BRAND_ORANGE }}>
-                  RGB: 255, 133, 51<br />Hex: #ff8533
+             </div>
+             
+             {/* Deep Navy */}
+             <div className="bg-[#022272] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
+                <motion.div className="absolute inset-0 bg-white/5" animate={{ scale: [1.5, 1, 1.5], opacity: [0.1, 0.3, 0.1] }} transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 2 }} />
+                <h3 className="text-3xl md:text-5xl font-bold sz-h tracking-tight mb-12 relative z-10 uppercase">Deep <br/>Navy</h3>
+                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-white/50">
+                  <span>#022272</span>
+                  <span>Base Stability</span>
                 </div>
-                <div className="flex items-end p-4 sz-bd text-xs" style={{ background: BRAND_DARK, color: 'rgba(255,255,255,0.6)' }}>
-                  RGB: 2, 34, 114<br />Hex: #022272
-                </div>
-              </div>
-            </motion.div>
-          </div>
+             </div>
 
-          {/* Color swatches */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-            {COLORS.map((c, i) => (
-              <motion.div key={i}
-                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] as any }}
-                whileHover={{ scale: 1.03, y: -4 }}
-                className="rounded-xl overflow-hidden cursor-default"
-                style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.07)' }}>
-                <div className="h-28 w-full" style={{
-                  background: c.hex,
-                  border: c.hex === '#ffffff' ? `1px solid ${BRAND_DARK}15` : 'none',
-                }} />
-                <div className="p-4" style={{ background: c.hex === '#000000' ? '#111' : '#fafcff' }}>
-                  <p className="font-bold sz-h text-sm mb-0.5" style={{ color: c.hex === '#000000' ? '#fff' : BRAND_DARK }}>{c.name}</p>
-                  <p className="sz-bd text-xs mb-1" style={{ color: c.hex === '#000000' ? 'rgba(255,255,255,0.5)' : `${BRAND_DARK}60` }}>{c.hex}</p>
-                  <span className="inline-block text-[9px] tracking-widest uppercase px-2 py-0.5 rounded-full sz-bd"
-                    style={{ background: `${BRAND_BLUE}15`, color: BRAND_BLUE }}>{c.label}</span>
+             {/* Sky Blue */}
+             <div className="bg-[#0968FF] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
+                <motion.div className="absolute inset-0 bg-white/15" animate={{ scale: [0.9, 1.3, 0.9], opacity: [0.2, 0.5, 0.2] }} transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 3 }} />
+                <h3 className="text-3xl md:text-5xl font-bold sz-h tracking-tight mb-12 relative z-10 uppercase">Sky <br/>Blue</h3>
+                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-white/60">
+                  <span>#0968FF</span>
+                  <span>Expansion</span>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+             </div>
 
-          {/* Gradient strip */}
-          <motion.div
-            initial={{ scaleX: 0, opacity: 0 }} whileInView={{ scaleX: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] as any, delay: 0.2 }}
-            className="mt-10 h-14 rounded-full origin-left"
-            style={{ background: `linear-gradient(90deg, ${BRAND_BLUE} 0%, ${BRAND_LIGHT_BLUE} 30%, ${BRAND_ORANGE} 70%, #ffbd00 100%)` }}
-          />
-          <div className="flex justify-between mt-3">
-            {['#003dfc', '#0968ff', '#ff8533', '#ffbd00'].map((c, i) => (
-              <span key={i} className="sz-bd text-[10px] tracking-widest" style={{ color: `${BRAND_DARK}50` }}>{c}</span>
-            ))}
+             {/* Amber */}
+             <div className="bg-[#FFBD00] p-12 md:p-16 flex flex-col justify-between text-[#022272] relative overflow-hidden group">
+                <motion.div className="absolute inset-0 bg-white/40" animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.7, 0.3] }} transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 4 }} />
+                <h3 className="text-3xl md:text-5xl font-bold sz-h tracking-tight mb-12 relative z-10 uppercase">Solar <br/>Amber</h3>
+                <div className="text-[10px] tracking-[0.2em] font-light flex justify-between relative z-10 text-[#022272]/40">
+                  <span>#FFBD00</span>
+                  <span>Warmth</span>
+                </div>
+             </div>
           </div>
         </div>
       </section>
@@ -596,7 +570,7 @@ const SunZenithBrandGuideline: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Montserrat */}
-            <motion.div {...fadeInUp} className="p-10 rounded-2xl" style={{ background: '#ffffff' }}>
+            <motion.div {...fadeInUp} className="p-10" style={{ background: '#ffffff' }}>
               <div className="flex items-center gap-3 mb-10">
                 <div className="h-10 w-1 rounded-full" style={{ background: BRAND_BLUE }} />
                 <div>
@@ -604,7 +578,7 @@ const SunZenithBrandGuideline: React.FC = () => {
                   <h3 className="sz-h text-5xl font-light" style={{ color: BRAND_DARK }}>Montserrat</h3>
                 </div>
               </div>
-              <div className="p-6 rounded-xl mb-8" style={{ background: '#f0f5ff' }}>
+              <div className="p-6 mb-8" style={{ background: '#f0f5ff' }}>
                 <p className="sz-h text-3xl font-bold mb-3" style={{ color: BRAND_DARK }}>Hello I am Montserrat</p>
                 <p className="sz-h text-2xl font-light mb-3" style={{ color: BRAND_DARK }}>Hello I am Montserrat</p>
                 <p className="sz-h text-sm" style={{ color: `${BRAND_DARK}88` }}>Hello I am Montserrat</p>
@@ -625,7 +599,7 @@ const SunZenithBrandGuideline: React.FC = () => {
             </motion.div>
 
             {/* Source Sans Pro */}
-            <motion.div {...fadeInUp} transition={{ delay: 0.2 } as any} className="p-10 rounded-2xl" style={{ background: '#ffffff' }}>
+            <motion.div {...fadeInUp} transition={{ delay: 0.2 } as any} className="p-10" style={{ background: '#ffffff' }}>
               <div className="flex items-center gap-3 mb-10">
                 <div className="h-10 w-1 rounded-full" style={{ background: BRAND_ORANGE }} />
                 <div>
@@ -633,7 +607,7 @@ const SunZenithBrandGuideline: React.FC = () => {
                   <h3 className="sz-bd text-5xl font-light" style={{ color: BRAND_DARK }}>Source Sans Pro</h3>
                 </div>
               </div>
-              <div className="p-6 rounded-xl mb-8" style={{ background: '#fff8f0' }}>
+              <div className="p-6 mb-8" style={{ background: '#fff8f0' }}>
                 <p className="sz-bd text-3xl font-semibold mb-3" style={{ color: BRAND_DARK }}>Hello I am Source Sans</p>
                 <p className="sz-bd text-2xl font-light mb-3" style={{ color: BRAND_DARK }}>Hello I am Source Sans</p>
                 <p className="sz-bd text-sm" style={{ color: `${BRAND_DARK}88` }}>Hello I am Source Sans Pro</p>
@@ -655,7 +629,7 @@ const SunZenithBrandGuideline: React.FC = () => {
           </div>
 
           {/* Type scale dark panel */}
-          <motion.div {...fadeInUp} transition={{ delay: 0.3 } as any} className="mt-16 p-10 rounded-2xl" style={{ background: BRAND_DARK }}>
+          <motion.div {...fadeInUp} transition={{ delay: 0.3 } as any} className="mt-16 p-10" style={{ background: BRAND_DARK }}>
             <p className="sz-bd text-xs tracking-[0.5em] uppercase mb-10" style={{ color: BRAND_ORANGE }}>Type Scale</p>
             <div className="space-y-4">
               {[
@@ -687,7 +661,7 @@ const SunZenithBrandGuideline: React.FC = () => {
             <span className="text-xs tracking-[0.5em] uppercase mb-4 block sz-bd font-semibold" style={{ color: BRAND_ORANGE }}>Application</span>
             <h2 className="text-5xl md:text-7xl font-bold sz-h tracking-tight text-white">Brand in Action</h2>
           </motion.div>
-          <motion.div {...scaleIn} className="relative overflow-hidden rounded-2xl group">
+          <motion.div {...scaleIn} className="relative overflow-hidden group">
             <img src={brand1} alt="SunZenith Brand Application" className="w-full h-auto object-cover transition-transform duration-[2.5s] ease-out group-hover:scale-105" />
             <div className="absolute inset-0 group-hover:bg-transparent transition-all duration-1000"
               style={{ background: 'rgba(0,0,0,0.15)' }} />

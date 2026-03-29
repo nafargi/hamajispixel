@@ -36,66 +36,68 @@ const AxerioBrandGuideline: React.FC = () => {
   return (
     <div className="bg-[#050505] text-white min-h-screen selection:bg-white selection:text-black overflow-x-hidden pt-20">
       
-      {/* 1. About the Brand */}
-      <section className="min-h-screen w-full flex flex-col items-center justify-center px-6 md:px-24 py-32 relative text-center">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] as any }}
-          className="max-w-5xl"
-        >
-          <p className="text-xs tracking-[0.6em] uppercase mb-12 text-white/40 font-medium">Identity Presentation</p>
-          <h1 className="text-[15vw] md:text-[10vw] font-bold leading-none mb-10 tracking-tighter font-devil">
-            AXERIO
-          </h1>
-          <h2 className="text-xl md:text-3xl font-light mb-12 tracking-wide text-white/80 italic font-editorial">
-            “A refined expression of modern luxury in jewelry design.”
-          </h2>
-          <div className="w-[1px] h-20 bg-gradient-to-b from-white/20 to-transparent mx-auto mb-12" />
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/50 font-light leading-relaxed font-bdo">
-            Axerio is built upon the pillars of minimalism, precision, and elegance. 
-            Our brand identity reflects a commitment to structural clarity, translating 
-            the intricate geometry of luxury jewelry into a timeless visual language.
-          </p>
-        </motion.div>
+      {/* 1. CINEMATIC HERO SECTION */}
+      <section className="h-[100svh] w-full relative flex items-center justify-center overflow-hidden">
+        {/* Ultra-HD Image Background */}
+        <div className="absolute inset-0 z-0">
+          <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover object-center" alt="Axerio Tech Hero" />
+          {/* Subtle Brand Color Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-[#050505]/30 mix-blend-multiply" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl">
+          <motion.img 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            src={logoMainWhite} className="w-[120px] md:w-[150px] mb-12" alt="Axerio Logo" 
+          />
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-xl md:text-3xl text-white font-light tracking-wide leading-relaxed font-editorial italic drop-shadow-md"
+          >
+            The intersection of strength and grace. Crafting modern luxury forms.
+          </motion.p>
+        </div>
 
         <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/20"
+          animate={{ y: [0, 10, 0] }} 
+          transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/50 z-10"
         >
-          <ArrowDown size={32} strokeWidth={1} />
+          <ArrowDown size={32} strokeWidth={1.5} />
         </motion.div>
       </section>
 
-      {/* 2. Logo Concept */}
-      <section className="min-h-screen w-full flex flex-col items-center justify-center bg-white text-black px-6 md:px-24 py-32 border-y border-neutral-100">
-        <div className="max-w-6xl w-full text-center">
-          <motion.div {...fadeInUp} className="mb-24">
-            <span className="text-xs tracking-[0.4em] uppercase opacity-40 mb-6 block">The Geometry</span>
-            <h2 className="text-4xl md:text-6xl font-light tracking-tight mb-8">Logo Concept</h2>
-            <p className="max-w-2xl mx-auto text-lg text-black/60 leading-relaxed font-bdo">
-              The Axerio logo is architecturally centered around the letter “X”, 
-              drawing direct inspiration from the structural connections and delicate 
-              links found in high-end jewelry design. It represents the intersection 
-              of strength and grace.
+      {/* 2. ABOUT THE BRAND */}
+      <section className="py-32 px-6 md:px-24 bg-[#050505] text-white">
+        <motion.div {...fadeInUp} className="max-w-4xl mx-auto text-center">
+          <span className="text-xs tracking-[0.4em] uppercase text-white/50 font-bold mb-6 block">The Purpose</span>
+          <h2 className="text-3xl md:text-5xl font-light leading-tight font-editorial italic">
+            Axerio translates the intricate geometry of luxury jewelry into a timeless visual language. We design structurally pure, high-end pieces for the uncompromising modern esthete.
+          </h2>
+        </motion.div>
+      </section>
+
+      {/* 3. LOGO CONCEPT */}
+      <section className="py-32 px-6 md:px-24 bg-white text-black border-y border-neutral-100">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <motion.div {...fadeInUp}>
+            <span className="text-xs tracking-[0.4em] uppercase opacity-40 mb-6 block font-bold">Logo Concept</span>
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-8">Structural Elegance</h2>
+            <p className="text-lg text-black/60 leading-relaxed font-bdo">
+              Architecturally centered around the letter 'X', the mark draws direct inspiration from structural connections and delicate links found in fine jewelry.
             </p>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center justify-center">
-            <motion.div {...scaleIn} className="flex flex-col items-center gap-6">
-              <div className="aspect-square w-full max-w-[400px] flex items-center justify-center bg-neutral-50 rounded-sm p-12">
-                <img src={logoMainBlack} alt="Axerio Main Logo" className="w-full h-auto object-contain" />
-              </div>
-              <span className="text-[10px] tracking-[0.3em] uppercase opacity-30">Full Logotype</span>
-            </motion.div>
-            <motion.div {...scaleIn} transition={{ delay: 0.2 }} className="flex flex-col items-center gap-6">
-              <div className="aspect-square w-full max-count-[400px] flex items-center justify-center bg-neutral-50 rounded-sm p-24">
-                <img src={logoMarkBlack} alt="Axerio Symbol" className="w-full h-auto object-contain" />
-              </div>
-              <span className="text-[10px] tracking-[0.3em] uppercase opacity-30">The Connection Mark</span>
-            </motion.div>
-          </div>
+          <motion.div 
+            {...scaleIn}
+            className="flex justify-center items-center bg-neutral-50 p-24 border border-neutral-100"
+          >
+            <img src={logoMarkBlack} alt="Axerio Symbol" className="w-[150px] md:w-[200px]" />
+          </motion.div>
         </div>
       </section>
 
@@ -153,92 +155,87 @@ const AxerioBrandGuideline: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. Color System (Redesigned with Entrance Animation) */}
-      <section className="w-full bg-white py-24 px-6 md:px-24">
+      {/* 4. Color System (Redesigned with Sweep Animation) */}
+      <section className="w-full bg-[#050505] py-24 px-6 md:px-24 border-y border-white/5 overflow-hidden relative">
+        {/* Animated Scanner Sweeps */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+          <motion.div 
+            className="absolute top-0 bottom-0 left-0 w-[20vw] bg-gradient-to-r from-transparent via-[#ffffff]/5 to-transparent mix-blend-screen"
+            style={{ filter: 'blur(10px)', willChange: 'transform' }}
+            animate={{ x: ['-100vw', '150vw'] }}
+            transition={{ duration: 7, repeat: Infinity, ease: 'linear' }}
+          />
+          <motion.div 
+            className="absolute top-0 bottom-0 left-0 w-[10vw] bg-gradient-to-r from-transparent via-[#ffffff]/10 to-transparent mix-blend-screen"
+            style={{ filter: 'blur(20px)', willChange: 'transform', transform: 'skewX(-20deg)' }}
+            animate={{ x: ['-50vw', '180vw'] }}
+            transition={{ duration: 11, repeat: Infinity, ease: 'linear', delay: 2 }}
+          />
+        </div>
+
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] as any }}
-          className="max-w-7xl mx-auto"
+          className="max-w-7xl mx-auto relative z-10"
         >
-          {/* Header specs from image */}
-          <div className="flex justify-between items-start mb-16 border-t border-black/10 pt-8 text-black/40 font-bdo text-[10px] tracking-widest uppercase">
+          {/* Header specs */}
+          <div className="flex justify-between items-start mb-16 border-t border-white/10 pt-8 text-white/40 font-bdo text-[10px] tracking-widest uppercase">
             <div>
               Topic — 3.1<br />
               Page no. — 17
             </div>
-            <div className="text-right font-bold text-black">
+            <div className="text-right font-bold text-white">
               Color Palette<br />
               Colors
             </div>
           </div>
 
-          {/* Main Color Split with staggered entrance */}
-          <div className="grid grid-cols-1 md:grid-cols-2 min-h-[500px] border border-black/5 overflow-hidden rounded-sm">
-            {/* White Side */}
-            <motion.div 
-              initial={{ x: -100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] as any }}
-              className="bg-white p-12 md:p-20 flex flex-col justify-between"
-            >
-              <h3 className="text-6xl md:text-8xl font-light text-black font-bdo tracking-tight mb-12">White</h3>
-              <div className="grid grid-cols-2 gap-8 text-[11px] font-bdo tracking-[0.2em] text-black/40">
-                <div>
-                  C: 0<br />M: 0<br />Y: 0<br />K: 0
-                </div>
-                <div>
-                  R: 255<br />G: 255<br />B: 255
-                </div>
-              </div>
-            </motion.div>
-            {/* Black Side */}
-            <motion.div 
-              initial={{ x: 100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] as any }}
-              className="bg-black p-12 md:p-20 flex flex-col justify-between text-white border-l border-black/5"
-            >
-              <h3 className="text-6xl md:text-8xl font-light font-bdo tracking-tight mb-12">Black</h3>
-              <div className="grid grid-cols-2 gap-8 text-[11px] font-bdo tracking-[0.2em] text-white/40">
-                <div>
-                  C: 0<br />M: 0<br />Y: 0<br />K: 100
-                </div>
-                <div>
-                  R: 255<br />G: 255<br />B: 255
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 min-h-[400px]">
+            {/* Alabaster */}
+            <div className="bg-white p-12 md:p-16 flex flex-col justify-between text-black relative overflow-hidden group">
+               <motion.div className="absolute inset-x-0 h-[200%] bg-gradient-to-b from-transparent via-black/5 to-transparent -skew-y-12"
+                 animate={{ y: ['-100%', '100%'] }} transition={{ duration: 8, repeat: Infinity, ease: 'linear' }} />
+               <h3 className="text-3xl md:text-5xl font-light tracking-tight mb-12 uppercase relative z-10 font-editorial italic">Alabaster</h3>
+               <div className="text-[10px] tracking-[0.2em] opacity-40 flex justify-between relative z-10 font-bdo">
+                 <span>#FFFFFF</span>
+                 <span>RGB 255 255 255</span>
+               </div>
+            </div>
+            
+            {/* Obsidian */}
+            <div className="bg-[#111111] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
+               <motion.div className="absolute inset-x-0 h-[200%] bg-gradient-to-b from-transparent via-white/5 to-transparent -skew-y-12"
+                 animate={{ y: ['-100%', '100%'] }} transition={{ duration: 10, repeat: Infinity, ease: 'linear', delay: 1 }} />
+               <h3 className="text-3xl md:text-5xl font-light tracking-tight mb-12 uppercase relative z-10 font-editorial italic">Obsidian</h3>
+               <div className="text-[10px] tracking-[0.2em] opacity-40 flex justify-between relative z-10 font-bdo">
+                 <span>#111111</span>
+                 <span>RGB 17 17 17</span>
+               </div>
+            </div>
 
-          {/* Gray Tints Below with staggered entrance */}
-          <div className="mt-px flex flex-col gap-px bg-black/5">
-            {[20, 40, 60, 80].map((percent, i) => (
-              <motion.div 
-                key={percent} 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.6 + (i * 0.1), ease: [0.22, 1, 0.36, 1] as any }}
-                className="grid grid-cols-2 h-20 md:h-28"
-              >
-                <div 
-                  className="relative group transition-all duration-500 hover:flex-[1.2] cursor-pointer"
-                  style={{ backgroundColor: `rgba(0,0,0, ${percent/100})` }}
-                >
-                  <span className="absolute left-6 top-1/2 -translate-y-1/2 text-[10px] font-bdo font-bold opacity-30">{percent}%</span>
-                </div>
-                <div 
-                  className="relative group transition-all duration-500 hover:flex-[1.2] cursor-pointer"
-                  style={{ backgroundColor: `rgba(0,0,0, ${percent/100})` }}
-                >
-                  <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-bdo font-bold text-white/30">{percent}%</span>
-                </div>
-              </motion.div>
-            ))}
+            {/* Graphite */}
+            <div className="bg-[#444444] p-12 md:p-16 flex flex-col justify-between text-white relative overflow-hidden group">
+               <motion.div className="absolute inset-x-0 h-[200%] bg-gradient-to-b from-transparent via-white/5 to-transparent -skew-y-12"
+                 animate={{ y: ['-100%', '100%'] }} transition={{ duration: 12, repeat: Infinity, ease: 'linear', delay: 2 }} />
+               <h3 className="text-3xl md:text-5xl font-light tracking-tight mb-12 uppercase relative z-10 font-editorial italic">Graphite</h3>
+               <div className="text-[10px] tracking-[0.2em] opacity-40 flex justify-between relative z-10 font-bdo">
+                 <span>#444444</span>
+                 <span>RGB 68 68 68</span>
+               </div>
+            </div>
+
+            {/* Silver */}
+            <div className="bg-[#C0C0C0] p-12 md:p-16 flex flex-col justify-between text-black relative overflow-hidden group">
+               <motion.div className="absolute inset-x-0 h-[200%] bg-gradient-to-b from-transparent via-white/20 to-transparent -skew-y-12"
+                 animate={{ y: ['-100%', '100%'] }} transition={{ duration: 9, repeat: Infinity, ease: 'linear', delay: 0.5 }} />
+               <h3 className="text-3xl md:text-5xl font-light tracking-tight mb-12 uppercase relative z-10 font-editorial italic">Silver</h3>
+               <div className="text-[10px] tracking-[0.2em] opacity-40 flex justify-between relative z-10 font-bdo">
+                 <span>#C0C0C0</span>
+                 <span>RGB 192 192 192</span>
+               </div>
+            </div>
           </div>
         </motion.div>
       </section>
@@ -330,7 +327,7 @@ const AxerioBrandGuideline: React.FC = () => {
                 key={i}
                 {...scaleIn}
                 transition={{ delay: i * 0.1, duration: 1.2 }}
-                className={`relative overflow-hidden rounded-sm group ${i % 3 === 0 ? 'md:col-span-2 aspect-[16/9]' : 'aspect-square'}`}
+                className={`relative overflow-hidden group ${i % 3 === 0 ? 'md:col-span-2 aspect-[16/9]' : 'aspect-square'}`}
               >
                 <img 
                   src={img} 

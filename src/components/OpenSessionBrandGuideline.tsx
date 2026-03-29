@@ -24,90 +24,61 @@ const OpenSessionBrandGuideline = () => {
   return (
     <div ref={containerRef} className="bg-[#fcfcfc] text-[#111] font-inter overflow-hidden">
       
-      {/* 1. Hero */}
-      <section className="h-screen w-full relative flex flex-col justify-end p-8 md:p-16">
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
-          transition={{ duration: 2 }}
-          className="absolute inset-0 z-0 bg-[#E9E4F0]"
-        >
-          <motion.div 
-            style={{ y: yParallax }} 
-            className="absolute -right-[20%] -top-[20%] w-[80vw] h-[80vw] bg-[#6E44A7] rounded-full opacity-10 blur-[150px]"
-          />
-        </motion.div>
+      {/* 1. CINEMATIC HERO SECTION */}
+      <section className="h-[100svh] w-full relative flex items-center justify-center overflow-hidden bg-[#1978A3]">
+        {/* Ultra-HD Image Background */}
+        <div className="absolute inset-0 z-0">
+          <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover object-center" alt="Open Session Cinematic Hero" />
+          {/* Subtle Brand Color Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-[#6E44A7]/60 mix-blend-multiply" />
+        </div>
         
-        <div className="relative z-10 w-full flex flex-col md:flex-row justify-between items-end gap-12">
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl">
+          <motion.img 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            src={verticalLogoWhite} className="w-[120px] md:w-[150px] mb-12" alt="Open Session Minimal Logo" 
+          />
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-xl md:text-3xl text-white font-light tracking-wide leading-relaxed drop-shadow-md"
           >
-            <img src={horizontalLogo} alt="Open Session" className="w-[280px] md:w-[600px] mb-8" />
-          </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            transition={{ duration: 1.5, delay: 0.5 }}
-            className="text-right"
-          >
-            <p className="text-[10px] tracking-[0.4em] uppercase font-bold text-[#6E44A7]">Brand Identity</p>
-            <p className="text-[10px] tracking-widest uppercase opacity-40 mt-2">V2.0 / 2023</p>
-          </motion.div>
+            Connect. Heal. Grow. A safe space for transformational therapy.
+          </motion.p>
         </div>
       </section>
 
-      {/* 2. Logo Definition Concept */}
-      <section className="py-32 md:py-48 px-8 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-stretch max-w-[1800px] mx-auto">
-        {/* Left Side: Concept Text */}
-        <div className="lg:col-span-6 bg-white rounded-[2rem] p-12 md:p-16 shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-black/5 flex flex-col justify-center">
-          <div className="space-y-12 pr-4 md:pr-8">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h3 className="text-3xl font-bold font-montserrat mb-6 text-[#111]">The Two People</h3>
-              <p className="text-lg font-light leading-relaxed text-[#111]/80 mb-4">
-                The logo shows <strong className="font-semibold text-[#111]">two figures</strong> connecting with each other.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-lg font-light leading-relaxed text-[#111]/80 marker:text-[#111]/40">
-                <li>It represents the partnership between the therapist and the person seeking help.</li>
-                <li>One person is reaching up and the other is reaching down, showing how they support each other during a session.</li>
-              </ul>
-            </motion.div>
+      {/* 2. ABOUT THE BRAND */}
+      <section className="py-32 px-6 md:px-24 bg-[#050505] text-white">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }} className="max-w-4xl mx-auto text-center">
+          <span className="text-xs tracking-[0.4em] uppercase text-[#F9832D] font-bold mb-6 block">The Purpose</span>
+          <h2 className="text-3xl md:text-5xl font-light leading-tight">
+            Open Session removes the barriers to mental health care, fostering an honest, supportive environment where personal healing naturally occurs.
+          </h2>
+        </motion.div>
+      </section>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-              <h3 className="text-3xl font-bold font-montserrat mb-6 text-[#111]">The "O" and "S" Shapes</h3>
-              <p className="text-lg font-light leading-relaxed text-[#111]/80 mb-4">
-                The way the two people are positioned creates two specific letters:
-              </p>
-              <ul className="list-disc pl-6 space-y-4 text-lg font-light leading-relaxed text-[#111]/80 marker:text-[#E73539] marker:text-sm">
-                <li>
-                  <strong className="font-semibold text-[#111]">The "O":</strong> The two figures join together to form a circle, which represents the word "Open." This circle creates a "safe space" where everything is contained and private.
-                </li>
-                <li className="marker:text-[#F9832D]">
-                  <strong className="font-semibold text-[#111]">The "S":</strong> If you look at the <strong className="font-semibold text-[#111]">flow of the two bodies</strong>, they create a soft curve that looks like an "S" for "Session." This shows that the session is a smooth, continuous process of talking and healing.
-                </li>
-              </ul>
-            </motion.div>
-
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
-              className="text-lg font-light leading-relaxed text-[#111]/80 italic border-l-[3px] border-[#6E44A7] pl-6 py-2"
-            >
-              In short: The logo uses two people to build the letters O and S, showing that a "session" is a "connection" between two people.
-            </motion.p>
-          </div>
-        </div>
-        
-        {/* Right Side: Visuals */}
-        <div className="lg:col-span-6 flex flex-col gap-8 h-full">
+      {/* 3. LOGO CONCEPT */}
+      <section className="py-32 px-6 md:px-24 bg-white text-[#111] border-y border-black/5">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }}>
+            <span className="text-xs tracking-[0.4em] uppercase opacity-40 mb-6 block font-bold">Logo Concept</span>
+            <h2 className="text-4xl font-light tracking-tight mb-8">Connection & Session</h2>
+            <p className="text-lg text-[#111]/80 leading-relaxed font-light">
+              Two figures unite—one reaching up, one reaching down—forming an 'O' for Open and a flowing 'S' for Session. It physically illustrates the supportive connection between therapist and client.
+            </p>
+          </motion.div>
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="w-full h-full min-h-[500px] bg-[#fdfdfd] rounded-[2rem] flex items-center justify-center p-16 border border-black/5 shadow-[inset_0_0_100px_rgba(0,0,0,0.02)]"
+            className="flex justify-center items-center bg-[#fdfdfd] p-16 border border-black/5"
           >
-            <img src={mainLogoMark} alt="Logo Mark Connection" className="w-[60%] drop-shadow-xl hover:scale-105 transition-transform duration-700" />
+            <img src={mainLogoMark} alt="Open Session Symbol" className="w-[150px] md:w-[250px]" />
           </motion.div>
         </div>
       </section>
@@ -154,32 +125,68 @@ const OpenSessionBrandGuideline = () => {
       </section>
 
       {/* 4. Color Swatches (Gradient Steps) */}
-      <section className="py-32 md:py-48 px-8 md:px-16 w-full bg-[#fcfcfc]">
+      <section className="py-32 md:py-48 px-8 md:px-16 w-full bg-[#fcfcfc] relative overflow-hidden">
+        {/* Animated Background Flow */}
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-20 flex items-center justify-center mix-blend-multiply">
+            <motion.div 
+              className="absolute w-[60vw] h-[60vw] rounded-full bg-[#6E44A7]"
+              style={{ filter: 'blur(100px)' }}
+              animate={{ x: [0, 100, -50, 0], y: [0, -50, 100, 0], scale: [1, 1.2, 0.9, 1] }} transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+            />
+            <motion.div 
+              className="absolute w-[50vw] h-[50vw] rounded-full bg-[#F9832D]"
+              style={{ filter: 'blur(100px)' }}
+              animate={{ x: [0, -100, 50, 0], y: [0, 50, -100, 0], scale: [1, 1.3, 0.8, 1] }} transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+            />
+            <motion.div 
+              className="absolute w-[70vw] h-[70vw] rounded-full bg-[#1978A3]"
+              style={{ filter: 'blur(120px)' }}
+              animate={{ x: [50, -50, 50], y: [50, 50, -50], scale: [1, 1.5, 1], opacity: [0.5, 0.8, 0.5] }} transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
+            />
+        </div>
+
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-[1800px] mx-auto"
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] as any }}
+          className="max-w-[1800px] mx-auto relative z-10"
         >
-          <div className="flex gap-[1%] w-full aspect-[1/1] sm:aspect-[2/1] md:aspect-[2.5/1]">
-            {[
-              { hex: '#6E44A7', span: 2 },
-              { hex: '#F9832D', span: 1 },
-              { hex: '#1978A3', span: 1 },
-              { hex: '#E73539', span: 1 },
-              { hex: '#0F172A', span: 1 }
-            ].map((col, i) => (
-              <div key={i} className={`flex flex-col h-full bg-white ${col.span === 2 ? 'w-[33.33%]' : 'w-[16.66%]'} group`}>
-                {[...Array(10)].map((_, idx) => (
-                  <div 
-                    key={idx} 
-                    className="flex-1 w-full transition-opacity duration-500 ease-out"
-                    style={{ backgroundColor: col.hex, opacity: 1 - (idx * 0.09) }}
-                  />
-                ))}
-              </div>
-            ))}
+          <div className="mb-24 flex justify-between items-end">
+             <h2 className="text-4xl md:text-6xl font-light font-montserrat text-[#111] tracking-tight">Empathy Palette</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-px bg-black/10 min-h-[400px]">
+             {/* Therapist Purple */}
+             <div className="bg-[#6E44A7] p-8 md:p-12 flex flex-col justify-end text-white relative overflow-hidden group mix-blend-normal">
+                <motion.div className="absolute inset-0 bg-white/10" animate={{opacity:[0,0.3,0]}} transition={{duration:8,repeat:Infinity,ease:'easeInOut'}} />
+                <h3 className="text-2xl font-light tracking-tight mb-2 relative z-10">Purple</h3>
+                <span className="text-xs font-light tracking-widest relative z-10 opacity-70">#6E44A7</span>
+             </div>
+             {/* Safe Space Teal */}
+             <div className="bg-[#1978A3] p-8 md:p-12 flex flex-col justify-end text-white relative overflow-hidden group mix-blend-normal">
+                <motion.div className="absolute inset-0 bg-white/10" animate={{opacity:[0,0.3,0]}} transition={{duration:9,repeat:Infinity,ease:'easeInOut',delay:1}} />
+                <h3 className="text-2xl font-light tracking-tight mb-2 relative z-10">Teal</h3>
+                <span className="text-xs font-light tracking-widest relative z-10 opacity-70">#1978A3</span>
+             </div>
+             {/* Warm Human Orange */}
+             <div className="bg-[#F9832D] p-8 md:p-12 flex flex-col justify-end text-white relative overflow-hidden group mix-blend-normal">
+                <motion.div className="absolute inset-0 bg-white/10" animate={{opacity:[0,0.3,0]}} transition={{duration:10,repeat:Infinity,ease:'easeInOut',delay:2}} />
+                <h3 className="text-2xl font-light tracking-tight mb-2 relative z-10">Orange</h3>
+                <span className="text-xs font-light tracking-widest relative z-10 opacity-70">#F9832D</span>
+             </div>
+             {/* Emotional Red */}
+             <div className="bg-[#E73539] p-8 md:p-12 flex flex-col justify-end text-white relative overflow-hidden group mix-blend-normal">
+                <motion.div className="absolute inset-0 bg-white/10" animate={{opacity:[0,0.3,0]}} transition={{duration:11,repeat:Infinity,ease:'easeInOut',delay:3}} />
+                <h3 className="text-2xl font-light tracking-tight mb-2 relative z-10">Red</h3>
+                <span className="text-xs font-light tracking-widest relative z-10 opacity-70">#E73539</span>
+             </div>
+             {/* Deep Navy */}
+             <div className="bg-[#0F172A] p-8 md:p-12 flex flex-col justify-end text-white relative overflow-hidden group mix-blend-normal">
+                <motion.div className="absolute inset-0 bg-white/10" animate={{opacity:[0,0.2,0]}} transition={{duration:12,repeat:Infinity,ease:'easeInOut',delay:4}} />
+                <h3 className="text-2xl font-light tracking-tight mb-2 relative z-10">Navy</h3>
+                <span className="text-xs font-light tracking-widest relative z-10 opacity-70">#0F172A</span>
+             </div>
           </div>
         </motion.div>
       </section>
@@ -263,7 +270,7 @@ const OpenSessionBrandGuideline = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                className="md:col-span-12 rounded-[2rem] overflow-hidden group shadow-[0_20px_60px_rgba(0,0,0,0.1)]"
+                className="md:col-span-12 overflow-hidden group"
              >
                 <img src={slide49} alt="Hero App" className="w-full h-[50vh] md:h-[70vh] object-cover transition-transform duration-[4s] hover:scale-105" />
              </motion.div>
@@ -273,7 +280,7 @@ const OpenSessionBrandGuideline = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-                className="md:col-span-6 rounded-[2rem] overflow-hidden group shadow-[0_20px_60px_rgba(0,0,0,0.1)]"
+                className="md:col-span-6 overflow-hidden group"
              >
                 <img src={slide50} alt="Stationery" className="w-full h-[40vh] md:h-[60vh] object-cover transition-transform duration-[4s] hover:scale-105" />
              </motion.div>
@@ -283,7 +290,7 @@ const OpenSessionBrandGuideline = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                className="md:col-span-6 rounded-[2rem] overflow-hidden group shadow-[0_20px_60px_rgba(0,0,0,0.1)]"
+                className="md:col-span-6 overflow-hidden group"
              >
                 <img src={slide54} alt="Digital Tool" className="w-full h-[40vh] md:h-[60vh] object-cover transition-transform duration-[4s] hover:scale-105" />
              </motion.div>
