@@ -3,26 +3,16 @@ import { Link } from "react-router-dom";
 import { logos } from "@/data/logos";
 
 const MarqueeRow = ({ items, direction = 1, speed = 60 }) => (
-  <div className="relative overflow-hidden ">
-    {/* TOP GRADIENT FLOW LINE */}
-    <motion.div
-      className="absolute top-0 left-0 h-[0.8px]"
-      style={{
-        background: "linear-gradient(90deg, transparent 0%, #ff8533 50%, transparent 100%)",
-        backgroundSize: "200% 100%",
-      }}
-      animate={{ backgroundPosition: ["0% 0%", "200% 0%"] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-    />
+  <div className="relative overflow-hidden border-t border-black">
 
     {/* LOGO STRIP */}
     <motion.div
       animate={{ x: direction > 0 ? ["0%", "-50%"] : ["-50%", "0%"] }}
       transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
-      className="flex w-max "
+      className="flex w-max"
     >
       {[...items, ...items].map((logo, i) => (
-        <div key={i} className="flex items-center justify-center">
+        <div key={i} className="flex items-center justify-center border-r border-black">
           <img
             src={logo.image}
             alt={logo.name}
@@ -31,17 +21,6 @@ const MarqueeRow = ({ items, direction = 1, speed = 60 }) => (
         </div>
       ))}
     </motion.div>
-
-    {/* BOTTOM GRADIENT FLOW LINE */}
-    <motion.div
-      className="absolute bottom-0 left-0 w-full h-[0.8px]"
-      style={{
-        background: "linear-gradient(90deg, transparent 0%, #ff8533 50%, transparent 100%)",
-        backgroundSize: "200% 100%",
-      }}
-      animate={{ backgroundPosition: ["200% 0%", "0% 0%"] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-    />
   </div>
 );
 
@@ -53,27 +32,27 @@ const LogoCollection = () => {
 
       {/* HEADER */}
       <div className="mb-28 text-center">
-        <span className="text-primary text-[9px] tracking-[0.6em] uppercase font-bold block mb-6">
+        <span className="text-white/50 text-[9px] tracking-[0.6em] uppercase font-bold block mb-6">
           Strategic Partnerships
         </span>
 
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tightest text-white uppercase leading-none">
-          TRUSTED BY <br />
-          <span className="text-white/20 italic font-light">
+        <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold font-heading uppercase tracking-tightest">
+          <span className="text-white">TRUSTED BY </span> 
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-400 to-neutral-600 italic font-editorial font-light whitespace-normal sm:whitespace-nowrap">
             GLOBAL BRANDS
           </span>
         </h2>
       </div>
 
       {/* LOGO ROWS WITH REAL EDGE FADE */}
-      <div className="relative overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6 relative overflow-hidden">
         {/* LEFT FADE */}
         <div className="pointer-events-none absolute left-0 top-0 h-full w-96 z-20 bg-gradient-to-r from-black to-transparent" />
         {/* RIGHT FADE */}
         <div className="pointer-events-none absolute right-0 top-0 h-full w-96 z-20 bg-gradient-to-l from-black to-transparent" />
 
-        <MarqueeRow items={displayLogos.slice(0, 16)} direction={1} speed={55} />
-        <MarqueeRow items={displayLogos.slice(16, 32)} direction={-1} speed={65} />
+        <MarqueeRow items={displayLogos.slice(0, 16)} direction={1} speed={200} />
+        <MarqueeRow items={displayLogos.slice(16, 32)} direction={-1} speed={220} />
       </div>
 
       {/* CTA */}
@@ -83,7 +62,7 @@ const LogoCollection = () => {
           className="group relative px-16 py-6 border border-white/10 text-white text-[12px] tracking-[0.5em] uppercase font-bold overflow-hidden"
         >
           {/* hover fill */}
-          <span className="absolute inset-0 bg-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></span>
+          <span className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></span>
 
           <span className="relative z-10 group-hover:text-black transition duration-500">
             Explore All Logos

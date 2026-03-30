@@ -15,11 +15,11 @@ const colorMap: Record<TileColor, string> = {
 };
 
 const MiniLogoGroup = ({ logosArr, color }: { logosArr: any[]; color: TileColor }) => (
-  <div className={`${colorMap[color]} grid grid-cols-2 grid-rows-2 aspect-square gap-[2px] p-[2px] bg-white/10`}>
+  <div className={`${colorMap[color]} grid grid-cols-2 grid-rows-2 aspect-square gap-[1px] p-[1px] bg-white/5`}>
     {logosArr.slice(0, 4).map((logo, i) => (
-      <div key={i} className="relative group overflow-hidden bg-black">
+      <div key={i} className="relative group overflow-hidden bg-[#0A0A0A]">
         <div
-          className="w-full h-full p-6 transition-all duration-700  group-hover:scale-105"
+          className="w-full h-full p-2 transition-transform duration-700"
           style={{
             backgroundImage: `url(${logo.image})`,
             backgroundSize: 'contain',
@@ -27,7 +27,6 @@ const MiniLogoGroup = ({ logosArr, color }: { logosArr: any[]; color: TileColor 
             backgroundPosition: 'center'
           }}
         />
-        <div className="absolute inset-0  group-hover:bg-white/5 transition-colors duration-700 pointer-events-none" />
       </div>
     ))}
   </div>
@@ -43,16 +42,15 @@ const LogoTile = ({ logo, color, size = "1x1" }: { logo: any; color: TileColor; 
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />
       <div
-        className="absolute inset-0 transition-all duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100"
+        className="absolute inset-[8%] transition-transform duration-700"
         style={{
           backgroundImage: `url(${logo.image})`,
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
         }}
       />
-      <div className="absolute inset-0  transition-colors duration-700 pointer-events-none" />
     </motion.div>
   );
 };
@@ -67,13 +65,13 @@ const ContentTile = ({ title, text, type }: { title: string; text: string; type:
   };
 
   return (
-    <div className={`${spanMap[type]} bg-[#050505] p-10 flex flex-col justify-center border border-white/5 relative overflow-hidden group hover:border-primary/30 transition-colors duration-500`}>
+    <div className={`${spanMap[type]} bg-[#050505] p-6 lg:p-10 flex flex-col justify-center border border-white/5 relative overflow-hidden group hover:border-white/20 transition-colors duration-500`}>
       <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
       <div className="absolute -inset-full duration-700 pointer-events-none" />
       <motion.h3
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
-        className="text-white text-3xl lg:text-5xl font-bold uppercase mb-6 tracking-tighter leading-[0.85] font-heading relative z-10"
+        className="text-white text-2xl lg:text-4xl font-bold uppercase mb-4 tracking-tighter leading-[0.85] font-heading relative z-10"
       >
         {title}
       </motion.h3>
@@ -81,7 +79,7 @@ const ContentTile = ({ title, text, type }: { title: string; text: string; type:
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="text-primary text-[10px] lg:text-xs leading-relaxed uppercase tracking-[0.3em] font-bold max-w-[90%] relative z-10"
+        className="text-white/40 text-[9px] lg:text-[11px] leading-relaxed uppercase tracking-[0.3em] font-bold max-w-[95%] relative z-10"
       >
         {text}
       </motion.p>
@@ -91,7 +89,7 @@ const ContentTile = ({ title, text, type }: { title: string; text: string; type:
 
 const EditorialBlockA = ({ items }: { items: any[] }) => (
   <>
-    <LogoTile logo={items[0]} color="purple" />
+    <LogoTile logo={items[0]} color="purple" size="2x2" />
     <LogoTile logo={items[1]} color="white" />
     <LogoTile logo={items[2]} color="cobalt" />
     <LogoTile logo={items[3]} color="electric" />
@@ -102,7 +100,7 @@ const EditorialBlockA = ({ items }: { items: any[] }) => (
     <LogoTile logo={items[7]} color="purple" />
     <LogoTile logo={items[8]} color="white" />
     <MiniLogoGroup logosArr={items.slice(9, 13)} color="electric" />
-    <LogoTile logo={items[13]} color="cobalt" />
+    <LogoTile logo={items[13]} color="cobalt" size="2x2" />
     <LogoTile logo={items[14]} color="purple" />
   </>
 );
@@ -110,7 +108,7 @@ const EditorialBlockA = ({ items }: { items: any[] }) => (
 const EditorialBlockB = ({ items }: { items: any[] }) => (
   <>
     <ContentTile type="wide" title="Synthesized Essence" text="Engineering minimal identities that synthesize brand essence into timeless visual marks for modern systems." />
-    <LogoTile logo={items[0]} color="electric" />
+    <LogoTile logo={items[0]} color="electric" size="2x2" />
     <LogoTile logo={items[1]} color="white" />
     <LogoTile logo={items[2]} color="electric" />
     <LogoTile logo={items[3]} color="purple" />
@@ -118,7 +116,7 @@ const EditorialBlockB = ({ items }: { items: any[] }) => (
     <LogoTile logo={items[5]} color="cobalt" />
     <ContentTile type="vertical" title="Iconic Purity" text="The art of subtraction: crafting essential symbols that speak volumes through minimal, powerful form." />
     <LogoTile logo={items[6]} color="purple" />
-    <LogoTile logo={items[7]} color="white" />
+    <LogoTile logo={items[7]} color="white" size="2x2" />
     <LogoTile logo={items[8]} color="electric" />
     <LogoTile logo={items[9]} color="cobalt" />
     <LogoTile logo={items[10]} color="purple" />
@@ -133,7 +131,7 @@ const EditorialBlockC = ({ items }: { items: any[] }) => (
   <>
     <LogoTile logo={items[0]} color="electric" />
     <LogoTile logo={items[1]} color="purple" />
-    <LogoTile logo={items[2]} color="white" />
+    <LogoTile logo={items[2]} color="white" size="2x2" />
     <LogoTile logo={items[3]} color="cobalt" />
     <ContentTile type="horizontal" title="Visual Distillation" text="Your brand's DNA, perfectly distilled into a single, powerful mark that resonates across all platforms." />
     <LogoTile logo={items[4]} color="white" />
@@ -145,7 +143,7 @@ const EditorialBlockC = ({ items }: { items: any[] }) => (
     <LogoTile logo={items[9]} color="purple" />
     <LogoTile logo={items[10]} color="cobalt" />
     <MiniLogoGroup logosArr={items.slice(11, 15)} color="purple" />
-    <div className="bg-[#0A0A0A] aspect-square border border-white/5" />
+    <LogoTile logo={items[11]} color="electric" size="2x2" />
     <div className="bg-[#0A0A0A] aspect-square border border-white/5" />
   </>
 );
@@ -190,10 +188,10 @@ const EditorialShowcase = () => {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex flex-col items-center gap-4 mb-6"
+            className="flex flex-col items-center gap-4  mb-6"
           >
-            <div className="w-[1px] h-16 bg-gradient-to-b from-primary/0 to-primary" />
-            <span className="text-primary text-[10px] tracking-[0.8em] uppercase font-bold">
+            <div className="w-[1px] h-16 bg-gradient-to-b from-white/0 to-white/60" />
+            <span className="text-white/60 text-[10px] tracking-[0.8em] uppercase font-bold">
               STRATEGIC VISUAL ARCHITECTURE
             </span>
           </motion.div>
@@ -214,7 +212,7 @@ const EditorialShowcase = () => {
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-                className="block text-primary drop-shadow-[0_0_40px_rgba(255,133,51,0.3)]"
+                className="block text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.1)]"
               >
                 crafting minimal
               </motion.span>
@@ -240,7 +238,7 @@ const EditorialShowcase = () => {
 
       <div className="py-4 px-6 lg:px-24 relative z-10">
         <main className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 border border-white/5 shadow-2xl">
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-[1px] border border-white/5 shadow-2xl">
             {Array.from({ length: Math.ceil(allLogos.length / 15) }, (_, i) => {
               const chunk = allLogos.slice(i * 15, (i + 1) * 15);
               const type = i % 3;

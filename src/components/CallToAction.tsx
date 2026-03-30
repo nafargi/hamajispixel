@@ -17,7 +17,7 @@ const CallToAction = () => {
           </h2>
           
           <div className="mt-16 flex flex-col items-center justify-center gap-8">
-            <a href="mailto:nafargidamena@gmail.com" className="inline-block px-12 py-6 bg-primary text-black font-bold text-sm tracking-widest uppercase transition-all rounded-full hover:scale-110 active:scale-95 shadow-[0_0_40px_rgba(255,107,53,0.3)]">
+            <a href="mailto:nafargidamena@gmail.com" className="inline-block px-12 py-6 gleaming-button font-bold text-sm tracking-widest uppercase rounded-full">
               Start the dialogue
             </a>
           </div>

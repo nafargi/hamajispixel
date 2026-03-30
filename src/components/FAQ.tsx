@@ -57,11 +57,14 @@ const FAQ = () => {
             viewport={{ once: true }}
             className="md:w-1/3 flex flex-col items-start"
           >
-            <span className="text-primary text-[10px] tracking-[0.3em] font-bold uppercase mb-6 block border border-primary/20 bg-primary/10 px-4 py-2 rounded-full">
+            <span className="text-white/60 text-[10px] tracking-[0.3em] font-bold uppercase mb-6 block border border-white/10 bg-white/5 px-4 py-2 rounded-full w-max">
               Clarity & Strategy
             </span>
-            <h2 className="text-5xl md:text-7xl font-bold text-white font-heading uppercase leading-[0.9] tracking-tightest mb-6">
-              Common<br/>Inquiries
+            <h2 className="text-5xl md:text-7xl font-bold font-heading uppercase leading-[1.1] tracking-tightest mb-6">
+              <span className="text-white">Common </span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-400 to-neutral-600 italic font-editorial font-light whitespace-normal sm:whitespace-nowrap">
+                Inquiries
+              </span>
             </h2>
             <p className="text-white/40 text-lg font-light leading-relaxed max-w-sm">
               Answers to help you understand our methodology, timelines, and the strategic value we bring to every partnership.
@@ -82,7 +85,7 @@ const FAQ = () => {
                   transition={{ delay: index * 0.05 }}
                   className={`border rounded-[30px] overflow-hidden transition-all duration-500 ${
                     faq.isPro 
-                      ? isOpen ? 'bg-primary/10 border-primary/30 shadow-[0_0_30px_rgba(255,107,53,0.1)]' : 'bg-white/[0.02] border-primary/20'
+                      ? isOpen ? 'bg-white/10 border-white/30 shadow-[0_0_30px_rgba(255,255,255,0.05)]' : 'bg-white/[0.02] border-white/20'
                       : isOpen ? 'bg-white/[0.05] border-white/20' : 'bg-white/[0.02] border-white/10'
                   }`}
                 >
@@ -92,8 +95,8 @@ const FAQ = () => {
                   >
                     <div className="flex items-center gap-4 pr-6">
                       {faq.isPro ? (
-                        <div className={`w-10 h-10 flex-shrink-0 rounded-full flex items-center justify-center transition-colors duration-500 ${isOpen ? 'bg-primary text-black' : 'bg-primary/20 text-primary'}`}>
-                          <Zap size={16} className={isOpen ? 'fill-black' : 'fill-primary'} />
+                        <div className={`w-10 h-10 flex-shrink-0 rounded-full flex items-center justify-center transition-colors duration-500 ${isOpen ? 'bg-white text-black' : 'bg-white/10 text-white/80'}`}>
+                          <Zap size={16} className={isOpen ? 'fill-black' : 'fill-white/80 text-white'} />
                         </div>
                       ) : (
                         <span className={`text-[9px] font-bold tracking-[0.2em] transition-colors duration-500 ${isOpen ? 'text-white' : 'text-white/30'}`}>
@@ -101,7 +104,7 @@ const FAQ = () => {
                         </span>
                       )}
                       <h3 className={`text-lg md:text-xl font-bold font-heading transition-colors duration-500 ${
-                        faq.isPro && !isOpen ? 'text-primary' : isOpen ? 'text-white' : 'text-white/60 group-hover:text-white/90'
+                        isOpen ? 'text-white' : 'text-white/60 group-hover:text-white/90'
                       }`}>
                         {faq.question}
                       </h3>
@@ -109,7 +112,7 @@ const FAQ = () => {
                     
                     <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-500 ${
                       isOpen 
-                        ? (faq.isPro ? 'bg-primary border-primary text-black' : 'bg-white border-white text-black') 
+                        ? 'bg-white border-white text-black' 
                         : 'border-white/10 text-white/50 group-hover:border-white/30 group-hover:text-white'
                     }`}>
                       {isOpen ? <Minus size={18} /> : <Plus size={18} />}

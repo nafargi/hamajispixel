@@ -54,7 +54,7 @@ const GlowingSketches = ({ preview = false }: { preview?: boolean }) => {
                 
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <span className="text-[10px] text-cyan-300 tracking-widest uppercase mb-2 block drop-shadow-md">Luminous Form</span>
-                  <h3 className="text-xl md:text-2xl text-white font-medium tracking-wide group-hover:text-cyan-400 transition-colors drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]">
+                  <h3 className="text-xl md:text-2xl text-white font-medium tracking-wide group-hover:text-white transition-colors drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
                     {item.title}
                   </h3>
                 </div>
@@ -72,7 +72,7 @@ const GlowingSketches = ({ preview = false }: { preview?: boolean }) => {
           >
             <Link 
                to="/collection/glowing"
-               className="inline-flex items-center gap-4 border border-white/20 px-8 py-4 rounded-full text-xs tracking-widest uppercase text-white hover:border-cyan-500 hover:text-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all duration-500"
+               className="inline-flex items-center gap-4 border border-white/20 px-8 py-4 rounded-full text-xs tracking-widest uppercase text-white hover:border-white/50 hover:text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-500"
             >
               Explore Collection
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">

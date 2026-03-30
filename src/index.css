@@ -27,46 +27,42 @@
 
 @layer base {
   :root {
-    --background: 222 47% 1.5%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 100%;
 
-    --card: 222 47% 4%;
+    --card: 0 0% 4%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 222 47% 4%;
+    --popover: 0 0% 4%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 220 98% 52%;
-    /* Brand Blue #0a5cfe */
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    /* Luminous White #FFFFFF */
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 222 47% 6%;
+    --secondary: 0 0% 7%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 63%;
     /* #A1A1AA approx */
-    --muted-foreground: 0 0% 55%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 0 0% 15%;
+    --accent: 0 0% 10%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 12%;
-    /* #1F1F1F approx */
-    --input: 0 0% 12%;
-    --ring: 24 100% 60%;
+    --border: 0 0% 10%;
+    /* #1A1A1A approx */
+    --input: 0 0% 10%;
+    --ring: 0 0% 100%;
 
     --radius: 2rem;
     /* 32px */
 
     /* Custom tokens */
-    --hyper-orange: 222 100% 45%;
     --surface-elevated: 0 0% 6%;
     --text-dim: 240 5% 65%;
     /* #A1A1AA */
-    --text-subtle: 0 0% 40%;
+    --text-subtle: 0 0% 30%;
   }
 }
 
@@ -77,8 +73,9 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    background-color: #020408;
-    font-family: 'Space Grotesk', sans-serif;
+    background-color: #000000;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.01em;
   }
 
   h1,
@@ -87,7 +84,7 @@
   h4,
   h5,
   h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', sans-serif;
     letter-spacing: -0.05em;
   }
 
@@ -101,17 +98,18 @@
 
   .font-editorial {
     @apply font-serif;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Instrument Sans', sans-serif;
+    font-style: italic;
   }
 
   .font-devil {
-    font-family: 'Devil Breeze', 'Cormorant Garamond', serif;
+    font-family: 'Devil Breeze', 'Inter', sans-serif;
     letter-spacing: -0.02em;
     font-weight: 700;
   }
 
   .font-bdo {
-    font-family: 'BDO Grotesk', 'Space Grotesk', sans-serif;
+    font-family: 'BDO Grotesk', 'Inter', sans-serif;
     letter-spacing: -0.01em;
   }
 
@@ -126,11 +124,11 @@
 @layer components {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--muted-foreground)) 100%);
+    background-image: linear-gradient(135deg, #FFFFFF 0%, #A1A1AA 100%);
   }
 
-  .border-gradient {
-    border-image: linear-gradient(135deg, hsl(var(--border)), transparent) 1;
+  .section-badge {
+    @apply px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[10px] uppercase font-bold tracking-[0.3em] text-white/60 mb-8 inline-block shadow-[0_0_15px_rgba(255,255,255,0.05)];
   }
 
   .hover-lift {
@@ -141,58 +139,69 @@
     transform: translateY(-4px);
   }
 
-  .line-reveal {
-    @apply relative overflow-hidden;
-  }
-
-  .line-reveal::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-full h-px bg-foreground;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-  }
-
-  .line-reveal:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-
-  .studio-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1.5rem;
-  }
-
-  /* Neon and Glow effects for luxury cyberpunk/modern feel */
-  .neon-glow {
-    box-shadow: 0 0 15px theme('colors.cyan.400'), inset 0 0 15px theme('colors.cyan.400');
-  }
-
-  .neon-text-glow {
-    text-shadow: 0 0 10px theme('colors.cyan.400');
-  }
-
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-
   .glassmorphism {
-    @apply bg-black/40 backdrop-blur-md border border-white/10;
-  }
-
-  .glassmorphism {
-    @apply bg-black/40 backdrop-blur-md border border-white/10;
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/5;
   }
 
   .rich-black {
-    background: radial-gradient(circle at top right, rgba(0, 82, 255, 0.08) 0%, #020408 70%),
-      radial-gradient(circle at bottom left, rgba(0, 82, 255, 0.05) 0%, #020408 60%);
-    background-color: #020408;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.03) 0%, #000000 70%),
+      radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.02) 0%, #000000 60%);
+    background-color: #000000;
+  }
+
+  .glow-border {
+    @apply relative border border-white/5 overflow-hidden;
+  }
+
+  .glow-border::after {
+    content: '';
+    @apply absolute inset-0 bg-[radial-gradient(circle_at_var(--x,_50%)_var(--y,_50%),rgba(255,255,255,0.08)_0%,transparent_70%)] opacity-0 transition-opacity duration-300 pointer-events-none;
+  }
+
+  .glow-border:hover::after {
+    @apply opacity-100;
+  }
+
+  /* Gleaming Light Effects - Monochromatic */
+  .gleaming-border {
+    @apply relative border border-white/10 bg-black overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.03)];
+  }
+  
+  .gleaming-border::before {
+    content: '';
+    @apply absolute -inset-[2px] z-[-1] opacity-50 pointer-events-none transition-opacity duration-500 rounded-[inherit];
+    background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.4) 40%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.4) 60%, transparent 80%);
+    background-size: 200% 200%;
+    animation: gleam 6s linear infinite;
+    mask-image: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-image: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px;
+  }
+
+  .gleaming-border:hover::before {
+    @apply opacity-100;
+  }
+
+  .gleaming-button {
+    @apply relative bg-black/80 backdrop-blur-md text-white font-medium transition-all duration-300;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.15);
+  }
+
+  .gleaming-button:hover {
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.25);
   }
 }
 
 @layer utilities {
+  @keyframes gleam {
+    0% { background-position: 200% center; }
+    100% { background-position: -200% center; }
+  }
+
   @keyframes marquee {
     0% {
       transform: translateX(0);
@@ -204,7 +213,7 @@
   }
 
   .animate-marquee {
-    animation: marquee 25s linear infinite;
+    animation: marquee 80s linear infinite;
   }
 
   .animate-marquee:hover {

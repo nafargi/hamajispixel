@@ -5,8 +5,8 @@ const RefundPolicy = () => {
   return (
     <section id="refund" className="py-24 lg:py-40 px-6 md:px-12 bg-black relative overflow-hidden border-t border-white/5">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
         <div className="flex flex-col items-center text-center mb-24">
@@ -14,18 +14,19 @@ const RefundPolicy = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-6 py-2 rounded-full mb-8"
+            className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-6 py-2 rounded-full mb-8"
           >
-            <span className="text-xs uppercase tracking-[0.4em] font-bold text-primary">Absolute Confidence</span>
+            <span className="text-xs uppercase tracking-[0.4em] font-bold text-white/60">Absolute Confidence</span>
           </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-6xl md:text-8xl lg:text-9xl font-bold font-heading text-white mb-8 leading-[0.8] tracking-tightest uppercase"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading uppercase tracking-tightest leading-[1.1] mb-8"
           >
-            RISK <span className="text-primary italic">FREE.</span>
+            <span className="text-white">RISK </span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-400 to-neutral-600 italic font-editorial font-light">FREE.</span>
           </motion.h2>
 
           <motion.p
@@ -63,9 +64,9 @@ const RefundPolicy = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-10 bg-white/[0.02] border border-white/10 rounded-[40px] hover:bg-white/[0.04] hover:border-primary/30 transition-all duration-500 group"
+              className="p-10 bg-white/[0.02] border border-white/10 rounded-[40px] hover:bg-white/[0.04] hover:border-white/30 transition-all duration-500 group"
             >
-              <div className="mb-8 w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+              <div className="mb-8 w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-white/80 group-hover:bg-white group-hover:text-black transition-all duration-500">
                 {item.icon}
               </div>
               <h3 className="text-2xl font-bold font-heading text-white mb-4 leading-tight uppercase tracking-tight">{item.title}</h3>

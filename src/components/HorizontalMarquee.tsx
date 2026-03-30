@@ -7,9 +7,9 @@ const HorizontalMarquee = () => {
         {[...Array(8)].map((_, idx) => (
           <div key={idx} className="flex items-center">
             <span className="mx-8">WE HANDLE THE RISK YOU GET THE OUTCOME</span>
-            <span className="mx-8 text-primary italic font-editorial font-light">MARKET AUTHORITY</span>
+            <span className="mx-8 text-white italic font-editorial font-light">MARKET AUTHORITY</span>
             <span className="mx-8">PIXEL PERFECTION</span>
-            <span className="mx-8 text-primary border border-primary/20 px-6 rounded-full">CRAFTED WITH INTENT</span>
+            <span className="mx-8 text-white border border-white/20 px-6 rounded-full">CRAFTED WITH INTENT</span>
           </div>
         ))}
       </div>

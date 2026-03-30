@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="py-24 px-6 md:px-12 rich-black border-t border-white/5 relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-50" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50" />
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -13,7 +13,7 @@ const Footer = () => {
           className="flex flex-col items-center md:items-start gap-4"
         >
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center overflow-hidden">
+            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center overflow-hidden">
               <img
                 src="/hamajis_logo.svg"
                 alt="HP"

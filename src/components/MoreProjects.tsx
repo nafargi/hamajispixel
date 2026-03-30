@@ -22,7 +22,7 @@ export const MoreProjects = ({ currentBrandId }: { currentBrandId?: string }) =>
                   .map((otherBrand) => {
                     return (
                       <Link to={`/brand/${otherBrand.id}`} key={otherBrand.id}>
-                        <div className="group cursor-pointer bg-[#0a0a0a] overflow-hidden rounded-2xl border border-white/5 hover:border-primary/30 transition-all duration-500 shadow-xl">
+                        <div className="group cursor-pointer bg-[#0a0a0a] overflow-hidden rounded-2xl border border-white/5 hover:border-white/30 transition-all duration-500 shadow-xl">
                             <div className="aspect-[4/3] overflow-hidden relative">
                                 <img 
                                     src={otherBrand.coverImage} 
@@ -33,7 +33,7 @@ export const MoreProjects = ({ currentBrandId }: { currentBrandId?: string }) =>
                             </div>
                             <div className="p-8">
                                 <span className="text-[10px] tracking-[0.3em] uppercase text-white/40 block mb-3 font-bold">{otherBrand.category}</span>
-                                <h4 className="text-2xl font-light text-white group-hover:text-primary transition-colors font-heading uppercase tracking-tight">{otherBrand.name}</h4>
+                                <h4 className="text-2xl font-light text-white group-hover:text-white transition-colors font-heading uppercase tracking-tight">{otherBrand.name}</h4>
                             </div>
                         </div>
                       </Link>

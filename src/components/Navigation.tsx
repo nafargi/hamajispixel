@@ -66,12 +66,10 @@ const Navigation = () => {
 
   useEffect(() => { setIsOpen(false); }, [pathname]);
 
-  const navThemeClass = isDarkSection
-    ? (scrolled ? 'bg-black/90 border-white/10 shadow-2xl' : 'bg-black/40 border-white/5')
-    : (scrolled ? 'bg-white/90 border-black/10 shadow-2xl' : 'bg-white/40 border-black/5');
+  const navThemeClass = scrolled ? 'bg-black/90 border-white/10 shadow-2xl' : 'bg-black/40 border-white/5';
 
-  const textColorClass = isDarkSection ? 'text-white' : 'text-black';
-  const linkColorClass = isDarkSection ? 'text-white/60 hover:text-white' : 'text-black/60 hover:text-black';
+  const textColorClass = 'text-white';
+  const linkColorClass = 'text-white/60 hover:text-white';
 
   return (
     <>
@@ -88,7 +86,7 @@ const Navigation = () => {
             <img
               src="/hamajis_logo.svg"
               alt="Hamaji's Pixel"
-              className={`h-4 md:h-5 w-auto transition-all duration-500 ${isDarkSection ? 'brightness-0 invert' : 'brightness-0'}`}
+              className="h-4 md:h-5 w-auto brightness-0 invert"
             />
             <span className="text-[10px] md:text-xs tracking-[0.15em] uppercase font-bold">Hamajis Pixel</span>
           </Link>
@@ -115,7 +113,7 @@ const Navigation = () => {
 
             <a
               href="/#book-call"
-              className="px-5 py-2 bg-primary text-black text-[10px] tracking-widest uppercase font-bold rounded-full hover:scale-105 transition-all shadow-lg shadow-primary/10 hidden md:block whitespace-nowrap"
+              className="gleaming-button px-5 py-2 text-[10px] tracking-widest uppercase rounded-full hidden md:block whitespace-nowrap"
             >
               Book a Call
             </a>
@@ -144,7 +142,7 @@ const Navigation = () => {
                   key={link.label}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-white text-4xl font-bold tracking-tightest uppercase hover:text-primary transition-colors font-bdo"
+                  className="text-white text-4xl font-bold tracking-tightest uppercase hover:text-white/60 transition-colors font-bdo"
                 >
                   <motion.span
                     initial={{ opacity: 0, y: 20 }}
@@ -162,7 +160,7 @@ const Navigation = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="px-8 py-4 bg-primary text-black text-[11px] tracking-widest uppercase font-bold rounded-full shadow-2xl shadow-primary/20"
+                className="gleaming-button px-8 py-4 text-[11px] tracking-widest uppercase rounded-full"
               >
                 Book a Call
               </motion.a>
@@ -173,5 +171,6 @@ const Navigation = () => {
     </>
   );
 };
+
 
 export default Navigation;

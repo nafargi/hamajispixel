@@ -14,7 +14,7 @@ const ValueProposition = () => {
           WE DON'T JUST DESIGN. <br />
           <span className="text-white/20">WE ENGINEER PERCEPTION.</span> <br />
           YOUR BRAND IS AN ASSET. <br />
-          <span className="text-primary italic font-editorial font-light px-4">PERFORM LIKE ONE.</span>
+          <span className="text-gradient italic font-editorial font-light px-4">PERFORM LIKE ONE.</span>
         </motion.p>
       </div>
     </section>

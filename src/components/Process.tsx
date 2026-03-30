@@ -58,12 +58,12 @@ const Process = () => {
   return (
     <section className="py-section px-6 md:px-12 rich-black relative overflow-hidden border-t border-white/5">
       <div className="max-w-[1400px] mx-auto">
-        
+
         {/* TOP: Header & Image */}
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 mb-20 items-center">
-          
+
           {/* Header Copy */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -72,24 +72,25 @@ const Process = () => {
             <div className="inline-flex items-center gap-2 bg-white/[0.05] border border-white/10 px-4 py-2 rounded-full mb-8">
               <span className="text-[10px] uppercase tracking-widest font-bold text-white/80">⚡ Design Process</span>
             </div>
-            
-            <h2 className="text-5xl md:text-7xl font-bold font-heading text-white mb-6 leading-none">
-              Process
+
+            <h2 className="text-5xl md:text-7xl font-bold font-heading uppercase leading-[1.1] tracking-tightest mb-6">
+              <span className="text-white">Our </span><br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-400 to-neutral-600 italic font-editorial font-light whitespace-normal sm:whitespace-nowrap">Process</span>
             </h2>
             <p className="text-white/50 text-xl font-light leading-relaxed mb-10 w-full max-w-sm">
               Crafting bold visuals that inspire and elevate brands with a structured, transparent thought process.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <button 
+              <button
                 onClick={handleBookCall}
-                className="bg-primary hover:bg-[#E85B2A] text-black px-8 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] transition-all shadow-[0_0_20px_rgba(255,107,53,0.3)]"
+                className="gleaming-button px-8 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] transition-all"
               >
                 Book for Strategy Call
               </button>
-              <a 
-                href="#work"
-                className="bg-transparent border border-white/20 hover:border-white text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] transition-all"
+              <a
+                href="/#work"
+                className="bg-transparent border border-white/20 hover:border-white hover:bg-white text-white hover:text-black px-8 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] transition-all"
               >
                 See Projects
               </a>
@@ -97,17 +98,17 @@ const Process = () => {
           </motion.div>
 
           {/* Wide Landscape Image */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="lg:w-[60%] w-full h-[300px] md:h-[400px] rounded-[40px] overflow-hidden relative shadow-2xl"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-            <img 
-              src={processImage} 
-              alt="Design Process" 
-              className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-[2s] hover:scale-105" 
+            <img
+              src={processImage}
+              alt="Design Process"
+              className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-[2s] hover:scale-105"
             />
           </motion.div>
 
@@ -116,7 +117,7 @@ const Process = () => {
         {/* BOTTOM: Horizontal Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {processSteps.map((step, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -125,7 +126,7 @@ const Process = () => {
               className="bg-white/[0.02] border border-white/5 p-6 md:p-8 rounded-[30px] hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 group flex flex-col"
             >
               <div className="flex justify-between items-start mb-6">
-                <div className="w-12 h-12 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all duration-300">
+                <div className="w-12 h-12 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/80 group-hover:bg-white group-hover:text-black transition-all duration-300">
                   {step.icon}
                 </div>
                 <span className="text-white/20 font-bold font-heading text-2xl group-hover:text-white/40 transition-colors duration-300">

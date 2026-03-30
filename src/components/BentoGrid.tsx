@@ -27,11 +27,11 @@ const BentoGrid = () => {
   return (
     <section className="py-section px-6 md:px-12 rich-black relative overflow-hidden pt-[120px]">
       <div className="max-w-[1400px] mx-auto mb-16 text-center">
-        <span className="text-primary text-[10px] tracking-[0.6em] uppercase font-bold block mb-4">
+        <span className="text-white/60 text-[10px] tracking-[0.6em] uppercase font-bold block mb-4">
           Our Impact
         </span>
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading text-white uppercase tracking-tightest">
-          Premium <span className="text-white/20 italic font-editorial font-light">Ecosystem</span>
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading uppercase tracking-tightest">
+          <span className="text-white">Premium</span> <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-400 to-neutral-600 italic font-editorial font-light">Ecosystem</span>
         </h2>
       </div>
       <div className="max-w-[1400px] mx-auto border border-white/10 p-6 md:p-8 rounded-[40px] ">
@@ -54,10 +54,10 @@ const BentoGrid = () => {
             </div>
 
             <div className="w-full">
-              <span className="text-primary text-[10px] tracking-[0.2em] font-bold uppercase mb-4 block">EXCELLENT</span>
+              <span className="text-white/60 text-[10px] tracking-[0.2em] font-bold uppercase mb-4 block">EXCELLENT</span>
               <div className="flex justify-center gap-2">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <div key={star} className={`w-12 h-12 rounded-full flex items-center justify-center ${star === 5 ? 'bg-primary text-black' : 'bg-white/5 text-white/30'}`}>
+                  <div key={star} className={`w-12 h-12 rounded-full flex items-center justify-center ${star === 5 ? 'bg-white text-black' : 'bg-white/5 text-white/30'}`}>
                     <Star size={20} className={star === 5 ? 'fill-black' : 'fill-white/20'} />
                   </div>
                 ))}
@@ -83,7 +83,7 @@ const BentoGrid = () => {
             </div>
 
             <div className="md:w-[45%] p-10 md:p-14 flex flex-col justify-center">
-              <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 text-primary">
+              <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 text-white/80">
                 <Target size={24} />
               </div>
               <h3 className="text-3xl font-bold font-heading mb-4 text-white">Strategy that matters</h3>
@@ -100,22 +100,22 @@ const BentoGrid = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="md:col-span-6 rounded-[40px] p-10 md:p-14 flex flex-col items-center text-center overflow-hidden relative group"
-            style={{ background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, #e6772e 100%)' }}
+            className="md:col-span-6 rounded-[40px] p-10 md:p-14 flex flex-col items-center text-center overflow-hidden relative group border border-white/10"
+            style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 100%)' }}
           >
-            <h3 className="text-black text-4xl font-bold font-heading mb-8 relative z-10">Discuss your project</h3>
+            <h3 className="text-white text-4xl font-bold font-heading mb-8 relative z-10">Discuss your project</h3>
 
-            <a href="mailto:nafargidamena@gmail.com" className="bg-[#e6772e] hover:bg-[#cc6a29] text-white px-8 py-4 rounded-xl font-bold tracking-wide transition-colors duration-300 flex items-center gap-3 relative z-10 shadow-lg shadow-black/20 mb-4">
+            <a href="https://calendly.com/nafargidamena/30min" target="_blank" rel="noopener noreferrer" className="gleaming-button px-8 py-4 rounded-xl text-sm transition-colors duration-300 flex items-center gap-3 relative z-10 mb-4">
               Schedule a call - 15 mins free
               <ArrowRight size={18} />
             </a>
 
-            <p className="text-black/60 font-medium mb-12 relative z-10">No pressure, just a thoughtful chat.</p>
+            <p className="text-white/60 font-light mb-12 relative z-10">No pressure, just a thoughtful chat.</p>
 
             <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex justify-center w-[120%]">
               <div className="flex -space-x-4">
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className={`w-28 h-36 rounded-2xl border-[6px] border-[#ff8533] shadow-2xl overflow-hidden transform ${i % 2 === 0 ? 'rotate-[-8deg] translate-y-4' : 'rotate-[6deg]'}`}>
+                  <div key={i} className={`w-28 h-36 rounded-2xl border border-white/20 shadow-[-10px_0_20px_rgba(0,0,0,0.5)] overflow-hidden transform transition-transform duration-700 group-hover:translate-y-[-10px] ${i % 2 === 0 ? 'rotate-[-8deg] translate-y-4' : 'rotate-[6deg]'}`}>
                     <img src={`https://i.pravatar.cc/200?u=${i + 10}`} alt={`Client ${i}`} className="w-full h-full object-cover" />
                   </div>
                 ))}
@@ -131,17 +131,17 @@ const BentoGrid = () => {
             transition={{ delay: 0.1 }}
             className="md:col-span-6 bg-white/[0.03] hover:bg-white/[0.05] transition-colors duration-500 border border-white/10 rounded-[40px] p-10 md:p-14 flex flex-col items-center text-center"
           >
-            <h3 className="text-white text-3xl font-bold font-heading mb-4">SEO ready & fast performance</h3>
-            <p className="text-white/50 font-medium text-lg mb-16">Optimized for search rankings and blazing-fast speed.</p>
+            <h3 className="text-white text-3xl font-bold font-heading mb-4">Brand Identity Systems</h3>
+            <p className="text-white/50 font-light text-lg mb-16">Comprehensive visual strategy for maximum market visibility.</p>
 
             <div className="flex flex-col sm:flex-row gap-8 sm:gap-4 md:gap-8 w-full justify-center">
               {[
-                { label: 'PERFORMANCE', value: '99', percent: 99 },
-                { label: 'SEO', value: '100', percent: 100 },
-                { label: 'ACCESSIBILITY', value: '98', percent: 98 }
+                { label: 'AESTHETICS', value: '99', percent: 99 },
+                { label: 'IMPACT', value: '100', percent: 100 },
+                { label: 'STRATEGY', value: '98', percent: 98 }
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col items-center">
-                  <div className={`w-28 h-28 rounded-full flex items-center justify-center relative mb-4 ${i === 1 ? 'border-[6px] border-primary' : 'border-[4px] border-primary/50'}`}>
+                  <div className={`w-28 h-28 rounded-full flex items-center justify-center relative mb-4 ${i === 1 ? 'border-[2px] border-white/60 bg-white/5' : 'border border-white/10 bg-white/[0.02]'}`}>
                     <span className="text-white font-bold text-2xl font-bdo">{stat.value}%</span>
                   </div>
                   <span className="text-white/40 text-[9px] tracking-[0.2em] font-bold uppercase">{stat.label}</span>
@@ -202,11 +202,11 @@ const BentoGrid = () => {
                       transition={{ duration: 0.8, ease: "easeInOut" }}
                       className="absolute w-full flex items-center justify-center gap-4 py-3 border-b border-white/5 last:border-0"
                     >
-                      <div className={`w-1.5 h-1.5 rounded-full ${isActive ? 'bg-primary' : 'bg-primary/20'}`} />
-                      <span className={`font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase transition-colors duration-500 ${isActive ? 'text-primary' : 'text-primary/50'}`}>
+                      <div className={`w-1.5 h-1.5 rounded-full ${isActive ? 'bg-white' : 'bg-white/20'}`} />
+                      <span className={`font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase transition-colors duration-500 ${isActive ? 'text-white' : 'text-white/40'}`}>
                         {industry}
                       </span>
-                      <div className={`w-1.5 h-1.5 rounded-full ${isActive ? 'bg-primary' : 'bg-primary/20'}`} />
+                      <div className={`w-1.5 h-1.5 rounded-full ${isActive ? 'bg-white' : 'bg-white/20'}`} />
                     </motion.div>
                   );
                 })}
