@@ -1,6 +1,6 @@
 import axerioCover from "@/assets/axerio/Brand guidelines - 26.jpg";
 import questifyCover from "@/assets/questify_ai/23.jpg";
-import onyxiumCover from "@/assets/onyxium/Artboard 19_8@3x-100.jpg";
+import onyxiumCover from "@/assets/onyxium/0.jpg";
 import openSessionCover from "@/assets/open_session/Slide 55.jpg";
 import sunzenithCover from "@/assets/sunzenith/1.jpg";
 import daphneHeckoCover from "@/assets/daphne_Hecko/Banner_Mockup.jpg";

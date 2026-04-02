@@ -46,7 +46,7 @@ export interface Brand {
 
 import axerioCover from "@/assets/axerio/Brand guidelines - 26.jpg";
 import questifyCover from "@/assets/questify_ai/23.jpg";
-import onyxiumCover from "@/assets/onyxium/Artboard 19_8@3x-100.jpg";
+import onyxiumCover from "@/assets/onyxium/0.jpg";
 import openSessionCover from "@/assets/open_session/Slide 55.jpg";
 import daphneHeckoCover from "@/assets/daphne_Hecko/cover.png";
 import sunzenithCover from "@/assets/sunzenith/Sunzenith_presentation_template.png";
@@ -72,9 +72,9 @@ export const brands: Brand[] = [
     story: "Axerio is driving the future of enterprise software, demanding an identity that projects unwavering reliability and cutting-edge vision. We crafted a visual system rooted in architectural precision, signaling a new era of software infrastructure.",
     services: ["Brand Identity", "Visual System", "Digital Product"],
     colors: [
-      { name: "Obsidian", hex: "#111111" },
-      { name: "Azure", hex: "#0055FF" },
-      { name: "Cloud", hex: "#F3F4F6" },
+      { name: "Rich Black", hex: "#000000" },
+      { name: "Silver", hex: "#A1A1A1" },
+      { name: "Luminous White", hex: "#FFFFFF" },
     ],
     typography: [
       { name: "Display", style: "Inter Bold" },
@@ -108,10 +108,10 @@ export const brands: Brand[] = [
     story: "Questify AI is an intelligent study assistant that analyzes academic performance to create personalized learning paths. By detecting weak points and tracking progress in real-time, it empowers students to achieve mastery at their own pace. The identity reflects this precision through structured geometry and fluid insights.",
     services: ["AI Strategy", "Academic Analysis", "Brand Identity"],
     colors: [
-      { name: "Royal Blue", hex: "#385FFF" },
+      { name: "Pure White", hex: "#FFFFFF" },
       { name: "Charcoal", hex: "#05080F" },
-      { name: "Slate Gray", hex: "#138DFC" },
-      { name: "Light Mist", hex: "#F2F7FB" },
+      { name: "Stone", hex: "#A1A1AA" },
+      { name: "Black", hex: "#000000" },
     ],
     typography: [
       { name: "Display", style: "Corbel Bold" },
@@ -145,9 +145,9 @@ export const brands: Brand[] = [
     story: "Onyxium required an identity that whispered luxury rather than shouting it. The deep black palette mixed with subtle metallic finishes creates an aura of exclusivity. Every touchpoint is designed to feel heavy, expensive, and deliberate.",
     services: ["Brand Identity", "Art Direction", "Packaging"],
     colors: [
-      { name: "Vantablack", hex: "#000000" },
-      { name: "Aged Gold", hex: "#C5A059" },
-      { name: "Charcoal", hex: "#222222" },
+      { name: "Rich Black", hex: "#111111" },
+      { name: "Silver", hex: "#A1A1A1" },
+      { name: "Luminous White", hex: "#FFFFFF" },
     ],
     typography: [
       { name: "Display", style: "Cormorant" },
@@ -181,11 +181,11 @@ export const brands: Brand[] = [
     story: "The journey to mental well-being doesn’t have to be walked alone. At Open Session, we believe that the connection between two people—a therapist and a client—is the foundation of all healing. Our platform is designed to be a safe, open space where you can share your story without judgment. Together, we can turn your challenges into a cycle of growth and discovery.",
     services: ["Mental Health Support", "Therapy Platform", "Visual Identity"],
     colors: [
-      { name: "Dynamic Purple", hex: "#6E44A7" },
-      { name: "Positive Orange", hex: "#ff8533" },
-      { name: "Friendly Blue", hex: "#1978A3" },
-      { name: "Smart Red", hex: "#E73539" },
-      { name: "Peaceful Teal", hex: "#0A7B89" },
+      { name: "Obsidian", hex: "#000000" },
+      { name: "Graphite", hex: "#333333" },
+      { name: "Silver", hex: "#A1A1A1" },
+      { name: "Stone", hex: "#E5E5E5" },
+      { name: "Alabaster", hex: "#FFFFFF" },
     ],
     typography: [
       { name: "Primary", style: "Montserrat" },
@@ -218,9 +218,11 @@ export const brands: Brand[] = [
     story: "Sunzenith is leading the charge in renewable energy infrastructure. We created a high-contrast, energetic visual system that balances raw solar power with industrial precision. The identity is designed to radiate authority and future-proof reliability.",
     services: ["Brand Strategy", "Visual Identity", "Environmental Design"],
     colors: [
-      { name: "Deep Carbon", hex: "#111111" },
-      { name: "Solar Orange", hex: "#ff8533" },
-      { name: "Morning Glow", hex: "#FFCC00" },
+      { name: "Obsidian", hex: "#000000" },
+      { name: "Alabaster", hex: "#FFFFFF" },
+      { name: "Silver", hex: "#A1A1A1" },
+      { name: "Stone", hex: "#444444" },
+      { name: "Cloud", hex: "#F3F4F6" },
     ],
     typography: [
       { name: "Display", style: "Outfit Bold" },
@@ -255,8 +257,8 @@ export const brands: Brand[] = [
     story: "DH Legal Ops delivers streamlined operational support for law firm owners. The brand’s promise is to lift the operational burden, enabling legal professionals to focus on practicing law, serving clients, and driving growth.",
     services: ["Operational Strategy", "Brand Identity", "Process Design"],
     colors: [
-      { name: "Burgundy", hex: "#590620" },
-      { name: "Legal Gold", hex: "#DAAB5B" },
+      { name: "Obsidian", hex: "#000000" },
+      { name: "Silver", hex: "#A1A1A1" },
     ],
     typography: [
       { name: "Display", style: "Nexa Heavy" },

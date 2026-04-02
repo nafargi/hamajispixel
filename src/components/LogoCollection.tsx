@@ -16,7 +16,7 @@ const MarqueeRow = ({ items, direction = 1, speed = 60 }) => (
           <img
             src={logo.image}
             alt={logo.name}
-            className="h-[200px] w-[200px] object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-500"
+            className="h-[200px] w-[200px] object-contain opacity-80 hover:opacity-100 transition duration-500"
           />
         </div>
       ))}

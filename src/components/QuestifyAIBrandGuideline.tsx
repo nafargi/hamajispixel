@@ -22,7 +22,7 @@ const fadeInUp = {
 
 const QuestifyAIBrandGuideline = () => {
   return (
-    <div className="min-h-screen bg-white text-[#05080F] selection:bg-[#385FFF] selection:text-white overflow-hidden font-corbel">
+    <div className="min-h-screen bg-white text-[#05080F] selection:bg-black selection:text-white overflow-hidden font-corbel">
       
       {/* 1. CINEMATIC HERO SECTION (Dynamic Data Background) */}
       <section className="h-[100svh] w-full relative flex items-center justify-center overflow-hidden bg-[#05080F]">
@@ -31,7 +31,7 @@ const QuestifyAIBrandGuideline = () => {
             {[...Array(20)].map((_, i) => (
                <motion.div 
                  key={i}
-                 className="w-[1px] md:w-[2px] h-[300%] bg-gradient-to-b from-transparent via-[#385FFF] to-transparent mix-blend-screen"
+                 className="w-[1px] md:w-[2px] h-[300%] bg-gradient-to-b from-transparent via-white/50 to-transparent mix-blend-screen"
                  style={{ willChange: 'transform' }}
                  animate={{ y: ['-100%', '0%'] }}
                  transition={{ duration: 10 + Math.random() * 20, repeat: Infinity, ease: 'linear', delay: -Math.random() * 20 }}
@@ -62,7 +62,7 @@ const QuestifyAIBrandGuideline = () => {
       {/* 2. ABOUT THE BRAND */}
       <section className="py-32 px-6 md:px-24 bg-[#05080F] text-white">
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto text-center">
-          <span className="text-xs tracking-[0.4em] uppercase text-[#385FFF] font-bold mb-6 block">The Purpose</span>
+          <span className="text-xs tracking-[0.4em] uppercase text-white/50 font-bold mb-6 block">The Purpose</span>
           <h2 className="text-3xl md:text-5xl font-light leading-tight">
             Questify AI builds institutional-grade artificial intelligence solutions explicitly designed to accelerate academic research, learning platforms, and operational efficiencies.
           </h2>
@@ -98,7 +98,7 @@ const QuestifyAIBrandGuideline = () => {
                         key={i} 
                         src={img} 
                         alt="Variant" 
-                        className="h-10 md:h-16 w-auto grayscale-0 brightness-1 transition-all hover:scale-110" 
+                        className="h-10 md:h-16 w-auto transition-all hover:scale-110" 
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ delay: i * 0.1 }}
@@ -111,14 +111,14 @@ const QuestifyAIBrandGuideline = () => {
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeInUp} className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-8">
             <h2 className="text-4xl md:text-5xl font-light tracking-tighter uppercase">Color Palette</h2>
-            <p className="text-xs tracking-[0.4em] uppercase text-[#385FFF] font-bold">Algorithmic Base</p>
+            <p className="text-xs tracking-[0.4em] uppercase text-white/40 font-bold">Algorithmic Base</p>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
              {[
-               { name: 'Royal Blue', hex: '#385FFF', rgb: '56 95 255', text: 'white' },
+               { name: 'Questify Blue', hex: '#385FFF', rgb: '56 95 255', text: 'white' },
                { name: 'Charcoal', hex: '#05080F', rgb: '5 8 15', text: 'white' },
-               { name: 'Light Blue', hex: '#D1E4FF', rgb: '209 228 255', text: '#05080F' }
+               { name: 'Slate Gray', hex: '#138DFC', rgb: '19 141 252', text: 'white' }
              ].map((color, i) => (
                <motion.div 
                  key={i}
@@ -147,7 +147,7 @@ const QuestifyAIBrandGuideline = () => {
       <section className="py-48 px-6 md:px-24 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 items-start">
           <motion.div {...fadeInUp}>
-            <span className="text-xs tracking-[0.4em] uppercase text-[#385FFF] font-bold mb-12 block">Typography System</span>
+            <span className="text-xs tracking-[0.4em] uppercase text-black/40 font-bold mb-12 block">Typography System</span>
             <h3 className="text-7xl md:text-9xl font-bold tracking-tightest mb-16 leading-[0.85]">CORBEL <br/> BOLD</h3>
             <div className="space-y-8 text-xl md:text-2xl font-light text-[#05080F]/60 leading-relaxed">
               <p>Designed for clarity and institutional authority. Corbel is a highly legible sans-serif that balances modern aesthetics with classical proportions.</p>
@@ -165,7 +165,7 @@ const QuestifyAIBrandGuideline = () => {
             <div>
                 <p className="text-[10px] tracking-[0.4em] uppercase opacity-30 mb-8 font-bold">Character Set / AA</p>
                 <div className="text-5xl md:text-7xl font-bold border-b border-black/5 pb-8 mb-8">Aa Bb Cc Dd Ee Ff Gg</div>
-                <div className="text-4xl md:text-5xl font-light opacity-40">01 23 45 67 89 !@ #$</div>
+                <div className="text-4xl md:text-5xl font-light opacity-20">01 23 45 67 89 !@ #$</div>
             </div>
             
             <div className="grid grid-cols-2 gap-12">
@@ -186,7 +186,7 @@ const QuestifyAIBrandGuideline = () => {
       <section className="py-24 px-4 md:px-8 bg-[#F2F7FB]">
         <div className="max-w-[1600px] mx-auto">
           <motion.div {...fadeInUp} className="mb-24 text-center">
-             <span className="text-[10px] tracking-[0.8em] uppercase text-[#385FFF] font-bold mb-4 block">Brand in Action</span>
+             <span className="text-[10px] tracking-[0.8em] uppercase text-black/40 font-bold mb-4 block">Brand in Action</span>
              <h2 className="text-5xl md:text-7xl font-light tracking-tighter">Realizing Future</h2>
           </motion.div>
 
@@ -211,8 +211,8 @@ const QuestifyAIBrandGuideline = () => {
       {/* Footer */}
       <section className="py-40 text-center bg-white border-t border-black/5">
         <motion.div {...fadeInUp}>
-          <p className="text-[10px] tracking-[0.8em] uppercase text-[#385FFF] font-bold mb-12">Institutional Portal</p>
-          <a href="#" className="text-5xl md:text-[10rem] font-bold tracking-tightest hover:text-[#385FFF] transition-all duration-1000 leading-none">
+          <p className="text-[10px] tracking-[0.8em] uppercase text-black/40 font-bold mb-12">Institutional Portal</p>
+          <a href="#" className="text-5xl md:text-[10rem] font-bold tracking-tightest hover:text-black/50 transition-all duration-1000 leading-none">
             QUESTIFY.AI
           </a>
         </motion.div>
@@ -220,7 +220,7 @@ const QuestifyAIBrandGuideline = () => {
 
       <section className="py-32 text-center bg-[#F2F7FB] border-t border-white/5">
         <p className="text-[10px] tracking-[0.4em] uppercase text-black/40 mb-8 font-bold">Full Presentation Available</p>
-        <a href="https://www.behance.net/gallery/244277807/Questify-AI-Full-brand" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold hover:scale-105 transition-transform duration-500" style={{ color: '#385FFF' }}>
+        <a href="https://www.behance.net/gallery/244277807/Questify-AI-Full-brand" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold hover:scale-105 transition-transform duration-500" style={{ color: '#000000' }}>
           Explore on Behance <ArrowUpRight className="w-8 h-8 md:w-10 md:h-10" />
         </a>
       </section>

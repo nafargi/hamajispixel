@@ -287,7 +287,7 @@ const AxerioBrandGuideline: React.FC = () => {
                 <img 
                   src={img} 
                   alt={`Axerio Application ${i}`} 
-                  className="w-full h-full object-cover transition-transform duration-[2.5s] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-105 filter grayscale hover:grayscale-0"
+                  className="w-full h-full object-cover transition-transform duration-[2.5s] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-1000" />
               </motion.div>
@@ -309,13 +309,6 @@ const AxerioBrandGuideline: React.FC = () => {
             Explore on Behance ↗
           </a>
         </motion.div>
-      </section>
-
-      <section className="py-32 text-center bg-[#000000] border-t border-white/5">
-        <p className="text-[10px] tracking-[0.4em] uppercase text-white/40 mb-8 font-bold">Full Presentation Available</p>
-        <a href="https://www.behance.net/gallery/245110401/AXerio" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold hover:scale-105 transition-transform duration-500" style={{ color: '#D4AF37' }}>
-          Explore on Behance <ArrowUpRight className="w-8 h-8 md:w-10 md:h-10" />
-        </a>
       </section>
 
       <MoreProjects currentBrandId="axerio" />

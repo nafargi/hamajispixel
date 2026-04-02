@@ -47,7 +47,7 @@ const CaseStudy = () => {
           <img 
             src={brand.image} 
             alt={brand.name} 
-            className="w-full h-full object-cover grayscale opacity-50 focus:opacity-100 transition-opacity duration-1000"
+            className="w-full h-full object-cover opacity-50 focus:opacity-100 transition-opacity duration-1000"
           />
           <div className="absolute inset-0 bg-black/40" />
         </motion.div>

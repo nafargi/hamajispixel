@@ -43,7 +43,7 @@ const LogoTile = ({ logo, color, size = "1x1" }: { logo: any; color: TileColor; 
       viewport={{ once: true }}
     >
       <div
-        className="absolute inset-[8%] transition-transform duration-700"
+        className="absolute inset-[0%] transition-transform duration-700"
         style={{
           backgroundImage: `url(${logo.image})`,
           backgroundSize: 'contain',
@@ -71,7 +71,7 @@ const ContentTile = ({ title, text, type }: { title: string; text: string; type:
       <motion.h3
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
-        className="text-white text-2xl lg:text-4xl font-bold uppercase mb-4 tracking-tighter leading-[0.85] font-heading relative z-10"
+        className="text-white text-2xl   lg:text-4xl font-bold uppercase mb-4 tracking-tighter leading-[0.85] font-heading relative z-10"
       >
         {title}
       </motion.h3>
@@ -79,7 +79,7 @@ const ContentTile = ({ title, text, type }: { title: string; text: string; type:
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="text-white/40 text-[9px] lg:text-[11px] leading-relaxed uppercase tracking-[0.3em] font-bold max-w-[95%] relative z-10"
+        className="text-white/40 text-[9px]  lg:text-[11px] leading-relaxed uppercase tracking-[0.3em] font-bold max-w-[95%] relative z-10"
       >
         {text}
       </motion.p>
@@ -154,7 +154,7 @@ const EditorialShowcase = () => {
   return (
     <div className="bg-black min-h-screen selection:bg-primary/30 selection:text-white overflow-x-hidden relative font-inter">
       {/* Global Premium Texture Background */}
-      <div className="fixed inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/linen.png")' }} />
+      <div className="fixed inset-0 z-0 opacity-[1] pointer-events-none" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/linen.png")' }} />
       <div className="fixed inset-0 z-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none" />
 
       <Navigation />
@@ -172,8 +172,8 @@ const EditorialShowcase = () => {
                 r={40 + i * 40}
                 fill="none"
                 stroke="white"
-                strokeWidth="0.5"
-                strokeDasharray="4 8"
+                strokeWidth="0.85"
+                strokeDasharray="2 8"
               />
             ))}
           </svg>
@@ -188,7 +188,7 @@ const EditorialShowcase = () => {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex flex-col items-center gap-4  mb-6"
+            className="flex flex-col items-center gap-4   mb-6"
           >
             <div className="w-[1px] h-16 bg-gradient-to-b from-white/0 to-white/60" />
             <span className="text-white/60 text-[10px] tracking-[0.8em] uppercase font-bold">
@@ -233,12 +233,12 @@ const EditorialShowcase = () => {
           </h1>
         </div>
 
-        <div className="absolute bottom-12 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <div className="absolute  bottom-12 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       </div>
 
       <div className="py-4 px-6 lg:px-24 relative z-10">
         <main className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-[1px] border border-white/5 shadow-2xl">
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5  gap-[1px] border border-white/5 shadow-2xl">
             {Array.from({ length: Math.ceil(allLogos.length / 15) }, (_, i) => {
               const chunk = allLogos.slice(i * 15, (i + 1) * 15);
               const type = i % 3;

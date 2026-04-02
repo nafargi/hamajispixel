@@ -22,15 +22,15 @@ const OpenSessionBrandGuideline = () => {
   const yParallax = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
-    <div ref={containerRef} className="bg-[#fcfcfc] text-[#111] font-inter overflow-hidden">
+    <div ref={containerRef} className="bg-white text-[#111] font-inter overflow-hidden">
       
       {/* 1. CINEMATIC HERO SECTION */}
-      <section className="h-[100svh] w-full relative flex items-center justify-center overflow-hidden bg-[#1978A3]">
+      <section className="h-[100svh] w-full relative flex items-center justify-center overflow-hidden bg-black">
         {/* Ultra-HD Image Background */}
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover object-center" alt="Open Session Cinematic Hero" />
+          <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover object-center opacity-60" alt="Open Session Cinematic Hero" />
           {/* Subtle Brand Color Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-[#6E44A7]/60 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent mix-blend-multiply opacity-80" />
         </div>
         
         {/* Content */}
@@ -55,7 +55,7 @@ const OpenSessionBrandGuideline = () => {
       {/* 2. ABOUT THE BRAND */}
       <section className="py-32 px-6 md:px-24 bg-[#050505] text-white">
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }} className="max-w-4xl mx-auto text-center">
-          <span className="text-xs tracking-[0.4em] uppercase text-[#F9832D] font-bold mb-6 block">The Purpose</span>
+          <span className="text-xs tracking-[0.4em] uppercase text-white/40 font-bold mb-6 block">01 / Purpose</span>
           <h2 className="text-3xl md:text-5xl font-light leading-tight">
             Open Session removes the barriers to mental health care, fostering an honest, supportive environment where personal healing naturally occurs.
           </h2>
@@ -116,7 +116,7 @@ const OpenSessionBrandGuideline = () => {
                 <img src={horizontalLogoBlack} alt="Horizontal Black" className="h-10 md:h-12 w-auto mb-8" />
                 <span className="text-[10px] tracking-[0.3em] uppercase opacity-30 text-black">Lockup 02</span>
              </div>
-             <div className="p-16 flex flex-col items-center justify-center transition-colors h-[40vh] bg-[#6E44A7]">
+             <div className="p-16 flex flex-col items-center justify-center transition-colors h-[40vh] bg-black">
                 <img src={verticalLogoWhite} alt="Vertical Purple" className="h-24 md:h-32 w-auto mb-8" />
                 <span className="text-[10px] tracking-[0.3em] uppercase text-white/50">Primary Display</span>
              </div>
@@ -137,11 +137,11 @@ const OpenSessionBrandGuideline = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
              {[
-               { name: 'Purple', hex: '#6E44A7', rgb: '110 68 167', text: 'white' },
-               { name: 'Teal', hex: '#1978A3', rgb: '25 120 163', text: 'white' },
-               { name: 'Orange', hex: '#F9832D', rgb: '249 131 45', text: 'white' },
-               { name: 'Red', hex: '#E73539', rgb: '231 53 57', text: 'white' },
-               { name: 'Navy', hex: '#0F172A', rgb: '15 23 42', text: 'white' }
+               { name: 'Healing Teal', hex: '#008080', rgb: '0 128 128', text: 'white' },
+               { name: 'Deep Navy', hex: '#002366', rgb: '0 35 102', text: 'white' },
+               { name: 'Vitality Orange', hex: '#FF8C00', rgb: '255 140 0', text: 'white' },
+               { name: 'Calm Purple', hex: '#6A0D91', rgb: '106 13 145', text: 'white' },
+               { name: 'Mist Gray', hex: '#F5F5F7', rgb: '245 245 247', text: 'black' }
              ].map((color, i) => (
                <motion.div 
                  key={i}
@@ -173,10 +173,10 @@ const OpenSessionBrandGuideline = () => {
             <div className="flex flex-col border-t border-black/10 pt-8">
                <div className="flex justify-between items-end mb-16">
                  <div>
-                    <span className="text-[10px] tracking-[0.4em] uppercase text-[#6E44A7] font-bold block mb-4">04 / Primary Type</span>
+                    <span className="text-[10px] tracking-[0.4em] uppercase text-black/40 font-bold block mb-4">04 / Primary Type</span>
                     <h3 className="text-4xl font-light font-montserrat tracking-tight">Montserrat</h3>
                  </div>
-                 <span className="text-8xl md:text-[10rem] font-bold font-montserrat leading-none text-[#6E44A7] opacity-20 -mb-8">Aa</span>
+                 <span className="text-8xl md:text-[10rem] font-bold font-montserrat leading-none text-black/10 -mb-8">Aa</span>
                </div>
                
                <div className="space-y-8 font-montserrat">
@@ -185,7 +185,7 @@ const OpenSessionBrandGuideline = () => {
                    <p className="flex-1 text-2xl md:text-3xl font-bold tracking-tight text-[#111] leading-snug">
                      ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
                      abcdefghijklmnopqrstuvwxyz<br/>
-                     <span className="font-mono text-xl tracking-[0.2em] text-[#6E44A7]">0123456789</span>
+                     <span className="font-mono text-xl tracking-[0.2em] text-black">0123456789</span>
                    </p>
                  </div>
                  <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-12">
@@ -193,7 +193,7 @@ const OpenSessionBrandGuideline = () => {
                    <p className="flex-1 text-2xl md:text-3xl font-normal tracking-tight text-[#111]/70 leading-snug">
                      ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
                      abcdefghijklmnopqrstuvwxyz<br/>
-                     <span className="font-mono text-xl tracking-[0.2em] text-[#6E44A7]/60">0123456789</span>
+                     <span className="font-mono text-xl tracking-[0.2em] text-black/40">0123456789</span>
                    </p>
                  </div>
                </div>
@@ -235,7 +235,7 @@ const OpenSessionBrandGuideline = () => {
       <section className="py-32 md:py-48 bg-white border-t border-black/5">
         <div className="max-w-[1800px] mx-auto px-8 md:px-16">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24">
-             <span className="text-[10px] tracking-[0.4em] uppercase text-[#6E44A7] font-bold block mb-4 md:mb-0">05 / Application</span>
+             <span className="text-[10px] tracking-[0.4em] uppercase text-black/40 font-bold block mb-4 md:mb-0">05 / Application</span>
              <h2 className="text-4xl md:text-5xl font-light font-montserrat tracking-tight text-[#111]">Real World Harmony</h2>
           </div>
 
@@ -274,7 +274,7 @@ const OpenSessionBrandGuideline = () => {
       </section>
 
       {/* Footer / Outro */}
-      <section className="py-48 bg-[#6E44A7] text-white flex items-center justify-center text-center">
+      <section className="py-48 bg-black text-white flex items-center justify-center text-center">
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}>
           <p className="text-[10px] tracking-[0.8em] uppercase font-bold mb-12 font-montserrat opacity-50">Connect. Heal. Grow.</p>
           <img src={horizontalLogo} alt="Open Session" className="w-[300px] md:w-[500px] mx-auto invert drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]" />
@@ -283,7 +283,7 @@ const OpenSessionBrandGuideline = () => {
 
       <section className="py-32 text-center bg-white border-t border-black/5">
         <p className="text-[10px] tracking-[0.4em] uppercase text-black/40 mb-8 font-bold">Full Presentation Available</p>
-        <a href="https://www.behance.net/gallery/239772409/Open-Session-Therapy-Brand" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold font-montserrat hover:scale-105 transition-transform duration-500" style={{ color: '#6E44A7' }}>
+        <a href="https://www.behance.net/gallery/239772409/Open-Session-Therapy-Brand" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold font-montserrat hover:scale-105 transition-transform duration-500 text-black">
           Explore on Behance <ArrowUpRight className="w-8 h-8 md:w-10 md:h-10" />
         </a>
       </section>

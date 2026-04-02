@@ -108,7 +108,7 @@ const Process = () => {
             <img
               src={processImage}
               alt="Design Process"
-              className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-[2s] hover:scale-105"
+              className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-[2s]"
             />
           </motion.div>
 

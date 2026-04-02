@@ -30,15 +30,15 @@ const DaphneHeckoBrandGuideline = () => {
   };
 
   return (
-    <div ref={containerRef} className="bg-[#FAF9F6] text-[#2c2b2b] font-montserrat overflow-hidden">
+    <div ref={containerRef} className="bg-white text-[#111111] font-montserrat overflow-hidden">
       
       {/* 1. CINEMATIC HERO SECTION */}
-      <section className="h-[100svh] w-full relative flex items-center justify-center overflow-hidden bg-[#590620]">
+      <section className="h-[100svh] w-full relative flex items-center justify-center overflow-hidden bg-black">
         {/* Ultra-HD Image Background */}
         <div className="absolute inset-0 z-0">
           <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover object-center" alt="DH Legal Ops Cinematic Hero" />
           {/* Subtle Brand Color Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-[#590620]/20 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent mix-blend-multiply opacity-80" />
         </div>
         
         {/* Content */}
@@ -63,7 +63,7 @@ const DaphneHeckoBrandGuideline = () => {
       {/* 2. ABOUT THE BRAND */}
       <section className="py-32 px-6 md:px-24 bg-[#050505] text-white">
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto text-center">
-          <span className="text-xs tracking-[0.4em] uppercase text-[#DAAB5B] font-bold mb-6 block">The Purpose</span>
+          <span className="text-xs tracking-[0.4em] uppercase text-white/40 font-bold mb-6 block">The Purpose</span>
           <h2 className="text-3xl md:text-5xl font-light leading-tight">
             DH Legal Ops delivers streamlined operational support—handling intake to billing—so legal professionals can focus entirely on practicing law and serving their clients.
           </h2>
@@ -71,12 +71,12 @@ const DaphneHeckoBrandGuideline = () => {
       </section>
 
       {/* 3. LOGO CONCEPT */}
-      <section className="py-32 px-6 md:px-24 bg-white text-[#2c2b2b] border-y border-[#2c2b2b]/10">
+      <section className="py-32 px-6 md:px-24 bg-white text-black border-y border-black/5">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <motion.div {...fadeInUp}>
             <span className="text-xs tracking-[0.4em] uppercase opacity-40 mb-6 block font-bold">Logo Concept</span>
             <h2 className="text-4xl font-light tracking-tight mb-8">Professional Precision</h2>
-            <p className="text-lg text-[#2c2b2b]/60 leading-relaxed">
+            <p className="text-lg text-black/60 leading-relaxed">
               The 'd' and 'h' are rendered in a bold, rounded style for approachability. The stem of the 'h' seamlessly transforms into a fountain pen nib, a classic symbol of legal precision.
             </p>
           </motion.div>
@@ -91,7 +91,7 @@ const DaphneHeckoBrandGuideline = () => {
         </div>
       </section>
 
-      <section className="w-full bg-[#590620] py-24 px-6 md:px-24 border-y border-black/10 relative z-10">
+      <section className="w-full bg-black py-24 px-6 md:px-24 border-y border-white/5 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 flex justify-between items-end border-b border-white/10 pb-8">
              <h2 className="text-4xl md:text-5xl font-light font-nexa text-white tracking-widest uppercase">Color Palette</h2>
@@ -99,9 +99,9 @@ const DaphneHeckoBrandGuideline = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
              {[
-               { name: 'Burgundy', hex: '#590620', rgb: '89 6 32', bg: '#2C0310', text: 'white' },
-               { name: 'Gold', hex: '#DAAB5B', rgb: '218 171 91', bg: '#4A3A1F', text: 'white' },
-               { name: 'Cream', hex: '#FAF9F6', rgb: '250 249 246', bg: '#FAF9F6', text: '#2c2b2b' }
+               { name: 'Burgundy', hex: '#630D16', rgb: '99 13 22', bg: '#630D16', text: 'white' },
+               { name: 'DH Gold', hex: '#C5A059', rgb: '197 160 89', bg: '#C5A059', text: 'white' },
+               { name: 'Alabaster', hex: '#F9F9F6', rgb: '249 249 246', bg: '#F9F9F6', text: '#111111' }
              ].map((color, i) => (
                <motion.div 
                  key={i}
@@ -131,14 +131,14 @@ const DaphneHeckoBrandGuideline = () => {
         <div className="max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-24">
            {/* Primary Font: Nexa Heavy (represented configuration) */}
            <div className="flex flex-col">
-              <span className="text-[10px] tracking-[0.4em] uppercase text-[#590620] font-bold block mb-4">Primary Headings</span>
-              <h3 className="text-5xl font-bold font-nexa tracking-tight mb-16 text-[#590620]">Nexa Heavy</h3>
+              <span className="text-[10px] tracking-[0.4em] uppercase text-black/40 font-bold block mb-4">Primary Headings</span>
+              <h3 className="text-5xl font-bold font-nexa tracking-tight mb-16 text-black">Nexa Heavy</h3>
               
               <div className="space-y-12">
-                 <p className="text-4xl md:text-5xl font-bold font-nexa text-[#2c2b2b] leading-tight break-all">
+                 <p className="text-4xl md:text-5xl font-bold font-nexa text-black leading-tight break-all">
                     Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
                  </p>
-                 <p className="text-3xl font-bold font-nexa text-[#DAAB5B] tracking-widest">
+                 <p className="text-3xl font-bold font-nexa text-black/40 tracking-widest">
                     0 1 2 3 4 5 6 7 8 9
                  </p>
               </div>
@@ -153,7 +153,7 @@ const DaphneHeckoBrandGuideline = () => {
                  <p className="text-3xl md:text-4xl font-normal font-montserrat text-[#2c2b2b]/80 leading-relaxed break-all">
                     Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
                  </p>
-                 <p className="text-2xl font-light font-montserrat text-[#2c2b2b]/60 tracking-[0.2em]">
+                 <p className="text-2xl font-light font-montserrat text-black/40 tracking-[0.2em]">
                     0 1 2 3 4 5 6 7 8 9
                  </p>
               </div>
@@ -165,8 +165,8 @@ const DaphneHeckoBrandGuideline = () => {
       <section className="py-32 bg-[#F3ECE6]">
          <div className="max-w-[1800px] mx-auto px-8 md:px-16 flex flex-col gap-12">
             <div className="text-center mb-16">
-               <span className="text-[10px] tracking-[0.4em] uppercase text-[#590620] font-bold block mb-4">Logo System</span>
-               <h2 className="text-4xl md:text-5xl font-bold font-nexa text-[#2c2b2b]">Variations & Lockups</h2>
+               <span className="text-[10px] tracking-[0.4em] uppercase text-black/40 font-bold block mb-4">02 / Signatures</span>
+               <h2 className="text-4xl md:text-5xl font-bold font-nexa text-black">Variations & Lockups</h2>
             </div>
                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                {/* Wordmark Primary */}
@@ -175,9 +175,9 @@ const DaphneHeckoBrandGuideline = () => {
                </motion.div>
                
                {/* Vertical Primary */}
-               <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ delay: 0.1 }} className="p-16 bg-[#590620] flex flex-col items-center justify-center gap-8">
+               <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ delay: 0.1 }} className="p-16 bg-black flex flex-col items-center justify-center gap-8">
                   <img src={verticalBurgendy} alt="Vertical Burgundy" className="w-[60%] max-w-[200px] brightness-0 invert object-contain" />
-                  <span className="text-[10px] tracking-[0.3em] uppercase text-[#DAAB5B] opacity-80">White Lockup</span>
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-white/50">White Lockup</span>
                </motion.div>
 
                {/* Horizontal White */}
@@ -193,9 +193,9 @@ const DaphneHeckoBrandGuideline = () => {
                </motion.div>
 
                {/* Logo Mark White */}
-               <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ delay: 0.4 }} className="p-16 bg-[#DAAB5B] flex flex-col items-center justify-center gap-8">
+               <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ delay: 0.4 }} className="p-16 bg-[#333333] flex flex-col items-center justify-center gap-8">
                   <img src={logoWhite} alt="White Mark" className="w-[50%] max-w-[150px] object-contain" />
-                  <span className="text-[10px] tracking-[0.3em] uppercase text-[#590620] opacity-80">Gold Lockup</span>
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-white/50">Silver Lockup</span>
                </motion.div>
             </div>
          </div>
@@ -205,8 +205,8 @@ const DaphneHeckoBrandGuideline = () => {
       <section className="py-32 md:py-48 px-8 md:px-16 bg-white">
         <div className="max-w-[1800px] mx-auto">
           <div className="text-center mb-24">
-             <span className="text-[10px] tracking-[0.4em] uppercase text-[#DAAB5B] font-bold block mb-4">Application</span>
-             <h2 className="text-4xl md:text-5xl font-bold font-nexa text-[#590620]">Professional Presence</h2>
+             <span className="text-[10px] tracking-[0.4em] uppercase text-black/40 font-bold block mb-4">Application</span>
+             <h2 className="text-4xl md:text-5xl font-bold font-nexa text-black">Professional Presence</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
@@ -242,16 +242,16 @@ const DaphneHeckoBrandGuideline = () => {
       </section>
 
       {/* Footer Outro */}
-      <section className="py-48 bg-[#1A1A1A] text-white flex items-center justify-center text-center">
+      <section className="py-48 bg-black text-white flex items-center justify-center text-center">
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}>
-          <p className="text-[10px] tracking-[0.8em] uppercase font-bold mb-12 font-montserrat opacity-50 text-[#DAAB5B]">Accuracy & Expertise</p>
+          <p className="text-[10px] tracking-[0.8em] uppercase font-bold mb-12 font-montserrat opacity-30">Accuracy & Expertise</p>
           <img src={horizontalWhite} alt="DH Legal Ops" className="w-[300px] md:w-[400px] mx-auto" />
         </motion.div>
       </section>
 
-      <section className="py-32 text-center bg-[#FAF9F6] border-t border-black/5">
-        <p className="text-[10px] tracking-[0.4em] uppercase text-[#4A1021]/60 mb-8 font-bold">Full Presentation Available</p>
-        <a href="https://www.behance.net/gallery/233839147/Brand-Identity-For-Law-Firms" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold hover:scale-105 transition-transform duration-500" style={{ color: '#4A1021' }}>
+      <section className="py-32 text-center bg-white border-t border-black/5">
+        <p className="text-[10px] tracking-[0.4em] uppercase text-black/40 mb-8 font-bold">Full Presentation Available</p>
+        <a href="https://www.behance.net/gallery/233839147/Brand-Identity-For-Law-Firms" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-3xl md:text-5xl font-bold hover:scale-105 transition-transform duration-500 text-black">
           Explore on Behance <ArrowUpRight className="w-8 h-8 md:w-10 md:h-10" />
         </a>
       </section>

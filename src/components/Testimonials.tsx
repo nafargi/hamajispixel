@@ -6,21 +6,21 @@ const reviews = [
     name: "Richards Johnson",
     title: "Creative Director & Lead Designer",
     quote: "\"Working with this process was a seamless experience. The ability to merge creativity with functionality resulted in designs that not only looked stunning but also drove meaningful engagement. Highly recommended!\"",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&q=80&grayscale",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&q=80",
     rating: 5.0
   },
   {
     name: "June Lee",
     title: "CEO of GreenRoots",
     quote: "\"The strategic approach to design brought our brand vision to life. The packaging and brand elements developed elevated our aesthetic and aligned perfectly with our sustainability values.\"",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&q=80&grayscale",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&q=80",
     rating: 5.0
   },
   {
     name: "Jonathan Toms",
     title: "Founder of GreenK Studios",
     quote: "\"Every project speaks for itself — bold, strategic, and impactful. They took the time to understand our brand, delivering concepts that resonated with our target audience and boosted product visibility.\"",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&q=80&grayscale",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&q=80",
     rating: 5.0
   }
 ];
@@ -28,7 +28,7 @@ const reviews = [
 const TestimonialCard = ({ review }: { review: typeof reviews[0] }) => (
   <div className="flex flex-col bg-[#050505] p-8 hover:bg-[#0a0a0a] transition-colors duration-500 border-x border-white/5 first:border-l-0 last:border-r-0">
     <div className="w-12 h-12 rounded-full overflow-hidden mb-6">
-      <img src={review.avatar} className="w-full h-full object-cover grayscale" alt={review.name} />
+      <img src={review.avatar} className="w-full h-full object-cover" alt={review.name} />
     </div>
     
     <h4 className="text-2xl font-medium text-white tracking-tight mb-1">{review.name}</h4>
@@ -58,9 +58,9 @@ const Testimonials = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mb-24 items-center">
           
           {/* Left: Office Image */}
-          <div className="relative aspect-[4/3] rounded-[30px] overflow-hidden grayscale opacity-80 border border-white/10">
+          <div className="relative aspect-[4/3] rounded-[30px] overflow-hidden opacity-80 border border-white/10">
             <img 
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80&grayscale" 
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80" 
               alt="Designer working at desk" 
               className="w-full h-full object-cover"
             />
